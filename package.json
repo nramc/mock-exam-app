@@ -1,0 +1,30 @@
+{
+  "name": "mock-exam-app",
+  "version": "1.0.0",
+  "description": "Mock exam app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nramc/mock-exam-app.git"
+  },
+  "keywords": [
+    "angular",
+    "sass",
+    "typescript",
+    "gulp",
+    "bootstrap",
+    "font-awesome"
+  ],
+  "author": "Ramachandran Nellaiyappan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nramc/mock-exam-app/issues"
+  },
+  "homepage": "https://github.com/nramc/mock-exam-app#readme",
+  "dependencies": {
+    "@angular/cli": "^12.2.6"
+  }
+}
