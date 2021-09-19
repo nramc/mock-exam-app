@@ -9,7 +9,6 @@ h2, h3, h4,h5, h6 {
 }
 
 hr {
-  size: 2rem;
   @include gradient($primary, $secondary);
   opacity: 0.95;
   height: 0.5rem;;

@@ -1,0 +1,53 @@
+<div class="container home">
+
+  <div class="home__title col-12 m-auto text-center">
+    <h1>Mock Certification Exams</h1>
+    <hr>
+  </div>
+
+  <div class="home__content mt-sm-4">
+
+    <div class="row row-cols-1 row-cols-md-3 flex-lg-grow-0 row align-items-center">
+
+      <div class="col exam-details mt-2" *ngFor="let exam of exams">
+        <div class="card h-100">
+          <div class="card-header">
+            <h6>{{exam.name}}</h6>
+          </div>
+          <div class="row row align-items-center">
+            <div class="col-sm-8 col-md-4 align-items-center text-center m-auto mt-sm-4">
+                <img [src]="exam.logoUrl"
+              class="exam__logo img-fluid rounded-start" [alt]="exam.name" [title]="exam.name"
+              >
+
+            </div>
+            <div class="col-sm-8 col-md-8">
+              <div class="card-body">
+                <div class="card-title text-wrap overflow-hidden text-primary">
+                  <p>{{exam.description}}</p>
+                </div>
+                <div class="card-text">
+                  <div [hidden]="!exam.labels" class="text-primary">
+                    <small>Topics: {{exam.labels}}</small>
+                  </div>
+                  <div [hidden]="!exam.noOfQuestions" class="text-primary">
+                    <small>Questions: {{exam.noOfQuestions}}</small>
+                  </div>
+                  <div [hidden]="!exam.durationInMin" class="text-primary font-weight-bold">
+                    <small>Duration: {{exam.durationInMin}}(min)</small>
+                  <div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>
+

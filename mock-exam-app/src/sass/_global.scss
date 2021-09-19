@@ -3,4 +3,7 @@
 
 body {
   @include gradient($white, $gray-100);
+  min-height: 100vh;
+  margin-bottom: 1rem;
 }
+
