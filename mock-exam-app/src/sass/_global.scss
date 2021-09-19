@@ -1,0 +1,6 @@
+@import 'variables';
+@import 'mixin';
+
+body {
+  @include gradient($white, $gray-100);
+}

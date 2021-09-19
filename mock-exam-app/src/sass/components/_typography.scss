@@ -1,0 +1,17 @@
+@import '../variables';
+@import '../mixin';
+
+h1 {
+  @include text-gradient($primary, $secondary);
+}
+h2, h3, h4,h5, h6 {
+  color: $primary;
+}
+
+hr {
+  size: 2rem;
+  @include gradient($primary, $secondary);
+  opacity: 0.95;
+  height: 0.5rem;;
+}
+
