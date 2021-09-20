@@ -1,7 +1,7 @@
 <div class="container home">
   <div class="row">
     <div class="col text-center">
-      <h1>Java Certification Mock Exams</h1>
+      <h1>{{exam.name}}</h1>
       <hr />
     </div>
   </div>
@@ -11,13 +11,12 @@
       <div class="exam__details">
         <div class="row">
           <div class="col">
-            <h5>
-              <small>Title: </small>Java11 Certification - Quick Practice Exam 1
-            </h5>
-            <h6><small>No of Questions: </small>20</h6>
-            <h6><small>Topics Covered: </small>Java Basics [Labels]</h6>
-            <h6><small>Format: </small>Multiple Choice</h6>
-            <h6><small>Passing Score: </small>60%</h6>
+            <h5 class="mb-4">{{exam.description}}</h5>
+            <h6><small>Topics Covered: </small>{{exam.labels}}</h6>
+            <h6><small>Format: </small> {{exam.format}}</h6>
+            <h6><small>No of Questions: </small>{{exam.noOfQuestions}}</h6>
+            <h6><small>Duration: </small> {{exam.durationInMin}}</h6>
+            <h6><small>Passing Score: </small> {{exam.requiredScoreInPercent}}% </h6>
           </div>
         </div>
       </div>
@@ -27,16 +26,22 @@
           <label class="text-primary">
             <input
               type="radio"
-              value="1"
+              [value]="true"
               name="examResultDisplayOption"
-              checked
+              [checked]="exam.showResultForEachQuestion"
+              [(ngModel)]="exam.showResultForEachQuestion"
             />
             Display solution after answering individual questions
           </label>
         </div>
         <div>
           <label class="text-primary">
-            <input type="radio" value="1" name="examResultDisplayOption" />
+            <input type="radio"
+            [value]="false"
+             name="examResultDisplayOption"
+             [checked]="!exam.showResultForEachQuestion"
+             [(ngModel)]="exam.showResultForEachQuestion"
+            />
             Display solution only at the end of exam
           </label>
         </div>

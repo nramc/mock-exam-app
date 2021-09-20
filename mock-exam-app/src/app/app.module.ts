@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
 import { HomeComponent } from './home/home.component';
 import { ExamComponent } from './exam/exam.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ExamComponent } from './exam/exam.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

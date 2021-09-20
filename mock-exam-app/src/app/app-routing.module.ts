@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ExamComponent } from './exam/exam.component';
 import { HomeComponent } from './home/home.component';
 
 import { QuestionComponent } from './question/question.component';
 
 const routes: Routes = [
-  { path: 'question', component: QuestionComponent },
-  { path: '', component: HomeComponent }
+  { path : 'home', component : HomeComponent },
+  { path : 'exam',
+    children: [
+      { path: ':examId', component: ExamComponent },
+      { path: ':examId/question/:questionId', component: QuestionComponent }
+     ]
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 
 ];
 

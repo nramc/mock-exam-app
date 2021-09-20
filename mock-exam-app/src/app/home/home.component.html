@@ -7,10 +7,10 @@
 
   <div class="home__content mt-sm-4">
 
-    <div class="row row-cols-1 row-cols-md-3 flex-lg-grow-0 row align-items-center">
+    <div class="row row-cols-1 row-cols-md-3 flex-grow-1 flex-fill h-100 row align-items-center">
 
       <div class="col exam-details mt-2" *ngFor="let exam of exams">
-        <div class="card h-100">
+        <div class="card h-100" (click)="gotoExam(exam)">
           <div class="card-header">
             <h6>{{exam.name}}</h6>
           </div>
