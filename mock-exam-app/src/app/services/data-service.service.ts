@@ -1,7 +1,16 @@
 import { Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import examData from '../data/exam.json';
+@Injectable({providedIn: 'root'})
+export class ServiceNameService {
+  constructor(private httpClient: HttpClient) { }
+
+}
+
+import examData from '../../assets/data/exam.json';
 import { Exam } from '../entity/Exam.enity';
+import { Question } from '../entity/Question.entity';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -9,7 +18,7 @@ import { Exam } from '../entity/Exam.enity';
 })
 export class DataServiceService {
   private exams !: Exam[];
-  constructor() {
+  constructor(private http : HttpClient) {
     this.exams = examData;
   }
 
@@ -20,4 +29,11 @@ export class DataServiceService {
   public getExamById(examId : string) : Exam | undefined {
     return this.exams.find(exam => exam.id == examId);
   }
+
+  public getAllQuestions(examId : string) : Observable<Question[]> {
+    let questions! : Question[];
+    const dataFileName = '../assets/data/' + examId + '.json';
+    return this.http.get<Question[]>(dataFileName);
+  }
+
 }

@@ -18,6 +18,7 @@ export class ExamComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
       let examId = params.get("examId") as string;
+      console.log('Exam -> examId '+ examId);
       this.exam = this.dataService.getExamById(examId) as Exam;
     });
     console.log(this.exam);

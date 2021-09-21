@@ -1,1 +1,51 @@
-<p>question works!</p>
+<div class="container question">
+
+  <div class="question__title mt-4">
+    <h5>{{exam.name}}</h5>
+    <hr>
+  </div>
+
+  <div class="question_content">
+    <div class="mb-2 font-weight-bold">
+      Question {{question?.id}}:
+    </div>
+    <div class="">
+      <p>
+        {{question?.text}}
+      </p>
+    </div>
+    <div>
+        <pre class="text-primary font-weight-bold">
+    {{question?.code}}
+      </pre>
+
+      <p>{{question?.textAfterCode}} </p>
+    </div>
+  </div>
+
+  <div class="question__answers">
+
+    <div class="option" *ngFor="let option of question?.options">
+      <label>
+        <input type="radio" [value]="option.id" [name]="option.id">
+        {{option.text}}
+      </label>
+    </div>
+
+
+  </div>
+
+  <div class="actions">
+    <button class="btn-primary mr-3 mt-2">Save</button>
+    <button class="btn-primary">Next</button>
+  </div>
+
+  <div class="question_solution mt-3 p-4" style="border: 1px solid purple;">
+    <h6>Solution:</h6>
+    <p class="legend text-success font-weight-bold">Correct Answer: {{question?.solution?.correctAnswers}}</p>
+    <p class="font-weight-bold text-primary">
+      {{question?.solution?.explanation}}
+    </p>
+  </div>
+
+</div>

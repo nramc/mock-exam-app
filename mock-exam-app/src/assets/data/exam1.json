@@ -1,0 +1,22 @@
+[
+  {
+    "examId" : "exam1",
+    "id" : 1,
+    "text" : "This free quiz contains 15 Java programming questions (with answer explanations) to help you test your Java skills and prepare for the Oracle Certified Associate Java SE 8 Programmer 1 exam (1Z0-808).",
+    "code" : "public static void main () {\n      int i = 0;\n      i += i++;\n      System.out.println(\"Hello World..!\" + i);\n    }",
+    "textAfterCode" : "What is the result?",
+    "isMultipleAnswerQust" : false,
+    "options" : [
+      { "id" : "A", "text" : "22" },
+      { "id" : "B", "text" : "23" },
+      { "id" : "C", "text" : "24" },
+      { "id" : "D", "text" : "25" },
+      { "id" : "E", "text" : "26" }
+    ],
+    "solution" : {
+      "correctAnswers" : ["A", "B", "C"],
+      "explanation" : "There is no need of any external libraries to show code snippets in web pages. You can simply leverage the code or pre tags. Store the snippets as string and use the variable for display.",
+      "reference" : "https://google.com"
+    }
+  }
+]
