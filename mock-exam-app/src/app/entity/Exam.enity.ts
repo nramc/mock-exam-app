@@ -10,5 +10,6 @@ export interface Exam {
   requiredScoreInPercent: number,
   showResultForEachQuestion : boolean,
   logoUrl: string;
+  isSubmitted?: boolean;
 
 }

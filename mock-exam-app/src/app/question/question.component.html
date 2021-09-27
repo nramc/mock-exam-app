@@ -6,46 +6,28 @@
   </div>
 
   <div class="question_content">
-    <div class="mb-2 font-weight-bold">
-      Question {{question?.id}}:
-    </div>
-    <div class="">
-      <p>
-        {{question?.text}}
-      </p>
-    </div>
-    <div>
-        <pre class="text-primary font-weight-bold">
-    {{question?.code}}
-      </pre>
-
-      <p>{{question?.textAfterCode}} </p>
-    </div>
+    <app-question-details [question] = "question"></app-question-details>
   </div>
 
   <div class="question__answers">
-
-    <div class="option" *ngFor="let option of question?.options">
-      <label>
-        <input type="radio" [value]="option.id" [name]="option.id">
-        {{option.text}}
-      </label>
-    </div>
-
-
+    <app-question-answers [question]="question"></app-question-answers>
   </div>
+
+  {{question?.selectedAnswer | json}}
 
   <div class="actions">
-    <button class="btn-primary mr-3 mt-2">Save</button>
-    <button class="btn-primary">Next</button>
+    <!-- Display Save option only when submit option is not displayed -->
+    <button *ngIf="!canDisplaySubmitOption()" class="btn-primary mr-3 mt-2">Save</button>
+    <!-- Display Previous button except first question -->
+    <button *ngIf="!isItFirstQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Prev</button>
+    <!-- Display Next option except last question -->
+    <button *ngIf="!isItLastQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Next</button>
+    <!-- Display Submit option only for last question and exam's display solution option set to display solution at the end -->
+    <button *ngIf="canDisplaySubmitOption()" class="btn-primary mr-3 mt-2">Submit</button>
   </div>
 
-  <div class="question_solution mt-3 p-4" style="border: 1px solid purple;">
-    <h6>Solution:</h6>
-    <p class="legend text-success font-weight-bold">Correct Answer: {{question?.solution?.correctAnswers}}</p>
-    <p class="font-weight-bold text-primary">
-      {{question?.solution?.explanation}}
-    </p>
+  <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-4" style="border: 1px solid purple;">
+    <app-question-solution [question]="question"></app-question-solution>
   </div>
 
 </div>

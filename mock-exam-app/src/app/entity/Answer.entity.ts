@@ -1,4 +1,4 @@
 export interface Answer {
-  id : String,
+  id : string,
   text : string;
 }

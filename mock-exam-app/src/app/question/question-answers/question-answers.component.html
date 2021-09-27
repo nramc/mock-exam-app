@@ -1,0 +1,17 @@
+<ng-container *ngIf="!question?.isMultipleAnswerQust; else multipleAnswerTemplate">
+  <div class="option" *ngFor="let option of question?.options">
+    <label>
+      <input type="radio" [value]="option.id" [(ngModel)]="question.selectedAnswer" name="answers">
+      {{option.text}}
+    </label>
+  </div>
+</ng-container>
+<ng-template #multipleAnswerTemplate>
+  <div class="option" *ngFor="let option of question?.options">
+    <label>
+      <input type="checkbox" [value]="option.id" [name]="option.id" (change)="eventAnswered($event, option)">
+      {{option.text}}
+    </label>
+  </div>
+</ng-template>
+

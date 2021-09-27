@@ -12,15 +12,9 @@ import { DataServiceService } from '../services/data-service.service';
 export class QuestionComponent implements OnInit {
 
   exam!: Exam;
+  allQuestions!: Question[];
   question!: Question;
 
-  code : string = `
-  public static void main () {
-    int i = 0;
-    i += i++;
-    System.out.println("Hello World..!" + i);
-   }`
-  ;
   constructor(
     private dataService : DataServiceService,
     private router: Router, private actvatedRoute: ActivatedRoute) { }
@@ -29,19 +23,48 @@ export class QuestionComponent implements OnInit {
     this.actvatedRoute.paramMap.subscribe(params => {
       const examId = params.get('examId') as string;
       this.exam = this.dataService.getExamById(examId) as Exam;
-      // Question goes here
+      //TODO check Exam ID is valid
       const questionId = params.get('questionId');
-      if ( questionId ) {
+      if ( examId && questionId ) {
         console.log('Question id : ' + questionId);
-        this.dataService.getAllQuestions(examId).subscribe(data => {
-            console.log(data);
-            this.question = data.find(question => question.id === +questionId) as Question;
-          });;
+        this.fetchQuestionsAndDisplayQuestion(examId, +questionId);
       } else {
         console.error('Invalid Question ID..!');
       }
 
     });
+  }
+
+  canDisplaySolution() : boolean {
+    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.isAnswered) as boolean;
+  }
+
+  isItLastQuestion() : boolean {
+    return this.question?.id === this.exam.noOfQuestions;
+  }
+
+  isItFirstQuestion() : boolean {
+    return this.question?.id === 1;
+  }
+
+  canDisplaySubmitOption() : boolean {
+    return !this.exam.showResultForEachQuestion && this.question?.id === this.exam.noOfQuestions;
+  }
+
+  private fetchQuestionsAndDisplayQuestion(examId : string, questionId: number) : void {
+    this.dataService.getAllQuestions(examId).subscribe(data => {
+      //TODO: Check whether data is not empty
+
+        console.log(data);
+        this.allQuestions = data;
+        this.fetchAndDisplayQuestion(this.allQuestions, questionId);
+      });
+  }
+
+  private fetchAndDisplayQuestion(questions : Question[], questionId : number) : void {
+    //TODO check whether question is not empty
+
+    this.question = questions.find(question => question.id === +questionId) as Question;
   }
 
 }

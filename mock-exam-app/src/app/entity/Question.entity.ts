@@ -9,5 +9,7 @@ export interface Question {
   textAfterCode? : string,
   isMultipleAnswerQust : boolean,
   options : Answer[],
-  solution : Solution
+  solution : Solution,
+  isAnswered?: boolean,
+  selectedAnswer?: Array<string>;
 }
