@@ -32,4 +32,8 @@ export class QuestionAnswersComponent implements OnInit {
     }
   }
 
+  isAnswerSelected(optionId : string) : boolean {
+    return this.question.selectedAnswer?.includes(optionId) as boolean;
+  }
+
 }

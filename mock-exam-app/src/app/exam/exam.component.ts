@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Exam } from '../entity/Exam.enity';
 import { DataServiceService } from '../services/data-service.service';
+import { PersistentService } from '../services/persistent.service';
 
 @Component({
   selector: 'app-exam',
@@ -13,6 +14,7 @@ export class ExamComponent implements OnInit {
   exam!: Exam;
 
   constructor(private dataService : DataServiceService,
+    private persistentService : PersistentService,
     private router : Router, private activatedRoute : ActivatedRoute){}
 
   ngOnInit(): void {
@@ -27,9 +29,11 @@ export class ExamComponent implements OnInit {
     }
   }
 
-  public startExam() : void {
+  public async startExam() : Promise<void> {
     console.log('will redirect to question page');
     console.log(this.exam.showResultForEachQuestion);
+    await this.persistentService.initializeExam(this.exam.id);
+    console.log('fetch initiated');
     this.router.navigate(['question', 1], {relativeTo: this.activatedRoute});
   }
 

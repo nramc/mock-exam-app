@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectMultipleControlValueAccessor } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Exam } from '../entity/Exam.enity';
 import { Question } from '../entity/Question.entity';
 import { DataServiceService } from '../services/data-service.service';
+import { PersistentService } from '../services/persistent.service';
 
 @Component({
   selector: 'app-question',
@@ -17,6 +19,7 @@ export class QuestionComponent implements OnInit {
 
   constructor(
     private dataService : DataServiceService,
+    private persistentService: PersistentService,
     private router: Router, private actvatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -27,12 +30,25 @@ export class QuestionComponent implements OnInit {
       const questionId = params.get('questionId');
       if ( examId && questionId ) {
         console.log('Question id : ' + questionId);
-        this.fetchQuestionsAndDisplayQuestion(examId, +questionId);
+        this.setQuestion(examId, +questionId);
       } else {
         console.error('Invalid Question ID..!');
       }
 
     });
+  }
+
+  moveToNextQuestion() : void {
+    if( this.exam.noOfQuestions <= this.question.id+1) {
+      this.router.navigate([`exam/${this.exam.id}/question/`, this.question.id+1]);
+    }
+
+  }
+
+  moveToPrevQuestion() : void {
+    if (this.question.id >= 1) {
+      this.router.navigate([`exam/${this.exam.id}/question/`, this.question.id-1]);
+    }
   }
 
   canDisplaySolution() : boolean {
@@ -48,23 +64,11 @@ export class QuestionComponent implements OnInit {
   }
 
   canDisplaySubmitOption() : boolean {
-    return !this.exam.showResultForEachQuestion && this.question?.id === this.exam.noOfQuestions;
+    return this.question?.id === this.exam.noOfQuestions;
   }
 
-  private fetchQuestionsAndDisplayQuestion(examId : string, questionId: number) : void {
-    this.dataService.getAllQuestions(examId).subscribe(data => {
-      //TODO: Check whether data is not empty
-
-        console.log(data);
-        this.allQuestions = data;
-        this.fetchAndDisplayQuestion(this.allQuestions, questionId);
-      });
-  }
-
-  private fetchAndDisplayQuestion(questions : Question[], questionId : number) : void {
-    //TODO check whether question is not empty
-
-    this.question = questions.find(question => question.id === +questionId) as Question;
+  private setQuestion(examId : string, questionId: number) : void {
+    this.persistentService.getQuestion(examId, questionId).then(question => this.question = question);
   }
 
 }

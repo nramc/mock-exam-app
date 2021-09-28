@@ -16,14 +16,14 @@
   {{question?.selectedAnswer | json}}
 
   <div class="actions">
-    <!-- Display Save option only when submit option is not displayed -->
-    <button *ngIf="!canDisplaySubmitOption()" class="btn-primary mr-3 mt-2">Save</button>
+    <!-- Always Display Save option -->
+    <button class="btn-primary mr-3 mt-2">Save</button>
     <!-- Display Previous button except first question -->
-    <button *ngIf="!isItFirstQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Prev</button>
+    <button *ngIf="!isItFirstQuestion()" (click)="moveToPrevQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Prev</button>
     <!-- Display Next option except last question -->
-    <button *ngIf="!isItLastQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Next</button>
+    <button *ngIf="!isItLastQuestion()" (click)="moveToNextQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Next</button>
     <!-- Display Submit option only for last question and exam's display solution option set to display solution at the end -->
-    <button *ngIf="canDisplaySubmitOption()" class="btn-primary mr-3 mt-2">Submit</button>
+    <button *ngIf="canDisplaySubmitOption()" class="btn-success mr-3 mt-2">Submit</button>
   </div>
 
   <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-4" style="border: 1px solid purple;">

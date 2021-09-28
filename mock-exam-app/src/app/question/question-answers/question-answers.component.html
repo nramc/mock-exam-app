@@ -9,7 +9,8 @@
 <ng-template #multipleAnswerTemplate>
   <div class="option" *ngFor="let option of question?.options">
     <label>
-      <input type="checkbox" [value]="option.id" [name]="option.id" (change)="eventAnswered($event, option)">
+      <input type="checkbox" [value]="option.id" [name]="option.id" (change)="eventAnswered($event, option)"
+      [checked]="isAnswerSelected(option.id)">
       {{option.text}}
     </label>
   </div>
