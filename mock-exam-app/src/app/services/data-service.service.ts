@@ -31,7 +31,7 @@ export class DataServiceService {
   }
 
   public getAllQuestions(examId : string) : Observable<Question[]> {
-    const dataFileName = '../assets/data/' + examId + '.json';
+    const dataFileName = 'assets/data/' + examId + '.json';
     return this.http.get<Question[]>(dataFileName);
   }
 
