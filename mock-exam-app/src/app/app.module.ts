@@ -19,6 +19,8 @@ import { SummaryComponent } from './exam/summary/summary.component';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AlertModelComponent } from './alert-model/alert-model.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     QuestionDetailsComponent,
     QuestionAnswersComponent,
     QuestionSolutionComponent,
-    SummaryComponent
+    SummaryComponent,
+    AlertModelComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

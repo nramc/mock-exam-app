@@ -7,6 +7,8 @@ import { Question } from '../entity/Question.entity';
 import { DataServiceService } from '../services/data-service.service';
 import { PersistentService } from '../services/persistent.service';
 import { templateJitUrl } from '@angular/compiler';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertModelComponent } from '../alert-model/alert-model.component';
 
 @Component({
   selector: 'app-question',
@@ -23,19 +25,24 @@ export class QuestionComponent implements OnInit {
     private dataService : DataServiceService,
     private persistentService: PersistentService,
     private router: Router, private actvatedRoute: ActivatedRoute,
-    private matSnackBar : MatSnackBar) { }
+    private matSnackBar : MatSnackBar,
+    private matDialog : MatDialog) { }
 
   ngOnInit(): void {
     this.actvatedRoute.paramMap.subscribe(params => {
       const examId = params.get('examId') as string;
       this.exam = this.persistentService.getExam(examId) as Exam;
-      //TODO check Exam ID is valid
       const questionId = params.get('questionId');
-      if ( examId && questionId ) {
-        console.log('Question id : ' + questionId);
+      if ( this.exam?.id && questionId && +questionId <= this.exam.noOfQuestions) {
         this.setQuestion(examId, +questionId);
       } else {
-        console.error('Invalid Question ID..!');
+        const dialogRef = this.matDialog.open(AlertModelComponent, {
+          data: {
+            title : 'Error',
+            message : 'Exam is invalid or expired. Please try again later.'
+          }
+        });
+        dialogRef.afterClosed().subscribe(_result => this.router.navigate(['/']));
       }
 
     });
@@ -54,11 +61,26 @@ export class QuestionComponent implements OnInit {
   }
 
   submit() : void {
-    this.exam.isSubmitted = true;
-    this.save();
 
-    this.persistentService.saveExam(this.exam);
-    this.router.navigate([`exam/${this.exam.id}/summary`]);
+    const dialogRef = this.matDialog.open(AlertModelComponent, {
+      data: {
+        title : 'Submit Exam',
+        message : 'Do you want to submit exam.?',
+        btnConfirmLabel : 'Yes',
+        btnCloseLabel : 'No'
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if ( result == 'YES' ) {
+        this.exam.isSubmitted = true;
+        this.save();
+
+        this.persistentService.saveExam(this.exam);
+        this.router.navigate([`exam/${this.exam.id}/summary`]);
+
+      }
+    });
+
 
   }
 

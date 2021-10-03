@@ -1,0 +1,8 @@
+<span class="text-danger" mat-dialog-title>{{data.title}}</span>
+<div mat-dialog-content>
+  <p>{{data.message}}</p>
+</div>
+<div mat-dialog-actions>
+  <button *ngIf="data.btnConfirmLabel" mat-button mat-dialog-close="YES">{{data.btnConfirmLabel}}</button>
+  <button mat-button mat-dialog-close="EXIT">{{data.btnCloseLabel || 'Close'}}</button>
+</div>

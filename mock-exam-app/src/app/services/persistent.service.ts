@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AlertModelComponent } from '../alert-model/alert-model.component';
 import { Exam } from '../entity/Exam.enity';
 import { Question } from '../entity/Question.entity';
 import { DataServiceService } from './data-service.service';
@@ -14,15 +17,27 @@ export class PersistentService {
   private exam!: Exam;
   private sleep = (ms : number) => new Promise(resolve => setTimeout(resolve, ms));
 
-  constructor(private dataService : DataServiceService) { }
+  constructor(private dataService : DataServiceService,
+    private matDialog : MatDialog,
+    private router : Router) { }
 
   async initializeExam(exam : Exam) : Promise<void> {
     this.exam = exam;
     await this.dataService.getAllQuestions(exam.id).subscribe(data => {
-      //TODO: Check whether data is not empty
-        console.log(data);
-        this.allQuestions = data;
-      });
+      if (data?.length == 0) {
+        const dialogRef = this.matDialog.open(AlertModelComponent, {
+          data: {
+            title : 'Error',
+            message : 'Exam is invalid or expired. Please try again later.'
+          }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          this.router.navigate(['/']);
+        });
+      }
+
+      this.allQuestions = data;
+    });
   }
 
   public cleanup() {
@@ -34,16 +49,14 @@ export class PersistentService {
     let initializeCount = 0;
     WaitForResult:
     while (this.allQuestions.length == 0 && retriedCount++ < this.RETRY_COUNT) {
-      console.log('Retried : ', retriedCount++);
       await this.sleep(300);
-      if ( this.allQuestions.length == 0 && retriedCount > this.RETRY_COUNT && initializeCount <= this.MAX_INITIALIZE_COUNT ) {
+      if ( this.allQuestions.length == 0 && retriedCount <= this.RETRY_COUNT && initializeCount <= this.MAX_INITIALIZE_COUNT ) {
         await this.initializeExam(this.getExam(examId));
         retriedCount = 0;
         initializeCount++;
         continue WaitForResult;
       }
     }
-    console.log(this.allQuestions);
     return Object.assign({}, this.findQuestion(questionId, examId)) as Question;
   }
 
