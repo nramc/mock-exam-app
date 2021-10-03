@@ -23,15 +23,14 @@ export class DataServiceService {
   }
 
   public getAllExams() : Exam[] {
-    return this.exams;
+    return [...this.exams];
   }
 
   public getExamById(examId : string) : Exam | undefined {
-    return this.exams.find(exam => exam.id == examId);
+    return Object.assign({}, this.exams.find(exam => exam.id == examId));
   }
 
   public getAllQuestions(examId : string) : Observable<Question[]> {
-    let questions! : Question[];
     const dataFileName = '../assets/data/' + examId + '.json';
     return this.http.get<Question[]>(dataFileName);
   }

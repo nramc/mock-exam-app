@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Answer } from 'src/app/entity/Answer.entity';
+import { Exam } from 'src/app/entity/Exam.enity';
 import { Question } from 'src/app/entity/Question.entity';
 
 @Component({
@@ -10,11 +11,12 @@ import { Question } from 'src/app/entity/Question.entity';
 export class QuestionAnswersComponent implements OnInit {
 
   @Input()
+  exam!: Exam;
+  @Input()
   question!: Question;
 
-  @Input()
-  isMultipleAnswerQuestion?: boolean;
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

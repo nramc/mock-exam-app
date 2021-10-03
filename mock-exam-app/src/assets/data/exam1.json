@@ -14,7 +14,7 @@
       { "id" : "E", "text" : "26" }
     ],
     "solution" : {
-      "correctAnswers" : ["A"],
+      "correctAnswers" : ["A", "B", "C"],
       "explanation" : "There is no need of any external libraries to show code snippets in web pages. You can simply leverage the code or pre tags. Store the snippets as string and use the variable for display.",
       "reference" : "https://google.com"
     }
@@ -35,7 +35,7 @@
       { "id" : "E", "text" : "26" }
     ],
     "solution" : {
-      "correctAnswers" : ["A", "B", "C"],
+      "correctAnswers" : ["A"],
       "explanation" : "There is no need of any external libraries to show code snippets in web pages. You can simply leverage the code or pre tags. Store the snippets as string and use the variable for display.",
       "reference" : "https://google.com"
     }

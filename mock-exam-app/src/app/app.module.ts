@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuestionDetailsComponent } from './question/question-details/question-details.component';
 import { QuestionAnswersComponent } from './question/question-answers/question-answers.component';
 import { QuestionSolutionComponent } from './question/question-solution/question-solution.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SummaryComponent } from './exam/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +25,17 @@ import { QuestionSolutionComponent } from './question/question-solution/question
     ExamComponent,
     QuestionDetailsComponent,
     QuestionAnswersComponent,
-    QuestionSolutionComponent
+    QuestionSolutionComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

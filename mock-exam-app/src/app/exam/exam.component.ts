@@ -30,10 +30,8 @@ export class ExamComponent implements OnInit {
   }
 
   public async startExam() : Promise<void> {
-    console.log('will redirect to question page');
-    console.log(this.exam.showResultForEachQuestion);
+    this.persistentService.cleanup();
     await this.persistentService.initializeExam(this.exam.id);
-    console.log('fetch initiated');
     this.router.navigate(['question', 1], {relativeTo: this.activatedRoute});
   }
 

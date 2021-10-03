@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectMultipleControlValueAccessor } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Exam } from '../entity/Exam.enity';
 import { Question } from '../entity/Question.entity';
 import { DataServiceService } from '../services/data-service.service';
@@ -20,12 +21,13 @@ export class QuestionComponent implements OnInit {
   constructor(
     private dataService : DataServiceService,
     private persistentService: PersistentService,
-    private router: Router, private actvatedRoute: ActivatedRoute) { }
+    private router: Router, private actvatedRoute: ActivatedRoute,
+    private matSnackBar : MatSnackBar) { }
 
   ngOnInit(): void {
     this.actvatedRoute.paramMap.subscribe(params => {
       const examId = params.get('examId') as string;
-      this.exam = this.dataService.getExamById(examId) as Exam;
+      this.exam = this.persistentService.getExam(examId) as Exam;
       //TODO check Exam ID is valid
       const questionId = params.get('questionId');
       if ( examId && questionId ) {
@@ -36,6 +38,25 @@ export class QuestionComponent implements OnInit {
       }
 
     });
+  }
+
+  save(question : Question) : void {
+    this.persistentService.saveQuestion(question);
+    this.matSnackBar.open("Answer saved successfully", "Close", {
+      duration : 1000,
+      politeness: 'polite',
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: 'mat-snack-bar-primary'
+    });
+  }
+
+  submit() : void {
+    this.exam.isSubmitted = true;
+    this.persistentService.saveQuestion(this.question);
+    this.persistentService.saveExam(this.exam);
+    this.router.navigate([`exam/${this.exam.id}/summary`]);
+
   }
 
   moveToNextQuestion() : void {
@@ -52,7 +73,7 @@ export class QuestionComponent implements OnInit {
   }
 
   canDisplaySolution() : boolean {
-    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.isAnswered) as boolean;
+    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.selectedAnswer?.length) as boolean;
   }
 
   isItLastQuestion() : boolean {
@@ -64,7 +85,7 @@ export class QuestionComponent implements OnInit {
   }
 
   canDisplaySubmitOption() : boolean {
-    return this.question?.id === this.exam.noOfQuestions;
+    return this.question?.id === this.exam.noOfQuestions && !this.exam.isSubmitted;
   }
 
   private setQuestion(examId : string, questionId: number) : void {

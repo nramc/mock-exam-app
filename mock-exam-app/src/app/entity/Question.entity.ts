@@ -10,6 +10,5 @@ export interface Question {
   isMultipleAnswerQust : boolean,
   options : Answer[],
   solution : Solution,
-  isAnswered?: boolean,
   selectedAnswer?: Array<string>;
 }
