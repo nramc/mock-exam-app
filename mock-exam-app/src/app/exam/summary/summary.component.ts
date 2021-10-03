@@ -30,7 +30,7 @@ export class SummaryComponent implements OnInit {
       const percentage = Math.ceil((correctAnswers.length/exam?.noOfQuestions) * 100);
       const result = this.getResult(percentage, exam?.requiredScoreInPercent);
       const title = result == 'Pass' ? 'Congratulation..!' : 'Sorry..! Better Luck Next Time';
-      const iconUrl = result == 'Pass' ? '/assets/images/success-animi2.gif' : '/assets/images/fail-animi.gif';
+      const iconUrl = result == 'Pass' ? 'assets/images/success-animi2.gif' : 'assets/images/fail-animi.gif';
 
       this.summary = {
         exam: exam,
