@@ -2,10 +2,12 @@
 
   <div class="question__title mt-4">
     <h5>{{exam.name}}</h5>
-    <hr>
   </div>
 
   <div class="question_content">
+
+    <mat-progress-bar mode="determinate" [value]="getCurrentProgress()" class="mb-2"></mat-progress-bar>
+
     <app-question-details [question]="question" [exam]="exam"></app-question-details>
   </div>
 
@@ -28,6 +30,7 @@
     <button *ngIf="!isItLastQuestion()" (click)="moveToNextQuestion()" class="btn btn-primary mr-3 mt-2">Next</button>
     <!-- Display Submit option only for last question and exam's display solution option set to display solution at the end -->
     <button *ngIf="canDisplaySubmitOption()" class="btn btn-success mr-3 mt-2" (click)="submit()">Submit</button>
+    <button *ngIf="exam?.isSubmitted && isItLastQuestion() " class="btn btn-primary mr-3 mt-2" (click)="home()">Home</button>
   </div>
 
 </div>

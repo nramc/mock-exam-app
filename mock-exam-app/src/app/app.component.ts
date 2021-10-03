@@ -15,4 +15,8 @@ export class AppComponent {
     this.router.navigate(['/']);
   }
 
+  myprofile() : void{
+    window.open('https://myprofile.codewithram.dev');
+  }
+
 }

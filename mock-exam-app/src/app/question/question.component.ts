@@ -75,6 +75,10 @@ export class QuestionComponent implements OnInit {
     }
   }
 
+  home() : void {
+    this.router.navigate(['/']);
+  }
+
   canDisplaySolution() : boolean {
     return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.isQuestionAnswerd ) as boolean;
   }
@@ -89,6 +93,10 @@ export class QuestionComponent implements OnInit {
 
   canDisplaySubmitOption() : boolean {
     return this.question?.id === this.exam.noOfQuestions && !this.exam.isSubmitted;
+  }
+
+  getCurrentProgress() : number {
+    return this.persistentService.getAllQuestions(this.exam.id).filter(question => question.isQuestionAnswerd).length/this.exam.noOfQuestions * 100;
   }
 
   private setQuestion(examId : string, questionId: number) : void {
