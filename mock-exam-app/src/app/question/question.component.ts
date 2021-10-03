@@ -6,6 +6,7 @@ import { Exam } from '../entity/Exam.enity';
 import { Question } from '../entity/Question.entity';
 import { DataServiceService } from '../services/data-service.service';
 import { PersistentService } from '../services/persistent.service';
+import { templateJitUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-question',
@@ -40,8 +41,9 @@ export class QuestionComponent implements OnInit {
     });
   }
 
-  save(question : Question) : void {
-    this.persistentService.saveQuestion(question);
+  save() : void {
+    this.question.isQuestionAnswerd = true;
+    this.persistentService.saveQuestion(this.question);
     this.matSnackBar.open("Answer saved successfully", "Close", {
       duration : 1000,
       politeness: 'polite',
@@ -53,7 +55,8 @@ export class QuestionComponent implements OnInit {
 
   submit() : void {
     this.exam.isSubmitted = true;
-    this.persistentService.saveQuestion(this.question);
+    this.save();
+
     this.persistentService.saveExam(this.exam);
     this.router.navigate([`exam/${this.exam.id}/summary`]);
 
@@ -73,7 +76,7 @@ export class QuestionComponent implements OnInit {
   }
 
   canDisplaySolution() : boolean {
-    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.selectedAnswer?.length) as boolean;
+    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.isQuestionAnswerd ) as boolean;
   }
 
   isItLastQuestion() : boolean {

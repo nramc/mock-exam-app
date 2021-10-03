@@ -1,15 +1,18 @@
-<div class="mb-2 font-weight-bold">
-  Question {{question?.id}}:
+<div class="mb-2 text-primary">
+  <h6>Question {{question?.id}}:</h6>
 </div>
-<div class="">
+<div class="justify-content-around">
   <p>
     {{question?.text}}
   </p>
 </div>
 <div>
-  <pre class="text-primary font-weight-bold">
-    {{question?.code}}
-  </pre>
+  <div>
+    <pre class="text-primary font-weight-bold">
+      {{question?.code}}
+    </pre>
+  </div>
+
 
   <p>{{question?.textAfterCode}} </p>
 </div>

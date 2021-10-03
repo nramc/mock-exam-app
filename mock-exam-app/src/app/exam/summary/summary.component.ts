@@ -4,6 +4,7 @@ import { Exam } from 'src/app/entity/Exam.enity';
 import { Question } from 'src/app/entity/Question.entity';
 import { Summary } from 'src/app/entity/Summary.entity';
 import { PersistentService } from 'src/app/services/persistent.service';
+import { AppUtils } from 'src/app/utils/AppUtils';
 
 @Component({
   selector: 'app-summary',
@@ -55,17 +56,7 @@ export class SummaryComponent implements OnInit {
   private getQuestionsAnsweredCorrectly(questions : Question[]) : Question[] {
 
 
-    return questions.filter(question => this.isAnswerCorrect(question));
-  }
-
-  private isAnswerCorrect(question : Question) : boolean {
-    if ( question.isMultipleAnswerQust ) {
-      return question.selectedAnswer?.length == question.solution.correctAnswers.length
-        && JSON.stringify(question.solution.correctAnswers.sort()) == JSON.stringify(question.selectedAnswer.sort())
-    }
-    else {
-      return question.selectedAnswer ? question.solution.correctAnswers[0] == question?.selectedAnswer[0] : false;
-    }
+    return questions.filter(question => AppUtils.isAnswerCorrect(question));
   }
 
   private getResult(actualPercentage : number, requiredPercentage : number) : 'Pass' | 'Fail' {

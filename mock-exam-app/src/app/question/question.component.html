@@ -15,19 +15,19 @@
 
   {{question?.selectedAnswer | json}}
 
-  <div class="actions">
-    <!-- Always Display Save option -->
-    <button *ngIf="!exam?.isSubmitted" class="btn-primary mr-3 mt-2 font-weight-bold" (click)="save(question)">Save</button>
-    <!-- Display Previous button except first question -->
-    <button *ngIf="!isItFirstQuestion()" (click)="moveToPrevQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Prev</button>
-    <!-- Display Next option except last question -->
-    <button *ngIf="!isItLastQuestion()" (click)="moveToNextQuestion()" class="btn-outline-primary mr-3 mt-2 font-weight-bold">Next</button>
-    <!-- Display Submit option only for last question and exam's display solution option set to display solution at the end -->
-    <button *ngIf="canDisplaySubmitOption()" class="btn-success mr-3 mt-2 font-weight-bold" (click)="submit()">Submit</button>
+  <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-1" style="border: 1px solid purple;">
+    <app-question-solution [question]="question" [exam]="exam"></app-question-solution>
   </div>
 
-  <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-4" style="border: 1px solid purple;">
-    <app-question-solution [question]="question" [exam]="exam"></app-question-solution>
+  <div class="actions">
+    <!-- Always Display Save option -->
+    <button *ngIf="!exam?.isSubmitted" class="btn btn-primary mr-3 mt-2" (click)="save()">Save</button>
+    <!-- Display Previous button except first question -->
+    <button *ngIf="!isItFirstQuestion()" (click)="moveToPrevQuestion()" class="btn btn-primary mr-3 mt-2">Prev</button>
+    <!-- Display Next option except last question -->
+    <button *ngIf="!isItLastQuestion()" (click)="moveToNextQuestion()" class="btn btn-primary mr-3 mt-2">Next</button>
+    <!-- Display Submit option only for last question and exam's display solution option set to display solution at the end -->
+    <button *ngIf="canDisplaySubmitOption()" class="btn btn-success mr-3 mt-2" (click)="submit()">Submit</button>
   </div>
 
 </div>

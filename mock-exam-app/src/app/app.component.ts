@@ -9,4 +9,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'mock-exam';
 
+  constructor(private router : Router){}
+
+  public home() : void {
+    this.router.navigate(['/']);
+  }
+
 }

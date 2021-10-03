@@ -29,9 +29,9 @@ export class ExamComponent implements OnInit {
     }
   }
 
-  public async startExam() : Promise<void> {
+  public startExam() : void {
     this.persistentService.cleanup();
-    await this.persistentService.initializeExam(this.exam.id);
+    this.persistentService.initializeExam(this.exam);
     this.router.navigate(['question', 1], {relativeTo: this.activatedRoute});
   }
 

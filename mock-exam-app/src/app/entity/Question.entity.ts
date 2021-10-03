@@ -11,4 +11,5 @@ export interface Question {
   options : Answer[],
   solution : Solution,
   selectedAnswer?: Array<string>;
+  isQuestionAnswerd?: boolean
 }

@@ -16,9 +16,9 @@ export class PersistentService {
 
   constructor(private dataService : DataServiceService) { }
 
-  async initializeExam(examId : string) : Promise<void> {
-    this.exam = this.dataService.getExamById(examId) as Exam;
-    await this.dataService.getAllQuestions(examId).subscribe(data => {
+  async initializeExam(exam : Exam) : Promise<void> {
+    this.exam = exam;
+    await this.dataService.getAllQuestions(exam.id).subscribe(data => {
       //TODO: Check whether data is not empty
         console.log(data);
         this.allQuestions = data;
@@ -37,7 +37,7 @@ export class PersistentService {
       console.log('Retried : ', retriedCount++);
       await this.sleep(300);
       if ( this.allQuestions.length == 0 && retriedCount > this.RETRY_COUNT && initializeCount <= this.MAX_INITIALIZE_COUNT ) {
-        await this.initializeExam(examId);
+        await this.initializeExam(this.getExam(examId));
         retriedCount = 0;
         initializeCount++;
         continue WaitForResult;

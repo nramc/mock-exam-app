@@ -38,4 +38,8 @@ export class QuestionAnswersComponent implements OnInit {
     return this.question.selectedAnswer?.includes(optionId) as boolean;
   }
 
+  canDisableInput() : boolean {
+    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question.isQuestionAnswerd) as boolean;
+  }
+
 }
