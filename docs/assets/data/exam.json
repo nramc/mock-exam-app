@@ -9,7 +9,7 @@
     "noOfQuestions" : 2,
     "requiredScoreInPercent" : 68,
     "showResultForEachQuestion" : false,
-    "logoUrl" : "https://www.kindpng.com/picc/m/198-1984828_java-icon-transparent-hd-png-download.png"
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
   },
   {
     "id" : "exam2",
@@ -21,7 +21,7 @@
     "noOfQuestions" : 20,
     "requiredScoreInPercent" : 68,
     "showResultForEachQuestion" : true,
-    "logoUrl" : "https://www.kindpng.com/picc/m/198-1984828_java-icon-transparent-hd-png-download.png"
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
   },
   {
     "id" : "exam3",
@@ -33,7 +33,7 @@
     "noOfQuestions" : 20,
     "requiredScoreInPercent" : 68,
     "showResultForEachQuestion" : false,
-    "logoUrl" : "https://www.kindpng.com/picc/m/198-1984828_java-icon-transparent-hd-png-download.png"
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
   },
   {
     "id" : "exam4",
@@ -45,7 +45,7 @@
     "noOfQuestions" : 20,
     "requiredScoreInPercent" : 68,
     "showResultForEachQuestion" : false,
-    "logoUrl" : "https://www.kindpng.com/picc/m/198-1984828_java-icon-transparent-hd-png-download.png"
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
   },
   {
     "id" : "exam5",
@@ -57,6 +57,6 @@
     "noOfQuestions" : 20,
     "requiredScoreInPercent" : 68,
     "showResultForEachQuestion" : false,
-    "logoUrl" : "https://www.kindpng.com/picc/m/198-1984828_java-icon-transparent-hd-png-download.png"
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
   }
 ]
