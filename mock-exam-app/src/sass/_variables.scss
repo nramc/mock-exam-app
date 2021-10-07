@@ -1,6 +1,6 @@
 // Define application specific theme and colors
-$blue-dark: #6c3696;
-$blue-light: #c57fe6;
+$blue-dark: #371a94;
+$blue-light: #9047d4;
 $pink: #d447c8;
 
 $white: #fff;
@@ -18,4 +18,20 @@ $black: #000;
 // Override bootstrap variables
 $primary: $blue-dark;
 $secondary: $blue-light;
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Define a dark theme
+$dark-primary: mat.define-palette(mat.$deep-purple-palette);
+$dark-accent: mat.define-palette(mat.$green-palette);
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
+));
+
+// Apply the dark theme by default
+@include mat.all-component-themes($dark-theme);
 
