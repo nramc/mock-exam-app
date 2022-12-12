@@ -26,7 +26,7 @@
     "@angular/router": "^15.0.3",
     "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "autoprefixer": "^10.3.4",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^5.2.3",
     "glob-parent": "^6.0.1",
     "gulp-cli": "^2.3.0",
     "rxjs": "~6.6.0",

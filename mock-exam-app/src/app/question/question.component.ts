@@ -6,7 +6,6 @@ import { Exam } from '../entity/Exam.enity';
 import { Question } from '../entity/Question.entity';
 import { DataServiceService } from '../services/data-service.service';
 import { PersistentService } from '../services/persistent.service';
-import { templateJitUrl } from '@angular/compiler';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertModelComponent } from '../alert-model/alert-model.component';
 
