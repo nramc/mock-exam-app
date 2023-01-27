@@ -1,0 +1,62 @@
+[
+  {
+    "id" : "exam1",
+    "name" : "Java Certification Exam - Quick Practice Exam 1",
+    "description" : "Quick Practice Exam to revise Java Basics",
+    "labels" : "Java Basics",
+    "format" : "Multiple Choice",
+    "durationInMin" : 120,
+    "noOfQuestions" : 2,
+    "requiredScoreInPercent" : 68,
+    "showResultForEachQuestion" : false,
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
+  },
+  {
+    "id" : "exam2",
+    "name" : "Java Certification Exam - Quick Practice Exam 2",
+    "description" : "Quick Practice Exam to revise Java Basics",
+    "labels" : "Java Basics",
+    "format" : "Multiple Choice",
+    "durationInMin" : 120,
+    "noOfQuestions" : 20,
+    "requiredScoreInPercent" : 68,
+    "showResultForEachQuestion" : true,
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
+  },
+  {
+    "id" : "exam3",
+    "name" : "Java Certification Exam - Quick Practice Exam 3",
+    "description" : "Quick Practice Exam to revise Java Basics",
+    "labels" : "Java Basics",
+    "format" : "Multiple Choice",
+    "durationInMin" : 120,
+    "noOfQuestions" : 20,
+    "requiredScoreInPercent" : 68,
+    "showResultForEachQuestion" : false,
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
+  },
+  {
+    "id" : "exam4",
+    "name" : "Java Certification Exam - Quick Practice Exam 4",
+    "description" : "Quick Practice Exam to revise Java Basics",
+    "labels" : "Java Basics",
+    "format" : "Multiple Choice",
+    "durationInMin" : 120,
+    "noOfQuestions" : 20,
+    "requiredScoreInPercent" : 68,
+    "showResultForEachQuestion" : false,
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
+  },
+  {
+    "id" : "exam5",
+    "name" : "Java Certification Exam - Quick Practice Exam 5",
+    "description" : "Quick Practice Exam to revise Java Basics",
+    "labels" : "Java Basics",
+    "format" : "Multiple Choice",
+    "durationInMin" : 120,
+    "noOfQuestions" : 20,
+    "requiredScoreInPercent" : 68,
+    "showResultForEachQuestion" : false,
+    "logoUrl" : "https://cdn.worldvectorlogo.com/logos/java.svg"
+  }
+]
