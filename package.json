@@ -7,9 +7,7 @@
     "build": "ng build --base-href /mock-exam-app/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "package": "npm run clean && npm run build && npm run copy-artefacts",
-    "clean": "gulp clean",
-    "copy-artefacts": "gulp copy"
+    "package": "npm run build -- --output-path=doc/"
   },
   "private": true,
   "dependencies": {
