@@ -15,7 +15,7 @@
     <app-question-answers [question]="question" [exam]="exam"></app-question-answers>
   </div>
 
-  {{question?.selectedAnswer | json}}
+  {{question.selectedAnswer | json}}
 
   <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-1" style="border: 1px solid purple;">
     <app-question-solution [question]="question" [exam]="exam"></app-question-solution>
