@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /mock-exam-app/",
+    "build": "ng build ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "package": "npm run build -- --output-path=docs/"
