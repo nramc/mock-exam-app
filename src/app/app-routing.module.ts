@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ExamPreviewComponent } from './exam/exam-preview/exam-preview.component';
 import { ExamComponent } from './exam/exam.component';
 import { SummaryComponent } from './exam/summary/summary.component';
