@@ -1,3 +1,5 @@
+import { Question } from "./Question.entity";
+
 export interface Exam {
 
   id: string;
@@ -11,5 +13,6 @@ export interface Exam {
   showResultForEachQuestion : boolean,
   logoUrl: string;
   isSubmitted?: boolean;
+  questions?: Question[]
 
 }
