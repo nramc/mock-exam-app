@@ -1,38 +1,68 @@
 <div class="container preview">
-    
-    <div class="row preview__title">
-      <div class="col text-center">
-        <h5>Preview</h5>
-        <hr />
-      </div>
+
+  <div class="row preview__title">
+    <div class="col text-center">
+      <h5>Exam Preview</h5>
+      <hr/>
     </div>
-  
-    <div class="preview__upload">
-        <p></p>
+  </div>
+
+  <div class="preview__exam">
+
+    <div class="row preview__exam__details">
+      <div class="col-md-3 col-sm-12">
+        <label for="examId" class="form-label">Exam ID</label>
+        <div class="input-group">
+          <input type="text" id="examId" class="form-control">
+          <button id="btnGenerateExamID" type="button" class="btn btn-outline-secondary">Generate</button>
+        </div>
+      </div>
+
+      <div class="col-md-9 col-sm-12">
+        <label for="examTitle" class="form-label font-monospace">Title</label>
+        <input type="text" id="examTitle" class="form-control">
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <label for="examDescription" class="form-label font-monospace">Description</label>
+        <textarea id="examDescription" class="form-control"></textarea>
+      </div>
+
+      <div class="col-md-12 col-sm-12">
+        <label for="examTags" class="form-label font-monospace">Tags</label>
+        <input type="text" id="examTags" class="form-control">
+      </div>
+
+        <div class="col-12">
+          <fieldset class="border rounded-3 p-3 row">
+            <legend class="float-none w-auto px-3">Optional</legend>
+
+            <div class="col-md-4 col-sm-12">
+              <label for="minPassingScore" class="form-label">Pass Score</label>
+              <div class="input-group">
+                <input id="minPassingScore" type="number" class="form-control">
+                <span class="input-group-text">%</span>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <label for="noOfQuestions" class="form-label">No Of Questions</label>
+              <input id="noOfQuestions" type="number" class="form-control">
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+              <label for="displaySolutionOption" class="form-label">Display Solution</label>
+              <select id="displaySolutionOption" class="form-select">
+                <option selected value="0">After exam submission</option>
+                <option value="1">After answering each question</option>
+              </select>
+            </div>
+
+          </fieldset>
+        </div>
+
+
     </div>
 
-    <div class="row exam-details">
-      <div class="col-md-8 col-sm-12">
-        <div class="exam__details">
-          <div class="row">
-            <div class="col">
-              <h5 class="mb-4">exam.description</h5>
-              <h6><small>Topics Covered: </small>exam.labels</h6>
-              <h6><small>Format: </small> exam.format</h6>
-              <h6><small>No of Questions: </small>exam.noOfQuestions</h6>
-              <h6><small>Duration: </small> exam.durationInMin</h6>
-              <h6><small>Passing Score: </small> exam.requiredScoreInPercent </h6>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-  
-  
-  
-    </div>
-  
-   
-  
   </div>
-  
+
+</div>
