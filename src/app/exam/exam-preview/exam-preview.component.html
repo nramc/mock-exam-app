@@ -10,55 +10,116 @@
   <div class="preview__exam">
 
     <div class="row preview__exam__details">
-      <div class="col-md-3 col-sm-12">
-        <label for="examId" class="form-label">Exam ID</label>
+
+      <div class="col-md-3 col-sm-12 mb-3">
+        <label for="examId" class="form-label text-secondary">Exam ID</label>
         <div class="input-group">
-          <input type="text" id="examId" class="form-control">
-          <button id="btnGenerateExamID" type="button" class="btn btn-outline-secondary">Generate</button>
+          <input type="text" id="examId" class="form-control text-primary" [(ngModel)]="exam.id">
+          <button id="btnGenerateExamID" type="button" class="btn btn-outline-primary" (click)="generateID()">Generate
+          </button>
         </div>
       </div>
 
-      <div class="col-md-9 col-sm-12">
-        <label for="examTitle" class="form-label font-monospace">Title</label>
-        <input type="text" id="examTitle" class="form-control">
+      <div class="col-md-9 col-sm-12 mb-3">
+        <label for="examTitle" class="form-label text-secondary">Title</label>
+        <input type="text" id="examTitle" class="form-control text-primary" [(ngModel)]="exam.title">
       </div>
 
-      <div class="col-md-12 col-sm-12">
-        <label for="examDescription" class="form-label font-monospace">Description</label>
-        <textarea id="examDescription" class="form-control"></textarea>
+      <div class="col-md-12 col-sm-12 mb-3">
+        <label for="examDescription" class="form-label text-secondary">Description</label>
+        <textarea id="examDescription" class="form-control text-primary" [(ngModel)]="exam.description"></textarea>
       </div>
 
-      <div class="col-md-12 col-sm-12">
-        <label for="examTags" class="form-label font-monospace">Tags</label>
-        <input type="text" id="examTags" class="form-control">
+      <div class="col-md-12 col-sm-12 mb-3">
+        <label for="examTags" class="form-label text-primary">Tags</label>
+        <input type="text" id="examTags" class="form-control text-primary" [(ngModel)]="exam.tags">
       </div>
 
-        <div class="col-12">
-          <fieldset class="border rounded-3 p-3 row">
-            <legend class="float-none w-auto px-3">Optional</legend>
+      <div class="col-12">
+        <fieldset class="border rounded-3 px-3 row">
+          <legend class="float-none w-auto px-3 text-secondary">Optional</legend>
 
-            <div class="col-md-4 col-sm-12">
-              <label for="minPassingScore" class="form-label">Pass Score</label>
-              <div class="input-group">
-                <input id="minPassingScore" type="number" class="form-control">
-                <span class="input-group-text">%</span>
+          <div class="col-md-4 col-sm-12 mb-3">
+            <label for="minPassingScore" class="form-label text-secondary">Pass Score</label>
+            <div class="input-group">
+              <input id="minPassingScore" type="number" class="form-control text-primary" [(ngModel)]="exam.passScore">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12 mb-3">
+            <label for="noOfQuestions" class="form-label text-secondary">No Of Questions</label>
+            <input id="noOfQuestions" type="number" class="form-control text-primary" [(ngModel)]="exam.noOfQuestions">
+          </div>
+
+          <div class="col-md-4 col-sm-12 mb-3">
+            <label for="displaySolutionOption" class="form-label text-secondary">Display Solution</label>
+            <select id="displaySolutionOption" class="form-select text-primary"
+                    [(ngModel)]="exam.solutionDisplayOption">
+              <option selected [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION">After Exam Submission</option>
+              <option [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION">After Answering Each Question</option>
+            </select>
+          </div>
+
+        </fieldset>
+      </div>
+      <hr/>
+
+      <!--  New Question section    -->
+      <div class="preview__exam__question row">
+        <h5>New Question</h5>
+
+        <div class="col-12 mb-3">
+          <label for="questionId" class="form-label text-secondary">ID</label>
+          <div class="input-group">
+            <input type="text" id="questionId" class="form-control text-primary">
+            <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary">Generate</button>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="questionDescription" class="form-label text-secondary">Description</label>
+          <div class="input-group">
+            <textarea id="questionDescription" class="form-control text-primary"></textarea>
+          </div>
+        </div>
+
+        <div class="col-12 text-secondary mb-3">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="hasMultipleAnswers">
+            <label class="form-check-label" for="hasMultipleAnswers">Allow Multiple Answers</label>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-11">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="radio" role="button" value="">
+              </div>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-1">
+            <div class="row">
+              <div class="col-6">
+                <button mat-mini-fab color="primary" title="Add new option below">
+                  <mat-icon>queue</mat-icon>
+                </button>
+              </div>
+              <div class="col-6">
+                <button mat-mini-fab color="warn" title="Delete the option">
+                  <mat-icon>remove_circle_outline</mat-icon>
+                </button>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-              <label for="noOfQuestions" class="form-label">No Of Questions</label>
-              <input id="noOfQuestions" type="number" class="form-control">
-            </div>
+          </div>
 
-            <div class="col-md-4 col-sm-12">
-              <label for="displaySolutionOption" class="form-label">Display Solution</label>
-              <select id="displaySolutionOption" class="form-select">
-                <option selected value="0">After exam submission</option>
-                <option value="1">After answering each question</option>
-              </select>
-            </div>
 
-          </fieldset>
         </div>
+
+      </div>
 
 
     </div>
