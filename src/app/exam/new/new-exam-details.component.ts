@@ -5,10 +5,10 @@ import {DisplaySolutionOption} from "../../domain/display-solution-option";
 
 @Component({
   selector: 'app-exam-preview',
-  templateUrl: './exam-preview.component.html',
-  styleUrls: ['./exam-preview.component.scss']
+  templateUrl: './new-exam-details.component.html',
+  styleUrls: ['./new-exam-details.component.scss']
 })
-export class ExamPreviewComponent implements OnInit{
+export class NewExamDetailsComponent implements OnInit{
 
   solutionDisplayOption = DisplaySolutionOption;
   exam!:Exam;
@@ -16,13 +16,14 @@ export class ExamPreviewComponent implements OnInit{
   // TODO for testing created dummy exam object
   ngOnInit(): void {
     this.exam = {
-      id: uuid() as string,
+      id: uuid(),
       title: 'Python Hello World',
       description: 'This is very basic python hello world..!',
       tags: ['python', 'basic', 'fundamental'],
       solutionDisplayOption: DisplaySolutionOption.AFTER_QUESTION_SUBMISSION,
       noOfQuestions: 10,
-      passScore: 69
+      passScore: 69,
+      questions:[]
     };
   }
 

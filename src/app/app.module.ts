@@ -21,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertModelComponent } from './alert-model/alert-model.component';
-import { ExamPreviewComponent } from './exam/exam-preview/exam-preview.component';
+import { NewExamDetailsComponent } from './exam/new/new-exam-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { ExamPreviewComponent } from './exam/exam-preview/exam-preview.component
     QuestionSolutionComponent,
     SummaryComponent,
     AlertModelComponent,
-    ExamPreviewComponent
+    NewExamDetailsComponent
   ],
   imports: [
     BrowserModule,
