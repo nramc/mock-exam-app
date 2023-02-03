@@ -19,69 +19,75 @@
 
     </div>
 
-    <div class="row new-exam__details">
+    <form #newExamForm="ngForm" (ngSubmit)="saveAndProceed()">
+      <div class="row new-exam__details">
 
-      <div class="col-md-3 col-sm-12 mb-3">
-        <label for="examId" class="form-label text-secondary">Exam ID</label>
-        <div class="input-group">
-          <input type="text" id="examId" class="form-control text-primary" [(ngModel)]="exam.id">
-          <button id="btnGenerateExamID" type="button" class="btn btn-outline-primary" (click)="generateID()">Generate
-          </button>
+        <div class="col-md-3 col-sm-12 mb-3">
+          <label for="examId" class="form-label text-secondary">Exam ID</label>
+          <div class="input-group">
+            <input type="text" id="examId" name="examId" class="form-control text-primary"
+                   [(ngModel)]="exam.id" required>
+            <button id="btnGenerateExamID" type="button" class="btn btn-outline-primary" (click)="generateID()">Generate
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-9 col-sm-12 mb-3">
-        <label for="examTitle" class="form-label text-secondary">Title</label>
-        <input type="text" id="examTitle" class="form-control text-primary" [(ngModel)]="exam.title">
-      </div>
+        <div class="col-md-9 col-sm-12 mb-3">
+          <label for="examTitle" class="form-label text-secondary">Title</label>
+          <input type="text" id="examTitle" name="examTitle" class="form-control text-primary" [(ngModel)]="exam.title">
+        </div>
 
-      <div class="col-md-12 col-sm-12 mb-3">
-        <label for="examDescription" class="form-label text-secondary">Description</label>
-        <textarea id="examDescription" class="form-control text-primary" rows="10"
-                  [(ngModel)]="exam.description"></textarea>
-      </div>
+        <div class="col-md-12 col-sm-12 mb-3">
+          <label for="examDescription" class="form-label text-secondary">Description</label>
+          <textarea id="examDescription" name="examDescription" class="form-control text-primary" rows="10"
+                    [(ngModel)]="exam.description"></textarea>
+        </div>
 
-      <div class="col-md-12 col-sm-12 mb-3">
-        <label for="examTags" class="form-label text-primary">Tags</label>
-        <input type="text" id="examTags" class="form-control text-primary" [(ngModel)]="exam.tags">
-      </div>
+        <div class="col-md-12 col-sm-12 mb-3">
+          <label for="examTags" class="form-label text-primary">Tags</label>
+          <input type="text" id="examTags" name="examTags" class="form-control text-primary" [(ngModel)]="exam.tags">
+        </div>
 
-      <div class="col-12">
-        <fieldset class="border rounded-3 px-3 row">
-          <legend class="float-none w-auto px-3 text-secondary">Optional</legend>
+        <div class="col-12">
+          <fieldset class="border rounded-3 px-3 row">
+            <legend class="float-none w-auto px-3 text-secondary">Optional</legend>
 
-          <div class="col-md-4 col-sm-12 mb-3">
-            <label for="minPassingScore" class="form-label text-secondary">Pass Score</label>
-            <div class="input-group">
-              <input id="minPassingScore" type="number" class="form-control text-primary" [(ngModel)]="exam.passScore">
-              <span class="input-group-text">%</span>
+            <div class="col-md-4 col-sm-12 mb-3">
+              <label for="minPassingScore" class="form-label text-secondary">Pass Score</label>
+              <div class="input-group">
+                <input id="minPassingScore" name="minPassingScore" type="number" class="form-control text-primary"
+                       [(ngModel)]="exam.passScore">
+                <span class="input-group-text">%</span>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-12 mb-3">
-            <label for="noOfQuestions" class="form-label text-secondary">No Of Questions</label>
-            <input id="noOfQuestions" type="number" class="form-control text-primary" [(ngModel)]="exam.noOfQuestions">
-          </div>
+            <div class="col-md-4 col-sm-12 mb-3">
+              <label for="noOfQuestions" class="form-label text-secondary">No Of Questions</label>
+              <input id="noOfQuestions" name="noOfQuestions" type="number" class="form-control text-primary"
+                     [(ngModel)]="exam.noOfQuestions">
+            </div>
 
-          <div class="col-md-4 col-sm-12 mb-3">
-            <label for="displaySolutionOption" class="form-label text-secondary">Display Solution</label>
-            <select id="displaySolutionOption" class="form-select text-primary"
-                    [(ngModel)]="exam.solutionDisplayOption">
-              <option selected [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION">After Exam Submission</option>
-              <option [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION">After Answering Each Question</option>
-            </select>
-          </div>
+            <div class="col-md-4 col-sm-12 mb-3">
+              <label for="displaySolutionOption" class="form-label text-secondary">Display Solution</label>
+              <select id="displaySolutionOption" name="displaySolutionOption" class="form-select text-primary"
+                      [(ngModel)]="exam.solutionDisplayOption">
+                <option selected [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION">After Exam Submission</option>
+                <option [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION">After Answering Each Question</option>
+              </select>
+            </div>
 
-        </fieldset>
+          </fieldset>
+        </div>
+
       </div>
 
-    </div>
+      <div class="row new-exam__actions mt-3 justify-content-md-center">
+        <button mat-raised-button color="primary" type="submit" [disabled]="newExamForm.invalid">
+          Save & Proceed
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
 
-    <div class="row new-exam__actions mt-3 justify-content-md-center">
-      <button mat-raised-button color="primary" (click)="saveAndProceed()">
-        Save & Proceed
-        <mat-icon>arrow_forward</mat-icon>
-      </button>
-    </div>
+    </form>
 
   </div>
 

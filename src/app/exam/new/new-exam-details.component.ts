@@ -9,24 +9,22 @@ import {DisplaySolutionOption} from "../../domain/display-solution-option";
   styleUrls: ['./new-exam-details.component.scss']
 })
 export class NewExamDetailsComponent implements OnInit {
-
   solutionDisplayOption = DisplaySolutionOption;
-  exam!: Exam;
+  // define values
+  exam: Exam = {
+    id: '',
+    title: '',
+    description: '',
+    tags: [],
+    solutionDisplayOption: DisplaySolutionOption.AFTER_QUESTION_SUBMISSION,
+    noOfQuestions: 0,
+    passScore: 70,
+    questions: []
+  };
 
-  // TODO for testing created dummy exam object
   private selectedFile: any;
 
   ngOnInit(): void {
-    this.exam = {
-      id: uuid(),
-      title: 'Python Hello World',
-      description: 'This is very basic python hello world..!',
-      tags: ['python', 'basic', 'fundamental'],
-      solutionDisplayOption: DisplaySolutionOption.AFTER_QUESTION_SUBMISSION,
-      noOfQuestions: 10,
-      passScore: 69,
-      questions: []
-    };
   }
 
   generateID(): void {
@@ -34,6 +32,7 @@ export class NewExamDetailsComponent implements OnInit {
   }
 
   uploadDataFromFile(): void {
+    if (!this.selectedFile) return;
     const fileReader = new FileReader();
     fileReader.readAsText(this.selectedFile, "UTF-8");
     fileReader.onload = () => {
@@ -54,6 +53,7 @@ export class NewExamDetailsComponent implements OnInit {
 
   saveAndProceed(): void {
     localStorage.setItem("new-exam-details", JSON.stringify(this.exam))
+    console.log("Saved", this.exam)
   }
 
   downloadDataAsJsonFile(): void {
