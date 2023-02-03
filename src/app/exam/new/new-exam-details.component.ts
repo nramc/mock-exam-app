@@ -4,7 +4,7 @@ import {v4 as uuid} from 'uuid';
 import {DisplaySolutionOption} from "../../domain/display-solution-option";
 
 @Component({
-  selector: 'app-exam-preview',
+  selector: 'app-exam-new',
   templateUrl: './new-exam-details.component.html',
   styleUrls: ['./new-exam-details.component.scss']
 })

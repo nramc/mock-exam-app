@@ -11,7 +11,8 @@ const routes: Routes = [
   { path : 'home', component : HomeComponent },
   { path : 'exam',
     children: [
-      { path: 'preview', component: NewExamDetailsComponent },
+      { path: 'new', component: NewExamDetailsComponent },
+
       { path: ':examId', component: ExamComponent },
       { path: ':examId/question/:questionId', component: QuestionComponent },
       { path: ':examId/summary', component: SummaryComponent}
