@@ -22,6 +22,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertModelComponent } from './alert-model/alert-model.component';
 import { NewExamDetailsComponent } from './exam/new/new-exam-details.component';
+import { NewExamQuestionsComponent } from './exam/new/new-exam-questions/new-exam-questions.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NewExamDetailsComponent } from './exam/new/new-exam-details.component';
     QuestionSolutionComponent,
     SummaryComponent,
     AlertModelComponent,
-    NewExamDetailsComponent
+    NewExamDetailsComponent,
+    NewExamQuestionsComponent
   ],
   imports: [
     BrowserModule,

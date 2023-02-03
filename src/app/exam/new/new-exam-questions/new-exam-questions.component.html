@@ -1,0 +1,72 @@
+<div class="container new-exam">
+
+  <div class="row new-exam__title">
+    <div class="col text-center">
+      <h5>New Exam Questions</h5>
+      <hr/>
+    </div>
+  </div>
+
+  <div class="new-exam__exam">
+
+    <!--  New Question section    -->
+    <div class="new-exam__new-question row">
+      <h5>New Question</h5>
+
+      <div class="col-12 mb-3">
+        <label for="questionId" class="form-label text-secondary">ID</label>
+        <div class="input-group">
+          <input type="text" id="questionId" class="form-control text-primary">
+          <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary">Generate</button>
+        </div>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="questionDescription" class="form-label text-secondary">Description</label>
+        <div class="input-group">
+          <textarea id="questionDescription" class="form-control text-primary"></textarea>
+        </div>
+      </div>
+
+      <div class="col-12 text-secondary mb-3">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="hasMultipleAnswers">
+          <label class="form-check-label" for="hasMultipleAnswers">Allow Multiple Answers</label>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-11">
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input class="form-check-input mt-0" type="radio" role="button" value="">
+            </div>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-1">
+          <div class="row">
+            <div class="col-6">
+              <button mat-mini-fab color="primary" title="Add new option below">
+                <mat-icon>queue</mat-icon>
+              </button>
+            </div>
+            <div class="col-6">
+              <button mat-mini-fab color="warn" title="Delete the option">
+                <mat-icon>remove_circle_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
