@@ -9,6 +9,16 @@
 
   <div class="new-exam__exam">
 
+    <div class="row new-exam__upload mb-3">
+      <div class="col-12">
+        <div class="input-group">
+          <input type="file" class="form-control" id="inputGroupFile04" (change)="onFileChanged($event)">
+          <button class="btn btn-outline-secondary" type="button" (click)="uploadDataFromFile()">Upload</button>
+        </div>
+      </div>
+
+    </div>
+
     <div class="row new-exam__details">
 
       <div class="col-md-3 col-sm-12 mb-3">
@@ -27,7 +37,8 @@
 
       <div class="col-md-12 col-sm-12 mb-3">
         <label for="examDescription" class="form-label text-secondary">Description</label>
-        <textarea id="examDescription" class="form-control text-primary" [(ngModel)]="exam.description"></textarea>
+        <textarea id="examDescription" class="form-control text-primary" rows="10"
+                  [(ngModel)]="exam.description"></textarea>
       </div>
 
       <div class="col-md-12 col-sm-12 mb-3">
@@ -63,6 +74,13 @@
         </fieldset>
       </div>
 
+    </div>
+
+    <div class="row new-exam__actions mt-3 justify-content-md-center">
+      <button mat-raised-button color="primary" (click)="saveAndProceed()">
+        Save & Proceed
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
     </div>
 
   </div>

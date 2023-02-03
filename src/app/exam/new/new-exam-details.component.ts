@@ -8,12 +8,14 @@ import {DisplaySolutionOption} from "../../domain/display-solution-option";
   templateUrl: './new-exam-details.component.html',
   styleUrls: ['./new-exam-details.component.scss']
 })
-export class NewExamDetailsComponent implements OnInit{
+export class NewExamDetailsComponent implements OnInit {
 
   solutionDisplayOption = DisplaySolutionOption;
-  exam!:Exam;
+  exam!: Exam;
 
   // TODO for testing created dummy exam object
+  private selectedFile: any;
+
   ngOnInit(): void {
     this.exam = {
       id: uuid(),
@@ -23,12 +25,43 @@ export class NewExamDetailsComponent implements OnInit{
       solutionDisplayOption: DisplaySolutionOption.AFTER_QUESTION_SUBMISSION,
       noOfQuestions: 10,
       passScore: 69,
-      questions:[]
+      questions: []
     };
   }
 
   generateID(): void {
     this.exam.id = uuid();
+  }
+
+  uploadDataFromFile(): void {
+    const fileReader = new FileReader();
+    fileReader.readAsText(this.selectedFile, "UTF-8");
+    fileReader.onload = () => {
+      if (typeof fileReader.result === "string") {
+        console.log(JSON.parse(fileReader.result));
+        this.exam = JSON.parse(fileReader.result)
+
+      }
+    }
+    fileReader.onerror = (error) => {
+      console.log(error);
+    }
+  }
+
+  onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
+
+  saveAndProceed(): void {
+    localStorage.setItem("new-exam-details", JSON.stringify(this.exam))
+  }
+
+  downloadDataAsJsonFile(): void {
+    let jsonData = JSON.stringify(this.exam);
+    let a = document.createElement('a');
+    a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(jsonData));
+    a.setAttribute('download', "filename.json");
+    a.click()
   }
 
 }
