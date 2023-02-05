@@ -10,53 +10,84 @@
   <div class="new-exam__exam">
 
     <!--  New Question section    -->
-    <div class="new-exam__new-question row">
-      <h5>New Question</h5>
-
-      <div class="col-12 mb-3">
-        <label for="questionId" class="form-label text-secondary">ID</label>
-        <div class="input-group">
-          <input type="text" id="questionId" class="form-control text-primary">
-          <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary">Generate</button>
-        </div>
-      </div>
-
-      <div class="col-12 mb-3">
-        <label for="questionDescription" class="form-label text-secondary">Description</label>
-        <div class="input-group">
-          <textarea id="questionDescription" class="form-control text-primary"></textarea>
-        </div>
-      </div>
-
-      <div class="col-12 text-secondary mb-3">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="hasMultipleAnswers">
-          <label class="form-check-label" for="hasMultipleAnswers">Allow Multiple Answers</label>
-        </div>
-      </div>
-
+    <div class="new-exam__new-question">
       <div class="row">
+        <div class="col-12 justify-content-center">
+          <h5>New Question</h5>
+        </div>
+      </div>
 
-        <div class="col-10">
-          <div class="input-group mb-3">
-            <div class="input-group-text">
-              <input class="form-check-input mt-0" type="radio" role="button" value="">
+
+      <form #newQuestionForm="ngForm" (ngSubmit)="saveQuestion()">
+        <div class="row new-question__details">
+          <div class="col-12 mb-3">
+            <label for="questionId" class="form-label text-secondary">ID</label>
+            <div class="input-group">
+              <input type="text" id="questionId" name="questionId" class="form-control text-primary"
+                     [(ngModel)]="newQuestion.id">
+              <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary"
+                      (click)="generateQuestionId()">Generate
+              </button>
             </div>
-            <input type="text" class="form-control">
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="questionDescription" class="form-label text-secondary">Description</label>
+            <div class="input-group">
+              <textarea id="questionDescription" name="questionDescription" class="form-control text-primary" rows="5"
+                        [(ngModel)]="newQuestion.description"></textarea>
+            </div>
+          </div>
+
+          <div class="col-12 text-secondary mb-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="hasMultipleAnswers"
+                     name="hasMultipleAnswers" [(ngModel)]="newQuestion.hasMultipleAnswers">
+              <label class="form-check-label" for="hasMultipleAnswers">Allow Multiple Answers</label>
+            </div>
           </div>
         </div>
 
-        <div class="col-2">
-          <button mat-mini-fab color="accent" class="me-1" title="Add new option below">
-            <mat-icon>queue</mat-icon>
-          </button>
-          <button mat-mini-fab color="warn" title="Delete the option">
-            <mat-icon>remove_circle_outline</mat-icon>
+        <div class="new-question__options">
+          <ng-template ngFor let-option [ngForOf]="newQuestion.options" let-index="index"
+                       [ngForTrackBy]="fnTracedByForOption">
+            <div class="row">
+
+              <div class="col-10">
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="radio" role="button" name="optionVal"
+                           [name]="option.id+'_checkField'"
+                    [(ngModel)]="option.isCorrectAnswer" value="true">
+                  </div>
+                  <input type="text" class="form-control" [(ngModel)]="option.text" [name]="option.id+'_inputField'">
+                </div>
+              </div>
+
+              <div class="col-2">
+                <button mat-mini-fab color="light" class="me-1" title="Add new option below" type="button"
+                        (click)="addOption(index)">
+                  <mat-icon color="accent">queue</mat-icon>
+                </button>
+                <button mat-mini-fab color="light" title="Delete the option" type="button"
+                        (click)="removeOption(index, option)">
+                  <mat-icon color="warn">remove_circle_outline</mat-icon>
+                </button>
+              </div>
+
+            </div>
+          </ng-template>
+        </div>
+
+        <div class="row new-exam__actions mt-3 justify-content-md-center">
+          <button mat-raised-button color="primary" type="submit" [disabled]="newQuestionForm.invalid">
+            Add
+            <mat-icon>add</mat-icon>
           </button>
         </div>
 
 
-      </div>
+      </form>
 
     </div>
 
