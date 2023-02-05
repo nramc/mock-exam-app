@@ -56,9 +56,10 @@
               <div class="col-10">
                 <div class="input-group mb-3">
                   <div class="input-group-text">
-                    <input class="form-check-input mt-0" type="radio" role="button" name="optionVal"
-                           [name]="option.id+'_checkField'"
-                    [(ngModel)]="option.isCorrectAnswer" value="true">
+
+                    <input class="form-check-input mt-0" type="checkbox" role="button"
+                           (change)="toggleMultipleAnswerField()"
+                           [name]="option.id+'_inputChoiceField'" [(ngModel)]="option.isCorrectAnswer" [value]="true">
                   </div>
                   <input type="text" class="form-control" [(ngModel)]="option.text" [name]="option.id+'_inputField'">
                 </div>

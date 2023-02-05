@@ -46,7 +46,11 @@ export class NewExamQuestionsComponent implements OnInit {
   }
 
   generateQuestionId(): void {
-    this.newQuestion.id= uuid();
+    this.newQuestion.id = uuid();
+  }
+
+  toggleMultipleAnswerField() {
+    this.newQuestion.hasMultipleAnswers = this.newQuestion.options.filter(option => option.isCorrectAnswer).length > 1
   }
 
 }
