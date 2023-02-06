@@ -25,6 +25,7 @@ import { NewExamDetailsComponent } from './exam/new/new-exam-details.component';
 import { NewExamQuestionsComponent } from './exam/new/new-exam-questions/new-exam-questions.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { NewQuestionComponent } from './exam/new/new-question/new-question.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     SummaryComponent,
     AlertModelComponent,
     NewExamDetailsComponent,
-    NewExamQuestionsComponent
+    NewExamQuestionsComponent,
+    NewQuestionComponent
   ],
   imports: [
     BrowserModule,
