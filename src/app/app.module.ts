@@ -23,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AlertModelComponent } from './alert-model/alert-model.component';
 import { NewExamDetailsComponent } from './exam/new/new-exam-details.component';
 import { NewExamQuestionsComponent } from './exam/new/new-exam-questions/new-exam-questions.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { NewExamQuestionsComponent } from './exam/new/new-exam-questions/new-exa
     MatIconModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
