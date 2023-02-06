@@ -1,0 +1,75 @@
+<h2 mat-dialog-title class="bg-primary">Question</h2>
+<mat-dialog-content class="mat-typography bg-light">
+  <div class="new-exam__new-question">
+
+    <form #newQuestionForm="ngForm" (ngSubmit)="saveQuestion()">
+      <div class="row new-question__details">
+        <div class="col-12 mb-3">
+          <label for="questionId" class="form-label text-secondary">ID</label>
+          <div class="input-group">
+            <input type="text" id="questionId" name="questionId" class="form-control text-primary"
+                   [(ngModel)]="newQuestion.id" autofocus>
+            <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary"
+                    (click)="generateQuestionId()">Generate
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="questionDescription" class="form-label text-secondary">Description</label>
+          <div class="input-group">
+              <textarea id="questionDescription" name="questionDescription" class="form-control text-primary" rows="5"
+                        [(ngModel)]="newQuestion.description"></textarea>
+          </div>
+        </div>
+
+        <div class="col-12 text-secondary mb-3">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="hasMultipleAnswers"
+                   name="hasMultipleAnswers" [(ngModel)]="newQuestion.hasMultipleAnswers">
+            <label class="form-check-label" for="hasMultipleAnswers">Allow Multiple Answers</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-question__options">
+        <ng-template ngFor let-option [ngForOf]="newQuestion.options" let-index="index"
+                     [ngForTrackBy]="fnTracedByForOption">
+          <div class="row">
+
+            <div class="col-10">
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+
+                  <input class="form-check-input mt-0" type="checkbox" role="button"
+                         (change)="toggleMultipleAnswerField()"
+                         [name]="option.id+'_inputChoiceField'" [(ngModel)]="option.isCorrectAnswer" [value]="true">
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="option.text" [name]="option.id+'_inputField'">
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-12 mb-3">
+              <button mat-mini-fab color="light" class="me-1" title="Add new option below" type="button"
+                      (click)="addOption(index)">
+                <mat-icon color="accent">queue</mat-icon>
+              </button>
+              <button mat-mini-fab color="light" title="Delete the option" type="button"
+                      (click)="removeOption(index, option)">
+                <mat-icon color="warn">remove_circle_outline</mat-icon>
+              </button>
+            </div>
+
+          </div>
+        </ng-template>
+      </div>
+
+    </form>
+
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="center" class="bg-light">
+  <button [mat-dialog-close]="this.data.question" class="btn btn-outline-secondary">Cancel</button>
+  <button [mat-dialog-close]="this.newQuestion" [disabled]="newQuestionForm.invalid"
+          class="btn btn-outline-primary" type="submit">Save</button>
+</mat-dialog-actions>
