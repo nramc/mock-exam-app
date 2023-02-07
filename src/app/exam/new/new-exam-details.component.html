@@ -34,13 +34,14 @@
 
         <div class="col-md-9 col-sm-12 mb-3">
           <label for="examTitle" class="form-label text-secondary">Title</label>
-          <input type="text" id="examTitle" name="examTitle" class="form-control text-primary" [(ngModel)]="exam.title">
+          <input type="text" id="examTitle" name="examTitle" class="form-control text-primary"
+                 [(ngModel)]="exam.title" required>
         </div>
 
         <div class="col-md-12 col-sm-12 mb-3">
           <label for="examDescription" class="form-label text-secondary">Description</label>
           <textarea id="examDescription" name="examDescription" class="form-control text-primary" rows="10"
-                    [(ngModel)]="exam.description"></textarea>
+                    [(ngModel)]="exam.description" required minlength="10"></textarea>
         </div>
 
         <div class="col-md-12 col-sm-12 mb-3">
@@ -81,7 +82,7 @@
       </div>
 
       <div class="row new-exam__actions mt-3 justify-content-md-center">
-        <button mat-raised-button color="primary" type="submit" [disabled]="newExamForm.invalid">
+        <button mat-raised-button color="primary" type="submit" [disabled]="newExamForm.invalid" matStepperNext>
           Save & Proceed
           <mat-icon>arrow_forward</mat-icon>
         </button>

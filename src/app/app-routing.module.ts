@@ -6,7 +6,7 @@ import {HomeComponent} from './home/home.component';
 
 import {QuestionComponent} from './question/question.component';
 import {NewExamQuestionsComponent} from "./exam/new/new-exam-questions/new-exam-questions.component";
-import {NewExamDetailsComponent} from "./exam/new/new-exam-details.component";
+import {NewExamComponent} from "./exam/new/new-exam/new-exam.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -16,7 +16,7 @@ const routes: Routes = [
       {
         path: 'new',
         children: [
-          {path: '', component: NewExamDetailsComponent},
+          {path: '', component: NewExamComponent},
           {path: "questions", component: NewExamQuestionsComponent}
         ]
       },

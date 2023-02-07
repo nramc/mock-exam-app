@@ -26,6 +26,8 @@ import { NewExamQuestionsComponent } from './exam/new/new-exam-questions/new-exa
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { NewQuestionComponent } from './exam/new/new-question/new-question.component';
+import { NewExamComponent } from './exam/new/new-exam/new-exam.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -40,23 +42,25 @@ import { NewQuestionComponent } from './exam/new/new-question/new-question.compo
     AlertModelComponent,
     NewExamDetailsComponent,
     NewExamQuestionsComponent,
-    NewQuestionComponent
+    NewQuestionComponent,
+    NewExamComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatTableModule,
-    MatPaginatorModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatProgressBarModule,
+        MatDialogModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatStepperModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
