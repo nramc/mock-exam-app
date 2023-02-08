@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Exam} from "../../../domain/exam.model";
 import {v4 as uuid} from 'uuid';
 import {DisplaySolutionOption} from "../../../domain/display-solution-option";
+import {NewExamService} from "../services/new-exam.service";
 
 @Component({
   selector: 'app-exam-new',
@@ -10,7 +11,7 @@ import {DisplaySolutionOption} from "../../../domain/display-solution-option";
 })
 export class NewExamDetailsComponent implements OnInit {
   solutionDisplayOption = DisplaySolutionOption;
-  // define values
+  // define default values
   exam: Exam = {
     id: '',
     title: '',
@@ -24,7 +25,11 @@ export class NewExamDetailsComponent implements OnInit {
 
   private selectedFile: any;
 
+  constructor(private newExamService:NewExamService) {
+  }
+
   ngOnInit(): void {
+    // TODO implement loading from local storage
   }
 
   generateID(): void {
@@ -40,6 +45,8 @@ export class NewExamDetailsComponent implements OnInit {
         console.log(JSON.parse(fileReader.result));
         this.exam = JSON.parse(fileReader.result)
 
+      } else {
+        console.error("sorry, file content is not json string..!")
       }
     }
     fileReader.onerror = (error) => {
@@ -52,8 +59,9 @@ export class NewExamDetailsComponent implements OnInit {
   }
 
   saveAndProceed(): void {
-    localStorage.setItem("new-exam-details", JSON.stringify(this.exam))
-    console.log("Saved", this.exam)
+    localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
+    this.newExamService.saveExam(this.exam);
+    console.log("Saved..!", this.exam);
   }
 
   downloadDataAsJsonFile(): void {
