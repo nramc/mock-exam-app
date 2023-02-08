@@ -8,9 +8,9 @@
           <label for="questionId" class="form-label text-secondary">ID</label>
           <div class="input-group">
             <input type="text" id="questionId" name="questionId" class="form-control text-primary"
-                   [(ngModel)]="newQuestion.id" autofocus>
+                   [(ngModel)]="newQuestion.id" autofocus [disabled]="newQuestion.id != null">
             <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary"
-                    (click)="generateQuestionId()">Generate
+                    (click)="generateQuestionId()" [hidden]="newQuestion.id != null">Generate
             </button>
           </div>
         </div>
@@ -71,5 +71,6 @@
 <mat-dialog-actions align="center" class="bg-light">
   <button [mat-dialog-close]="this.data.question" class="btn btn-outline-secondary">Cancel</button>
   <button [mat-dialog-close]="this.newQuestion" [disabled]="newQuestionForm.invalid"
-          class="btn btn-outline-primary" type="submit">Save</button>
+          class="btn btn-outline-primary" type="submit">Save
+  </button>
 </mat-dialog-actions>
