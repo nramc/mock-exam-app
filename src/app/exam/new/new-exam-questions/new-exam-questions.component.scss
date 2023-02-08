@@ -5,4 +5,9 @@
 .wrap-content {
   overflow: clip;
   max-height: 10rem;
+  max-width: 20rem;
+}
+
+table {
+  table-layout: fixed;
 }
