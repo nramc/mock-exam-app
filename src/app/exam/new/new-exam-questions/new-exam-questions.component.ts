@@ -12,32 +12,38 @@ import {NewExamService} from "../services/new-exam.service";
   styleUrls: ['./new-exam-questions.component.scss']
 })
 export class NewExamQuestionsComponent implements AfterViewInit {
+  displayedColumns: string[] = ['id', 'description', 'hasMultipleAnswers', 'actions'];
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatTable) table!: MatTable<Question>;
+
+  dataSource: MatTableDataSource<Question> = new MatTableDataSource<Question>();
+  wrapDescription: boolean = true;
+
   constructor(
     public dialog: MatDialog,
     public newExamService: NewExamService
   ) {
   }
 
-  displayedColumns: string[] = ['id', 'description', 'hasMultipleAnswers', 'actions'];
-
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
-  @ViewChild(MatTable) table: MatTable<Question> | undefined;
-
-  dataSource: MatTableDataSource<Question> = new MatTableDataSource<Question>([]);
-  wrapDescription: boolean = true;
-
 
   ngAfterViewInit() {
     this.dataSource = new MatTableDataSource<Question>(this.newExamService.getExam()?.questions);
-    // @ts-ignore
     this.dataSource.paginator = this.paginator;
   }
 
-  addQuestion(): void {
+  openAddQuestionDialog(): void {
+    this.openAddOrEditQuestionDialog({});
+  }
 
+  openUpdateQuestionDialog(question: Question): void {
+    this.openAddOrEditQuestionDialog(question);
+  }
+
+  private openAddOrEditQuestionDialog(question: Question | {}) {
     const dialogRef = this.dialog.open(NewQuestionComponent, {
       data: {
-        question: {}
+        question: question
       },
       disableClose: true,
       width: "100%"
@@ -45,7 +51,7 @@ export class NewExamQuestionsComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result as Question);
-      this.newExamService.addQuestion(result)
+      this.newExamService.saveOrUpdateQuestion(result)
       this.dataSource.data = this.newExamService.getExam().questions;
       this.table?.renderRows();
     });

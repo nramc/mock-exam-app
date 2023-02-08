@@ -17,8 +17,13 @@ export class NewExamService {
     return this.exam;
   }
 
-  public addQuestion(newQuestion:Question) : Exam {
-    this.exam.questions.push(newQuestion);
+  public saveOrUpdateQuestion(question: Question): Exam {
+    let index = this.exam.questions.findIndex(q => q.id == question.id);
+    if (index >= 0) {
+      this.exam.questions[index] = question;
+    } else {
+      this.exam.questions.push(question);
+    }
     return this.exam;
   }
 

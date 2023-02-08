@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Exam} from "../../../domain/exam.model";
 import {v4 as uuid} from 'uuid';
 import {DisplaySolutionOption} from "../../../domain/display-solution-option";
@@ -9,7 +9,7 @@ import {NewExamService} from "../services/new-exam.service";
   templateUrl: './new-exam-details.component.html',
   styleUrls: ['./new-exam-details.component.scss']
 })
-export class NewExamDetailsComponent implements OnInit {
+export class NewExamDetailsComponent {
   solutionDisplayOption = DisplaySolutionOption;
   // define default values
   exam: Exam = {
@@ -25,15 +25,25 @@ export class NewExamDetailsComponent implements OnInit {
 
   private selectedFile: any;
 
-  constructor(private newExamService:NewExamService) {
-  }
-
-  ngOnInit(): void {
-    // TODO implement loading from local storage
+  constructor(private newExamService: NewExamService) {
   }
 
   generateID(): void {
     this.exam.id = uuid();
+  }
+
+  uploadData(): void {
+    if (this.selectedFile) {
+      this.uploadDataFromFile();
+    } else {
+      this.uploadDataFromLocalStorage();
+    }
+  }
+
+  uploadDataFromLocalStorage(): void {
+    let data = JSON.parse(localStorage.getItem("new-exam-details")!);
+    console.log(data);
+    this.exam = data
   }
 
   uploadDataFromFile(): void {

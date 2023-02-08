@@ -9,18 +9,18 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   templateUrl: './new-question.component.html',
   styleUrls: ['./new-question.component.scss']
 })
-export class NewQuestionComponent  implements OnInit{
+export class NewQuestionComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<NewQuestionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: {question: Question}) {
+    @Inject(MAT_DIALOG_DATA) public data: { question: Question }) {
     console.log(data.question)
 
   }
 
   ngOnInit(): void {
 
-        console.log( this.newQuestion)
-    }
+    console.log(this.newQuestion)
+  }
 
   defaultOption: Option = {
     id: '',
@@ -32,7 +32,7 @@ export class NewQuestionComponent  implements OnInit{
     description: '',
     hasMultipleAnswers: false,
     options: [Object.assign({}, this.defaultOption, {id: uuid()})]
-  },this.data.question);
+  }, this.data.question);
 
   saveQuestion(): void {
     console.log(this.newQuestion)
