@@ -1,7 +1,7 @@
 
 
 <mat-stepper linear #stepper color="primary" orientation="horizontal" >
-  <mat-step  [editable]="true" [hasError]="true" #step1>
+  <mat-step  [editable]="true" [hasError]="true" errorMessage="Please fix error" #step1>
     <ng-template matStepLabel><div class="text-primary">Details</div></ng-template>
     <app-exam-new></app-exam-new>
   </mat-step>
@@ -14,7 +14,6 @@
         <button class="btn btn-primary" matStepperNext [disabled]="step1.hasError">Next</button>
       </div>
     </div>
-    <div  class="mt-3">Please fix error in previous step to proceed further.</div>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel><div class="text-primary">Download</div></ng-template>
