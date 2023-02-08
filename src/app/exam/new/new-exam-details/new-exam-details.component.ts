@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Exam} from "../../domain/exam.model";
+import {Exam} from "../../../domain/exam.model";
 import {v4 as uuid} from 'uuid';
-import {DisplaySolutionOption} from "../../domain/display-solution-option";
+import {DisplaySolutionOption} from "../../../domain/display-solution-option";
 
 @Component({
   selector: 'app-exam-new',
