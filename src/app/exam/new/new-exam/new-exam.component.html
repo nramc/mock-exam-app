@@ -1,6 +1,6 @@
 
 
-<mat-stepper linear #stepper color="primary" orientation="horizontal" >
+<mat-stepper linear #stepper color="primary" [orientation]="(stepperOrientation | async)!" >
   <mat-step  [editable]="true" [hasError]="hasAnyErrorInDetailsForm() | async" errorMessage="Please fix error" #step1>
     <ng-template matStepLabel><div class="text-primary">Details</div></ng-template>
     <app-exam-new></app-exam-new>
