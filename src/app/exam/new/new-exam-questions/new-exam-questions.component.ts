@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Question} from "../../../domain/question.model";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTable, MatTableDataSource} from "@angular/material/table";
@@ -11,7 +11,7 @@ import {NewExamService} from "../services/new-exam.service";
   templateUrl: './new-exam-questions.component.html',
   styleUrls: ['./new-exam-questions.component.scss']
 })
-export class NewExamQuestionsComponent implements AfterViewInit {
+export class NewExamQuestionsComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'description', 'hasMultipleAnswers', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -24,6 +24,15 @@ export class NewExamQuestionsComponent implements AfterViewInit {
     public dialog: MatDialog,
     public newExamService: NewExamService
   ) {
+  }
+
+  ngOnInit(): void {
+    this.newExamService.getExam$().subscribe(exam => {
+      console.log("received", exam)
+      this.dataSource.data = exam?.questions;
+      this.dataSource.paginator = this.paginator;
+      this.table?.renderRows();
+    });
   }
 
 

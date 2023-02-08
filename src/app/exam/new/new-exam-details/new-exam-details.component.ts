@@ -69,8 +69,8 @@ export class NewExamDetailsComponent {
   }
 
   saveAndProceed(): void {
-    localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     this.newExamService.saveExam(this.exam);
+    localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     console.log("Saved..!", this.exam);
   }
 

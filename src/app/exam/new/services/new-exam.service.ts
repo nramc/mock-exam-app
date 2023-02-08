@@ -1,30 +1,38 @@
 import {Injectable} from '@angular/core';
 import {Exam} from "../../../domain/exam.model";
 import {Question} from "../../../domain/question.model";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewExamService {
   private exam!: Exam;
+  private exam$ = new BehaviorSubject<Exam>(Object.assign({}))
 
   public getExam(): Exam {
+    this.exam$.next(this.exam);
     return this.exam;
   }
 
-  public saveExam(exam: Exam): Exam {
+  public getExam$(): Observable<Exam> {
+    return this.exam$.asObservable();
+  }
+
+  public saveExam(exam: Exam): void {
     this.exam = exam;
-    return this.exam;
+    this.exam$.next(this.exam);
   }
 
-  public saveOrUpdateQuestion(question: Question): Exam {
+  public saveOrUpdateQuestion(question: Question): void {
+    if(!question.id) return;
     let index = this.exam.questions.findIndex(q => q.id == question.id);
     if (index >= 0) {
       this.exam.questions[index] = question;
     } else {
       this.exam.questions.push(question);
     }
-    return this.exam;
+    this.exam$.next(this.exam);
   }
 
   public hasValidExamDetails(): boolean {
