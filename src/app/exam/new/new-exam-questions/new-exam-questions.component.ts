@@ -12,13 +12,13 @@ import {NewExamService} from "../services/new-exam.service";
   styleUrls: ['./new-exam-questions.component.scss']
 })
 export class NewExamQuestionsComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'description', 'hasMultipleAnswers', 'actions'];
+  displayedColumns: string[] = ['description', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatTable) table!: MatTable<Question>;
 
   dataSource: MatTableDataSource<Question> = new MatTableDataSource<Question>();
-  wrapDescription: boolean = true;
+  wrapDescription: boolean = false;
 
   constructor(
     public dialog: MatDialog,

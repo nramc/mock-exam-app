@@ -8,9 +8,9 @@
           <label for="questionId" class="form-label text-secondary">ID</label>
           <div class="input-group">
             <input type="text" id="questionId" name="questionId" class="form-control text-primary"
-                   [(ngModel)]="newQuestion.id" autofocus [disabled]="newQuestion.id != null">
+                   [(ngModel)]="newQuestion.id" autofocus [disabled]="newQuestion.id.length > 0">
             <button id="btnGenerateQuestionID" type="button" class="btn btn-outline-primary"
-                    (click)="generateQuestionId()" [hidden]="newQuestion.id != null">Generate
+                    (click)="generateQuestionId()" [hidden]="newQuestion.id.length > 0">Generate
             </button>
           </div>
         </div>
