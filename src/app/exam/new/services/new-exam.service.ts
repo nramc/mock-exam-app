@@ -25,13 +25,19 @@ export class NewExamService {
   }
 
   public saveOrUpdateQuestion(question: Question): void {
-    if(!question.id) return;
+    if (!question.id) return;
     let index = this.exam.questions.findIndex(q => q.id == question.id);
     if (index >= 0) {
       this.exam.questions[index] = question;
     } else {
       this.exam.questions.push(question);
     }
+    this.exam$.next(this.exam);
+  }
+
+  public deleteQuestion(question: Question): void {
+    let index = this.exam.questions.findIndex(q => q.id == question.id);
+    this.exam.questions.splice(index, 1);
     this.exam$.next(this.exam);
   }
 

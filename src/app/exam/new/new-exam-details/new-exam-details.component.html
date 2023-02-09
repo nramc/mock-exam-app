@@ -26,8 +26,9 @@
           <label for="examId" class="form-label text-secondary">Exam ID</label>
           <div class="input-group">
             <input type="text" id="examId" name="examId" class="form-control text-primary"
-                   [(ngModel)]="exam.id" required>
-            <button id="btnGenerateExamID" type="button" class="btn btn-outline-primary" (click)="generateID()">Generate
+                   [(ngModel)]="exam.id" required [disabled]="exam.id.length > 0">
+            <button id="btnGenerateExamID" type="button" class="btn btn-outline-primary"
+                    (click)="generateID()" [hidden]="exam.id.length > 0">Generate
             </button>
           </div>
         </div>

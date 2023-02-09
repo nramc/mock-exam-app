@@ -49,6 +49,10 @@ export class NewExamQuestionsComponent implements OnInit, AfterViewInit {
     this.openAddOrEditQuestionDialog(question);
   }
 
+  deleteQuestion(question: Question): void {
+    this.newExamService.deleteQuestion(question);
+  }
+
   private openAddOrEditQuestionDialog(question: Question | {}) {
     const dialogRef = this.dialog.open(NewQuestionComponent, {
       data: {
