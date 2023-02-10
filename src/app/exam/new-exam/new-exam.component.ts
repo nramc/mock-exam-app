@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NewExamService} from "../services/new-exam.service";
+import {NewExamService} from "./services/new-exam.service";
 import {Observable, of} from "rxjs";
 import {StepperOrientation} from "@angular/cdk/stepper";
 import {BreakpointObserver} from "@angular/cdk/layout";

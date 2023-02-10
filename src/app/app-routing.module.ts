@@ -5,8 +5,8 @@ import {SummaryComponent} from './exam/summary/summary.component';
 import {HomeComponent} from './home/home.component';
 
 import {QuestionComponent} from './question/question.component';
-import {NewExamQuestionsComponent} from "./exam/new/new-exam-questions/new-exam-questions.component";
-import {NewExamComponent} from "./exam/new/new-exam/new-exam.component";
+import {NewExamQuestionsComponent} from "./exam/new-exam/new-exam-questions/new-exam-questions.component";
+import {NewExamComponent} from "./exam/new-exam/new-exam.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},

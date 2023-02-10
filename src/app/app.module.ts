@@ -21,14 +21,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertModelComponent } from './alert-model/alert-model.component';
-import { NewExamDetailsComponent } from './exam/new/new-exam-details/new-exam-details.component';
-import { NewExamQuestionsComponent } from './exam/new/new-exam-questions/new-exam-questions.component';
+import { NewExamDetailsComponent } from './exam/new-exam/new-exam-details/new-exam-details.component';
+import { NewExamQuestionsComponent } from './exam/new-exam/new-exam-questions/new-exam-questions.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import { NewQuestionComponent } from './exam/new/new-question/new-question.component';
-import { NewExamComponent } from './exam/new/new-exam/new-exam.component';
+import { NewQuestionComponent } from './exam/new-exam/new-question/new-question.component';
+import { NewExamComponent } from './exam/new-exam/new-exam.component';
 import {MatStepperModule} from "@angular/material/stepper";
-import { NewExamSummaryComponent } from './exam/new/new-exam-summary/new-exam-summary.component';
+import { NewExamSummaryComponent } from './exam/new-exam/new-exam-summary/new-exam-summary.component';
 
 @NgModule({
   declarations: [
