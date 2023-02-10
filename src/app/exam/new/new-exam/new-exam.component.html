@@ -16,11 +16,10 @@
     </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel><div class="text-primary">Download</div></ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button class="btn btn-primary" matStepperPrevious>Back</button>
-      <button class="btn btn-primary" (click)="downloadDataAsJsonFile()">Reset</button>
-    </div>
+    <ng-template matStepLabel><div class="text-primary">Summary</div></ng-template>
+    <ng-template matStepContent>
+      <app-new-exam-summary></app-new-exam-summary>
+    </ng-template>
+
   </mat-step>
 </mat-stepper>

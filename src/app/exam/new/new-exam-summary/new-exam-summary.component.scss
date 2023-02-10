@@ -1,0 +1,10 @@
+.new-exam-summary {
+  &__details {
+    &__description {
+      &__content{
+        min-height: 10rem;
+        overflow: auto;
+      }
+    }
+  }
+}

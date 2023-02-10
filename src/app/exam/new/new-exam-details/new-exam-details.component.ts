@@ -16,6 +16,7 @@ export class NewExamDetailsComponent {
     id: '',
     title: '',
     description: '',
+    imageUrl: 'assets/images/logo/python-logo.png',
     tags: [],
     solutionDisplayOption: DisplaySolutionOption.AFTER_QUESTION_SUBMISSION,
     noOfQuestions: 0,

@@ -5,6 +5,7 @@ export interface Exam {
   id: string;
   title: string;
   description: string;
+  imageUrl: string;
   tags: string[];
   noOfQuestions: number;
   solutionDisplayOption: DisplaySolutionOption;
