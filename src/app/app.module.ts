@@ -28,6 +28,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import { NewQuestionComponent } from './exam/new/new-question/new-question.component';
 import { NewExamComponent } from './exam/new/new-exam/new-exam.component';
 import {MatStepperModule} from "@angular/material/stepper";
+import { NewExamSummaryComponent } from './exam/new/new-exam-summary/new-exam-summary.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatStepperModule} from "@angular/material/stepper";
     NewExamDetailsComponent,
     NewExamQuestionsComponent,
     NewQuestionComponent,
-    NewExamComponent
+    NewExamComponent,
+    NewExamSummaryComponent
   ],
     imports: [
         BrowserModule,

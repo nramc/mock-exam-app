@@ -74,12 +74,4 @@ export class NewExamDetailsComponent {
     console.log("Saved..!", this.exam);
   }
 
-  downloadDataAsJsonFile(): void {
-    let jsonData = JSON.stringify(this.exam);
-    let a = document.createElement('a');
-    a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(jsonData));
-    a.setAttribute('download', "filename.json");
-    a.click()
-  }
-
 }
