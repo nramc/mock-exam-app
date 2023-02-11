@@ -2,15 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Summary} from 'src/app/entity/Summary.entity';
 import {PersistentService} from 'src/app/services/persistent.service';
-import {PracticeExam} from "../../domain/practice-exam.model";
-import {PracticeQuestion} from "../../domain/practice-question.model";
+import {PracticeExam} from "../../../domain/practice-exam.model";
+import {PracticeQuestion} from "../../../domain/practice-question.model";
 
 @Component({
-  selector: 'app-summary',
-  templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.scss']
+  selector: 'app-practice-exam-summary',
+  templateUrl: './practice-exam-summary.component.html',
+  styleUrls: ['./practice-exam-summary.component.scss']
 })
-export class SummaryComponent implements OnInit {
+export class PracticeExamSummaryComponent implements OnInit {
 
   summary!: Summary;
 

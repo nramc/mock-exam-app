@@ -13,27 +13,30 @@
 
   </div>
 
+  <br/>
   <div class="question__answers">
+    <hr>
 
-    <ng-container *ngIf="!question.hasMultipleAnswers; else multipleAnswerTemplate">
-      <div class="option" *ngFor="let option of question.options">
-        <label>
-          <input type="radio" [value]="true" [(ngModel)]="option.isSelected" name="answers"
-                 [disabled]="canDisableInput()">
-          {{option.text}}
-        </label>
-      </div>
-    </ng-container>
-    <ng-template #multipleAnswerTemplate>
-      <div class="option" *ngFor="let option of question.options">
-        <label>
-          <input type="checkbox" [value]="true" [name]="option.id" [(ngModel)]="option.isSelected"
-                 [disabled]="canDisableInput()">
-          {{option.text}}
-        </label>
-      </div>
-    </ng-template>
+    <section class="multiple-answer-option-section text-primary row" *ngIf="question.hasMultipleAnswers">
+      <ng-template ngFor let-option [ngForOf]="question.options" let-index="index"
+                   [ngForTrackBy]="fnTracedByForOption">
+        <div class="input-group mb-3 col-12">
+          <mat-checkbox color="primary" class="form-control col-12" [(ngModel)]="option.isSelected">
+            <div class="text-primary" [innerHtml]="option.text"></div>
+          </mat-checkbox>
+        </div>
+      </ng-template>
+    </section>
 
+    <section class="single-answer-option-section text-primary row" *ngIf="!question.hasMultipleAnswers">
+      <mat-radio-group (change)="singleOptionChangeEvent($event)" color="primary">
+        <div class="input-group mb-3 col-12" *ngFor="let option of question.options">
+          <mat-radio-button [value]="option.id" color="primary" class="form-control col-12 w-100">
+            <div class="text-primary" [innerHtml]="option.text"></div>
+          </mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </section>
 
   </div>
 

@@ -21,6 +21,7 @@ export class NewExamService {
 
   public saveExam(exam: Exam): void {
     this.exam = exam;
+    localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     this.exam$.next(this.exam);
   }
 
@@ -32,12 +33,14 @@ export class NewExamService {
     } else {
       this.exam.questions.push(question);
     }
+    localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     this.exam$.next(this.exam);
   }
 
   public deleteQuestion(question: Question): void {
     let index = this.exam.questions.findIndex(q => q.id == question.id);
     this.exam.questions.splice(index, 1);
+    localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     this.exam$.next(this.exam);
   }
 

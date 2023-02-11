@@ -1,0 +1,26 @@
+@import 'src/sass/variables';
+
+::ng-deep .mdc-checkbox__background {
+  border: 1px solid $primary !important;
+}
+
+::ng-deep .mdc-radio__background {
+  border: 1px solid $primary !important;
+  border-radius: 50%;
+}
+
+::ng-deep mdc-checkbox .mdc-form-field {
+  width: 100% !important;
+}
+
+::ng-deep mat-checkbox,
+::ng-deep mat-radio-button,
+::ng-deep mat-checkbox .mdc-form-field,
+::ng-deep mat-radio-button .mdc-form-field {
+  width: 100% !important;
+}
+
+::ng-deep mat-radio-button .mdc-form-field  div,
+::ng-deep mat-checkbox .mdc-form-field  div{
+  display: block;
+}

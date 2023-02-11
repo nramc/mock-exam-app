@@ -2,20 +2,22 @@ import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
-import {DataServiceService} from '../services/data-service.service';
-import {PersistentService} from '../services/persistent.service';
-import {AlertModelComponent} from '../alert-model/alert-model.component';
-import {PracticeExam} from "../domain/practice-exam.model";
-import {PracticeQuestion} from "../domain/practice-question.model";
-import {DisplaySolutionOption} from "../domain/display-solution-option";
-import {NotificationService} from "../services/notification.service";
+import {DataServiceService} from '../../../services/data-service.service';
+import {PersistentService} from '../../../services/persistent.service';
+import {AlertModelComponent} from '../../../alert-model/alert-model.component';
+import {PracticeExam} from "../../../domain/practice-exam.model";
+import {PracticeQuestion} from "../../../domain/practice-question.model";
+import {DisplaySolutionOption} from "../../../domain/display-solution-option";
+import {NotificationService} from "../../../services/notification.service";
 import {MatDialog} from "@angular/material/dialog";
+import {Option} from "../../../domain/option.model";
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html'
+  selector: 'app-practice-exam-question',
+  templateUrl: './practice-exam-question.component.html',
+  styleUrls: ['./practice-exam-question.component.scss']
 })
-export class QuestionComponent {
+export class PracticeExamQuestionComponent {
 
   exam!: PracticeExam;
   question!: PracticeQuestion;
@@ -128,6 +130,15 @@ export class QuestionComponent {
   canDisableInput(): boolean {
     return this.exam.isSubmitted ||
       (this.exam.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question.isQuestionAnswered) as boolean;
+  }
+
+  fnTracedByForOption(index: number, item: Option) {
+    return item?.id;
+  }
+
+  singleOptionChangeEvent($event: any) {
+    const selectedOption = $event.value;
+    this.question.options.forEach(option => option.isSelected = option.id === selectedOption)
   }
 
 }

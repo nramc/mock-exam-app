@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AlertModelComponent} from '../alert-model/alert-model.component';
-import {DataServiceService} from '../services/data-service.service';
-import {PersistentService} from '../services/persistent.service';
-import {Exam} from "../domain/exam.model";
-import {DisplaySolutionOption} from "../domain/display-solution-option";
+import {AlertModelComponent} from '../../alert-model/alert-model.component';
+import {DataServiceService} from '../../services/data-service.service';
+import {PersistentService} from '../../services/persistent.service';
+import {Exam} from "../../domain/exam.model";
+import {DisplaySolutionOption} from "../../domain/display-solution-option";
 
 @Component({
-  selector: 'app-exam',
-  templateUrl: './exam.component.html',
-  styleUrls: ['./exam.component.scss']
+  selector: 'app-practice-exam',
+  templateUrl: './practice-exam.component.html',
+  styleUrls: ['./practice-exam.component.scss']
 })
-export class ExamComponent implements OnInit {
+export class PracticeExamComponent implements OnInit {
   solutionDisplayOption = DisplaySolutionOption;
   exam!: Exam;
 

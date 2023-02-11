@@ -1,4 +1,4 @@
-@import '../../sass/variables';
+@import 'src/sass/variables';
 
 div.examDescription {
   @media only screen and (max-width: 600px) {
@@ -18,3 +18,6 @@ img.exam-language-logo {
 .language-logo-container {
   margin-bottom: 1rem;
 }
+
+
+

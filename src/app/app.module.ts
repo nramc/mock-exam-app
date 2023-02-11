@@ -5,14 +5,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {QuestionComponent} from './question/question.component';
+import {PracticeExamQuestionComponent} from './exam/practice/practice-exam-question/practice-exam-question.component';
 import {HomeComponent} from './home/home.component';
-import {ExamComponent} from './exam/exam.component';
+import {PracticeExamComponent} from './exam/practice/practice-exam.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {SummaryComponent} from './exam/summary/summary.component';
+import {PracticeExamSummaryComponent} from './exam/practice/practice-exam-summary/practice-exam-summary.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -26,14 +26,17 @@ import {NewQuestionComponent} from './exam/new-exam/new-question/new-question.co
 import {NewExamComponent} from './exam/new-exam/new-exam.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import {NewExamSummaryComponent} from './exam/new-exam/new-exam-summary/new-exam-summary.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent,
+    PracticeExamQuestionComponent,
     HomeComponent,
-    ExamComponent,
-    SummaryComponent,
+    PracticeExamComponent,
+    PracticeExamSummaryComponent,
     AlertModelComponent,
     NewExamDetailsComponent,
     NewExamQuestionsComponent,
@@ -55,7 +58,10 @@ import {NewExamSummaryComponent} from './exam/new-exam/new-exam-summary/new-exam
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatStepperModule
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
