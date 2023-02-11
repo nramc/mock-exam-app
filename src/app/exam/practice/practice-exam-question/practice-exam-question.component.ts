@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar';
 
 import {DataServiceService} from '../../../services/data-service.service';
 import {PersistentService} from '../../../services/persistent.service';
@@ -21,6 +20,7 @@ export class PracticeExamQuestionComponent {
 
   exam!: PracticeExam;
   question!: PracticeQuestion;
+  displaySolutionOption = DisplaySolutionOption;
 
   constructor(
     private dataService: DataServiceService,
@@ -28,7 +28,6 @@ export class PracticeExamQuestionComponent {
     private persistentService: PersistentService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private matSnackBar: MatSnackBar,
     private matDialog: MatDialog) {
 
     this.activatedRoute.paramMap.subscribe(async params => {
@@ -44,17 +43,9 @@ export class PracticeExamQuestionComponent {
     });
   }
 
-
   save(): void {
     this.question.isQuestionAnswered = true;
     this.persistentService.saveQuestion(this.question);
-    this.matSnackBar.open("Answer saved successfully", "Close", {
-      duration: 1000,
-      politeness: 'polite',
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-      panelClass: 'mat-snack-bar-primary'
-    });
   }
 
   submit(): void {
@@ -72,7 +63,7 @@ export class PracticeExamQuestionComponent {
         this.exam.isSubmitted = true;
         this.save();
 
-        this.persistentService.saveExam(this.exam!);
+        this.persistentService.saveExam(this.exam);
         this.router.navigate([`exam/${this.exam?.id}/summary`]);
 
       }
@@ -82,6 +73,7 @@ export class PracticeExamQuestionComponent {
   }
 
   moveToNextQuestion(): void {
+    this.save();
     if (this.question.rowNo + 1 <= this.exam.noOfQuestions) {
       this.router.navigate([`exam/${this.exam?.id}/question/`, this.question.rowNo + 1]);
     }

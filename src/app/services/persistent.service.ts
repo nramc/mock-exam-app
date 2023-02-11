@@ -35,7 +35,7 @@ export class PersistentService {
         });
       } else {
 
-        this.exam = Object.assign({}, data) as PracticeExam;
+        this.exam = Object.assign({}, data, {solutionDisplayOption: exam.solutionDisplayOption}) as PracticeExam;
         this.exam.questions.forEach((question, index) => question.rowNo = index + 1);
       }
     });
@@ -55,7 +55,7 @@ export class PersistentService {
   }
 
   public getQuestion(examId: string, questionId: string): Question {
-    return Object.assign({}, this.findQuestion(questionId, examId)) as Question;
+    return Object.assign({}, this.findQuestion(questionId, examId));
   }
 
   public getAllQuestions(examId: string): PracticeQuestion[] {

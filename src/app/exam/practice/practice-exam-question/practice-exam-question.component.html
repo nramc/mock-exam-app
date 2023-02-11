@@ -56,10 +56,11 @@
     </ng-template>
 
   </div>
-
+{{exam|json}}
   <div class="actions">
-    <!-- Always Display Save option -->
-    <button *ngIf="!exam?.isSubmitted" class="btn btn-primary mr-3 mt-2" (click)="save()">Save</button>
+    <!-- Save & Display correct answer -->
+    <button *ngIf="!exam?.isSubmitted && exam.solutionDisplayOption == displaySolutionOption.AFTER_QUESTION_SUBMISSION"
+            class="btn btn-primary mr-3 mt-2" (click)="save()">Show Answer</button>
     <!-- Display Previous button except first question -->
     <button *ngIf="!isItFirstQuestion()" (click)="moveToPrevQuestion()" class="btn btn-primary mr-3 mt-2">Prev</button>
     <!-- Display Next option except last question -->
