@@ -10,7 +10,7 @@
 
       <div class="col-md-8 col-sm-12 mt-4">
         <h3 class="mb-4">{{summary.title}}</h3>
-        <h5><small>Exam:</small> {{summary.exam.name}}</h5>
+        <h5><small>Exam:</small> {{summary.exam.title}}</h5>
         <h5><small>Result: </small> <label [class]="summary.result == 'Pass' ? 'text-success' : 'text-danger'">{{summary.result}}</label></h5>
         <h5><small>Scored:</small> {{summary.score}}%</h5>
         <h5><small>Correct Answers:</small> {{summary.correctAnswer}} out of {{summary.exam.noOfQuestions}}</h5>

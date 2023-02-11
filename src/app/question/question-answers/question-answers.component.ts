@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Answer } from 'src/app/entity/Answer.entity';
-import { Exam } from 'src/app/entity/Exam.enity';
-import { Question } from 'src/app/entity/Question.entity';
+import {Component, Input, OnInit} from '@angular/core';
+import {Answer} from 'src/app/entity/Answer.entity';
+import {PracticeExam} from "../../domain/practice-exam.model";
+import {PracticeQuestion} from "../../domain/practice-question.model";
 
 @Component({
   selector: 'app-question-answers',
@@ -11,35 +11,28 @@ import { Question } from 'src/app/entity/Question.entity';
 export class QuestionAnswersComponent implements OnInit {
 
   @Input()
-  exam!: Exam;
+  exam!: PracticeExam;
   @Input()
-  question!: Question;
+  question!: PracticeQuestion;
 
   constructor() {
-   }
+  }
 
   ngOnInit(): void {
   }
 
-  eventAnswered(event:any, answer: Answer) : void {
+  eventAnswered(event: any, answer: Answer): void {
 
-    if (!this.question.selectedAnswer) {
-      this.question.selectedAnswer =  [];
-    }
 
-    if ( event.target.checked ) {
-      this.question.selectedAnswer.push(answer.id);
-    } else {
-      this.question.selectedAnswer?.splice(this.question.selectedAnswer.indexOf(answer.id), 1);
-    }
   }
 
-  isAnswerSelected(optionId : string) : boolean {
-    return this.question.selectedAnswer?.includes(optionId) as boolean;
+  isAnswerSelected(optionId: string): boolean {
+    return false
   }
 
-  canDisableInput() : boolean {
-    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question.isQuestionAnswerd) as boolean;
+  canDisableInput(): boolean {
+    //return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question.isQuestionAnswerd) as boolean;
+    return true;
   }
 
 }

@@ -1,57 +1,54 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
-import { Exam } from '../entity/Exam.enity';
-import { Question } from '../entity/Question.entity';
-import { DataServiceService } from '../services/data-service.service';
-import { PersistentService } from '../services/persistent.service';
-import { MatDialog } from '@angular/material/dialog';
-import { AlertModelComponent } from '../alert-model/alert-model.component';
+import {DataServiceService} from '../services/data-service.service';
+import {PersistentService} from '../services/persistent.service';
+import {AlertModelComponent} from '../alert-model/alert-model.component';
+import {PracticeExam} from "../domain/practice-exam.model";
+import {PracticeQuestion} from "../domain/practice-question.model";
+import {DisplaySolutionOption} from "../domain/display-solution-option";
+import {NotificationService} from "../services/notification.service";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss']
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent {
 
-  exam!: Exam;
-  allQuestions!: Question[];
-  question!: Question;
+  exam!: PracticeExam;
+  question!: PracticeQuestion;
 
   constructor(
-    private dataService : DataServiceService,
+    private dataService: DataServiceService,
+    private notifyService: NotificationService,
     private persistentService: PersistentService,
-    private router: Router, private actvatedRoute: ActivatedRoute,
-    private matSnackBar : MatSnackBar,
-    private matDialog : MatDialog) { }
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private matSnackBar: MatSnackBar,
+    private matDialog: MatDialog) {
 
-  ngOnInit(): void {
-    this.actvatedRoute.paramMap.subscribe(params => {
+    this.activatedRoute.paramMap.subscribe(async params => {
       const examId = params.get('examId') as string;
-      this.exam = this.persistentService.getExam(examId) as Exam;
-      const questionId = params.get('questionId');
-      if ( this.exam?.id && questionId && +questionId <= this.exam.noOfQuestions) {
-        this.setQuestion(examId, +questionId);
+      this.exam = await this.persistentService.getPracticeExam(examId);
+      const questionRowNo = params.get('questionId');
+      if (this.exam?.id && questionRowNo && +questionRowNo <= this.exam.noOfQuestions) {
+        this.setQuestion(+questionRowNo);
       } else {
-        const dialogRef = this.matDialog.open(AlertModelComponent, {
-          data: {
-            title : 'Error',
-            message : 'Exam is invalid or expired. Please try again later.'
-          }
-        });
-        dialogRef.afterClosed().subscribe(_result => this.router.navigate(['/']));
+        this.notifyService.notifyError();
       }
 
     });
   }
 
-  save() : void {
-    this.question.isQuestionAnswerd = true;
+
+  save(): void {
+    this.question.isQuestionAnswered = true;
     this.persistentService.saveQuestion(this.question);
     this.matSnackBar.open("Answer saved successfully", "Close", {
-      duration : 1000,
+      duration: 1000,
       politeness: 'polite',
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
@@ -59,23 +56,23 @@ export class QuestionComponent implements OnInit {
     });
   }
 
-  submit() : void {
+  submit(): void {
 
     const dialogRef = this.matDialog.open(AlertModelComponent, {
       data: {
-        title : 'Submit Exam',
-        message : 'Do you want to submit exam.?',
-        btnConfirmLabel : 'Yes',
-        btnCloseLabel : 'No'
+        title: 'Submit Exam',
+        message: 'Do you want to submit exam.?',
+        btnConfirmLabel: 'Yes',
+        btnCloseLabel: 'No'
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      if ( result == 'YES' ) {
+      if (result == 'YES') {
         this.exam.isSubmitted = true;
         this.save();
 
-        this.persistentService.saveExam(this.exam);
-        this.router.navigate([`exam/${this.exam.id}/summary`]);
+        this.persistentService.saveExam(this.exam!);
+        this.router.navigate([`exam/${this.exam?.id}/summary`]);
 
       }
     });
@@ -83,45 +80,46 @@ export class QuestionComponent implements OnInit {
 
   }
 
-  moveToNextQuestion() : void {
-    if( this.exam.noOfQuestions <= this.question.id+1) {
-      this.router.navigate([`exam/${this.exam.id}/question/`, this.question.id+1]);
+  moveToNextQuestion(): void {
+    if (this.question.rowNo + 1 <= this.exam.noOfQuestions) {
+      this.router.navigate([`exam/${this.exam?.id}/question/`, this.question.rowNo + 1]);
     }
 
   }
 
-  moveToPrevQuestion() : void {
-    if (this.question.id >= 1) {
-      this.router.navigate([`exam/${this.exam.id}/question/`, this.question.id-1]);
+  moveToPrevQuestion(): void {
+    if (this.question.rowNo > 1) {
+      this.router.navigate([`exam/${this.exam?.id}/question/`, this.question.rowNo - 1]);
     }
   }
 
-  home() : void {
+  home(): void {
     this.router.navigate(['/']);
   }
 
-  canDisplaySolution() : boolean {
-    return this.exam.isSubmitted || (this.exam.showResultForEachQuestion && this.question?.isQuestionAnswerd ) as boolean;
+  canDisplaySolution(): boolean {
+    return this.exam?.isSubmitted ||
+      (this.exam?.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question?.isQuestionAnswered) as boolean;
   }
 
-  isItLastQuestion() : boolean {
-    return this.question?.id === this.exam.noOfQuestions;
+  isItLastQuestion(): boolean {
+    return this.question?.rowNo === this.exam?.noOfQuestions;
   }
 
-  isItFirstQuestion() : boolean {
-    return this.question?.id === 1;
+  isItFirstQuestion(): boolean {
+    return this.question?.rowNo === 1;
   }
 
-  canDisplaySubmitOption() : boolean {
-    return this.question?.id === this.exam.noOfQuestions && !this.exam.isSubmitted;
+  canDisplaySubmitOption(): boolean {
+    return this.question?.rowNo === this.exam?.noOfQuestions && !this.exam?.isSubmitted;
   }
 
-  getCurrentProgress() : number {
-    return this.persistentService.getAllQuestions(this.exam.id).filter(question => question.isQuestionAnswerd).length/this.exam.noOfQuestions * 100;
+  getCurrentProgress(): number {
+    return this.exam?.questions.filter(question => question.isQuestionAnswered).length / this.exam?.noOfQuestions * 100;
   }
 
-  private setQuestion(examId : string, questionId: number) : void {
-    this.persistentService.getQuestion(examId, questionId).then(question => this.question = question);
+  private setQuestion(questionRowNumber: number): void {
+    this.question = this.exam?.questions.find(q => q.rowNo == questionRowNumber)!;
   }
 
 }

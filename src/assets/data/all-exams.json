@@ -1,0 +1,13 @@
+[
+  {
+    "id": "7556a79b-7638-4ced-9292-0727cf4cdb7a",
+    "title": "Python Hello World",
+    "description": "This is very basic python hello world..!",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": ["python","basic","fundamental"],
+    "solutionDisplayOption": 1,
+    "noOfQuestions": 10,
+    "passScore": 69,
+    "questions": []
+  }
+]

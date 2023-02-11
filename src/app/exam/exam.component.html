@@ -1,8 +1,8 @@
 <div class="container home">
   <div class="row">
     <div class="col text-center">
-      <h1>{{exam.name}}</h1>
-      <hr />
+      <h1>{{exam.title}}</h1>
+      <hr/>
     </div>
   </div>
 
@@ -12,11 +12,10 @@
         <div class="row">
           <div class="col">
             <h5 class="mb-4">{{exam.description}}</h5>
-            <h6><small>Topics Covered: </small>{{exam.labels}}</h6>
-            <h6><small>Format: </small> {{exam.format}}</h6>
+            <h6><small>Topics Covered: </small>{{exam.tags}}</h6>
             <h6><small>No of Questions: </small>{{exam.noOfQuestions}}</h6>
-            <h6><small>Duration: </small> {{exam.durationInMin}}</h6>
-            <h6><small>Passing Score: </small> {{exam.requiredScoreInPercent}}% </h6>
+            <h6><small>Duration: </small> {{exam.noOfQuestions}}</h6>
+            <h6><small>Passing Score: </small> {{exam.passScore}}% </h6>
           </div>
         </div>
       </div>
@@ -26,10 +25,9 @@
           <label class="text-primary">
             <input
               type="radio"
-              [value]="true"
+              [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION"
               name="examResultDisplayOption"
-              [checked]="exam.showResultForEachQuestion"
-              [(ngModel)]="exam.showResultForEachQuestion"
+              [(ngModel)]="exam.solutionDisplayOption"
             />
             Display solution after answering individual questions
           </label>
@@ -37,10 +35,9 @@
         <div>
           <label class="text-primary">
             <input type="radio"
-            [value]="false"
-             name="examResultDisplayOption"
-             [checked]="!exam.showResultForEachQuestion"
-             [(ngModel)]="exam.showResultForEachQuestion"
+                   [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION"
+                   name="examResultDisplayOption"
+                   [(ngModel)]="exam.solutionDisplayOption"
             />
             Display solution only at the end of exam
           </label>

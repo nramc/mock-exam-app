@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Exam } from 'src/app/entity/Exam.enity';
-import { Question } from 'src/app/entity/Question.entity';
-import { AppUtils } from 'src/app/utils/AppUtils';
+import {Component, Input, OnInit} from '@angular/core';
+import {PracticeQuestion} from "../../domain/practice-question.model";
+import {PracticeExam} from "../../domain/practice-exam.model";
 
 @Component({
   selector: 'app-question-solution',
@@ -11,19 +10,18 @@ import { AppUtils } from 'src/app/utils/AppUtils';
 export class QuestionSolutionComponent implements OnInit {
 
   @Input()
-  exam!: Exam;
+  exam!: PracticeExam;
   @Input()
-  question!: Question;
-  isAnswerRight!: boolean;
-  constructor() { }
+  question!: PracticeQuestion;
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  isAnswerCorrect() : boolean {
-    return AppUtils.isAnswerCorrect(this.question);
+  isAnswerCorrect(): boolean {
+    return this.question.options.every(option => option.isCorrectAnswer == option.isSelected);
   }
-
 
 
 }

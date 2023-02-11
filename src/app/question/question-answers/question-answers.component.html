@@ -1,7 +1,7 @@
-<ng-container *ngIf="!question?.isMultipleAnswerQust; else multipleAnswerTemplate">
+<ng-container *ngIf="!question?.isQuestionAnswered; else multipleAnswerTemplate">
   <div class="option" *ngFor="let option of question?.options">
     <label>
-      <input type="radio" [value]="option.id" [(ngModel)]="question.selectedAnswer" name="answers" [disabled]="canDisableInput()">
+      <input type="radio" [value]="option.id" [(ngModel)]="question.isQuestionAnswered" name="answers" [disabled]="canDisableInput()">
       {{option.text}}
     </label>
   </div>
