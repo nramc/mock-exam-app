@@ -13,8 +13,7 @@ import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.scss']
+  templateUrl: './question.component.html'
 })
 export class QuestionComponent {
 
@@ -120,6 +119,15 @@ export class QuestionComponent {
 
   private setQuestion(questionRowNumber: number): void {
     this.question = this.exam?.questions.find(q => q.rowNo == questionRowNumber)!;
+  }
+
+  isAnswerCorrect(): boolean {
+    return this.question.options.every(option => option.isCorrectAnswer == option.isSelected);
+  }
+
+  canDisableInput(): boolean {
+    return this.exam.isSubmitted ||
+      (this.exam.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question.isQuestionAnswered) as boolean;
   }
 
 }

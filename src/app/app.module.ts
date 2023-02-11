@@ -10,8 +10,6 @@ import {HomeComponent} from './home/home.component';
 import {ExamComponent} from './exam/exam.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {QuestionAnswersComponent} from './question/question-answers/question-answers.component';
-import {QuestionSolutionComponent} from './question/question-solution/question-solution.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {SummaryComponent} from './exam/summary/summary.component';
@@ -35,8 +33,6 @@ import {NewExamSummaryComponent} from './exam/new-exam/new-exam-summary/new-exam
     QuestionComponent,
     HomeComponent,
     ExamComponent,
-    QuestionAnswersComponent,
-    QuestionSolutionComponent,
     SummaryComponent,
     AlertModelComponent,
     NewExamDetailsComponent,

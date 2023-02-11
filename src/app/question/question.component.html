@@ -14,12 +14,44 @@
   </div>
 
   <div class="question__answers">
-    <app-question-answers [question]="question" [exam]="exam"></app-question-answers>
+
+    <ng-container *ngIf="!question.hasMultipleAnswers; else multipleAnswerTemplate">
+      <div class="option" *ngFor="let option of question.options">
+        <label>
+          <input type="radio" [value]="true" [(ngModel)]="option.isSelected" name="answers"
+                 [disabled]="canDisableInput()">
+          {{option.text}}
+        </label>
+      </div>
+    </ng-container>
+    <ng-template #multipleAnswerTemplate>
+      <div class="option" *ngFor="let option of question.options">
+        <label>
+          <input type="checkbox" [value]="true" [name]="option.id" [(ngModel)]="option.isSelected"
+                 [disabled]="canDisableInput()">
+          {{option.text}}
+        </label>
+      </div>
+    </ng-template>
+
+
   </div>
 
 
   <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-1" style="border: 1px solid purple;">
-    <app-question-solution [question]="question" [exam]="exam"></app-question-solution>
+
+    <ng-container *ngIf="isAnswerCorrect(); else wrongAnswerTemplate">
+      <label class="text-primary">
+        <mat-icon color="accent">check_circle</mat-icon>
+        <span class="icon-text ml-2">Right Answer</span></label>
+
+    </ng-container>
+    <ng-template #wrongAnswerTemplate>
+      <label class="text-danger">
+        <mat-icon color="warn">clear</mat-icon>
+        <span class="icon-text">Wrong Answer</span></label>
+    </ng-template>
+
   </div>
 
   <div class="actions">
