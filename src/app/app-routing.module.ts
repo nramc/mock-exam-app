@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PracticeExamComponent} from './exam/practice/practice-exam.component';
-import {PracticeExamSummaryComponent} from './exam/practice/practice-exam-summary/practice-exam-summary.component';
+import {PracticeExamSummaryComponent} from './exam/practice/summary/practice-exam-summary.component';
 import {HomeComponent} from './home/home.component';
 
-import {PracticeExamQuestionComponent} from './exam/practice/practice-exam-question/practice-exam-question.component';
+import {PracticeExamQuestionComponent} from './exam/practice/question/practice-exam-question.component';
 import {NewExamQuestionsComponent} from "./exam/new-exam/new-exam-questions/new-exam-questions.component";
 import {NewExamComponent} from "./exam/new-exam/new-exam.component";
 

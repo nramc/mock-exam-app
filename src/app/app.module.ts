@@ -5,14 +5,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {PracticeExamQuestionComponent} from './exam/practice/practice-exam-question/practice-exam-question.component';
+import {PracticeExamQuestionComponent} from './exam/practice/question/practice-exam-question.component';
 import {HomeComponent} from './home/home.component';
 import {PracticeExamComponent} from './exam/practice/practice-exam.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {PracticeExamSummaryComponent} from './exam/practice/practice-exam-summary/practice-exam-summary.component';
+import {PracticeExamSummaryComponent} from './exam/practice/summary/practice-exam-summary.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -29,6 +29,7 @@ import {NewExamSummaryComponent} from './exam/new-exam/new-exam-summary/new-exam
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
+import { PracticeExamQuestionAnswerComponent } from './exam/practice/question/answer/practice-exam-question-answer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {MatRadioModule} from "@angular/material/radio";
     NewExamQuestionsComponent,
     NewQuestionComponent,
     NewExamComponent,
-    NewExamSummaryComponent
+    NewExamSummaryComponent,
+    PracticeExamQuestionAnswerComponent
   ],
   imports: [
     BrowserModule,
