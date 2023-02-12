@@ -24,3 +24,10 @@
 ::ng-deep mat-checkbox .mdc-form-field  div{
   display: block;
 }
+
+::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:disabled:checked+.mdc-radio__background .mdc-radio__outer-circle,
+::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-disabled.mat-mdc-checkbox-checked .mdc-checkbox__background {
+  background: $gray-800 !important;
+  opacity: 50%;
+}
+

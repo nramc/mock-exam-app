@@ -15,13 +15,13 @@
 
   <br/>
   <div class="question__answers">
-    <hr>
 
     <section class="multiple-answer-option-section text-primary row" *ngIf="question.hasMultipleAnswers">
-      <ng-template ngFor let-option [ngForOf]="question.options" let-index="index"
+      <ng-template ngFor let-option [ngForOf]="question.options"
                    [ngForTrackBy]="fnTracedByForOption">
         <div class="input-group mb-3 col-12">
-          <mat-checkbox color="primary" class="form-control col-12" [(ngModel)]="option.isSelected">
+          <mat-checkbox color="primary" class="form-control col-12" [(ngModel)]="option.isSelected"
+                         [checked]="option.isSelected" [disabled]="exam.isSubmitted!">
             <div class="text-primary" [innerHtml]="option.text"></div>
           </mat-checkbox>
         </div>
@@ -31,12 +31,17 @@
     <section class="single-answer-option-section text-primary row" *ngIf="!question.hasMultipleAnswers">
       <mat-radio-group (change)="singleOptionChangeEvent($event)" color="primary">
         <div class="input-group mb-3 col-12" *ngFor="let option of question.options">
-          <mat-radio-button [value]="option.id" color="primary" class="form-control col-12 w-100">
+          <mat-radio-button [value]="option.id" color="primary" class="form-control col-12 w-100"
+                            [checked]="option.isSelected" [disabled]="exam.isSubmitted">
             <div class="text-primary" [innerHtml]="option.text"></div>
           </mat-radio-button>
         </div>
       </mat-radio-group>
     </section>
+
+    <div>
+      {{question | json}}
+    </div>
 
   </div>
 
@@ -60,7 +65,8 @@
   <div class="actions">
     <!-- Save & Display correct answer -->
     <button *ngIf="!exam?.isSubmitted && exam.solutionDisplayOption == displaySolutionOption.AFTER_QUESTION_SUBMISSION"
-            class="btn btn-outline-primary mr-3 mt-2" (click)="save()">Show Answer</button>
+            class="btn btn-outline-primary mr-3 mt-2" (click)="save()">Show Answer
+    </button>
     <!-- Display Previous button except first question -->
     <button *ngIf="!isItFirstQuestion()" (click)="moveToPrevQuestion()" class="btn btn-primary mr-3 mt-2">Prev</button>
     <!-- Display Next option except last question -->
