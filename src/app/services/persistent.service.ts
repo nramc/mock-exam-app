@@ -7,6 +7,7 @@ import {Exam} from "../domain/exam.model";
 import {PracticeExam} from "../domain/practice-exam.model";
 import {Question} from "../domain/question.model";
 import {PracticeQuestion} from "../domain/practice-question.model";
+import {DisplaySolutionOption} from "../domain/display-solution-option";
 
 @Injectable({
   providedIn: 'root'
@@ -31,11 +32,13 @@ export class PersistentService {
           }
         });
         dialogRef.afterClosed().subscribe(result => {
+          console.log("clicked:", result)
           this.router.navigate(['/']);
         });
       } else {
 
-        this.exam = Object.assign({}, data, {solutionDisplayOption: exam.solutionDisplayOption}) as PracticeExam;
+        this.exam = Object.assign({}, data,
+          {solutionDisplayOption: exam.solutionDisplayOption || DisplaySolutionOption.AFTER_EXAM_SUBMISSION}) as PracticeExam;
         this.exam.questions.forEach((question, index) => question.rowNo = index + 1);
       }
     });
@@ -46,7 +49,14 @@ export class PersistentService {
     this.exam = undefined;
   }
 
+  private isExamInitialised() {
+    return this.exam && this.exam.questions.length > 0;
+  }
+
   public async getPracticeExam(examId: string): Promise<PracticeExam> {
+    if (!this.isExamInitialised()) {
+      await this.initializeExam(this.dataService.getExamById(examId)!);
+    }
     return Object.assign({}, this.exam);
   }
 
