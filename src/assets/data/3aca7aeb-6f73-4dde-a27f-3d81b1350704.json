@@ -11,12 +11,12 @@
     {
       "id": "d22ef9b7-ad25-431b-8689-3b79bf0c55d0",
       "description": "What is the output of the following code?\n<br >\n<code>\np, q, r = 10, 20 ,30\nprint(p, q, r)\n</code>",
-      "hasMultipleAnswers": true,
+      "hasMultipleAnswers": false,
       "options": [
         {
           "id": "ee07f780-114f-45d2-aca3-e6275df71596",
           "text": " 10 20",
-          "isCorrectAnswer": true
+          "isCorrectAnswer": false
         },
         {
           "id": "9317b243-d363-4915-bcce-083b09cff292",

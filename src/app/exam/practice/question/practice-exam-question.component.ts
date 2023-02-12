@@ -90,7 +90,7 @@ export class PracticeExamQuestionComponent {
     this.router.navigate(['/']);
   }
 
-  canDisplaySolution(): boolean {
+  isQuestionOrExamSubmitted(): boolean {
     return this.exam?.isSubmitted ||
       (this.exam?.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question?.isQuestionAnswered) as boolean;
   }
@@ -116,7 +116,7 @@ export class PracticeExamQuestionComponent {
   }
 
   isAnswerCorrect(): boolean {
-    return this.question.options.every(option => option.isCorrectAnswer == option.isSelected);
+    return this.question.options.every(option => Boolean(option.isCorrectAnswer) === Boolean(option.isSelected));
   }
 
   canDisableInput(): boolean {

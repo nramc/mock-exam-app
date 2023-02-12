@@ -22,17 +22,15 @@
             <div class="col-sm-8 col-md-8">
               <div class="card-body">
                 <div class="card-title text-wrap overflow-hidden text-primary">
-                  <p>{{exam.description}}</p>
+                  <p class="text-primary">{{exam.title}}</p>
                 </div>
-                <div class="card-text">
-                  <div [hidden]="!exam.tags" class="text-primary">
+                <div class="card-text text-primary">
+                  <p class="exam-description">{{exam.description}}</p>
+                  <div [hidden]="!exam.tags">
                     <small>Topics: {{exam.tags}}</small>
                   </div>
-                  <div [hidden]="!exam.noOfQuestions" class="text-primary">
+                  <div [hidden]="!exam.noOfQuestions">
                     <small>Questions: {{exam.noOfQuestions}}</small>
-                  </div>
-                  <div [hidden]="!exam.noOfQuestions" class="text-primary font-weight-bold">
-                    <small>Duration: {{exam.noOfQuestions}}(min)</small>
                   </div>
                 </div>
               </div>
