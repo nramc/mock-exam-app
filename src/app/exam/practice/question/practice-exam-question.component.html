@@ -8,7 +8,9 @@
 
     <mat-progress-bar mode="determinate" [value]="getCurrentProgress()" class="mb-2"></mat-progress-bar>
     <div class="row">
-      <div class="col-12 justify-content-around" [innerHtml]="question.description"></div>
+      <div class="col-12 justify-content-around text-primary">
+        <p [innerHtml]="question.description" class="text-dark-emphasis"></p>
+      </div>
     </div>
 
   </div>
