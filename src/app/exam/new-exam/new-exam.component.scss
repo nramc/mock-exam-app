@@ -1,0 +1,24 @@
+@import 'src/sass/variables';
+
+.mat-stepper-horizontal, .mat-stepper-vertical {
+  background-color: transparent;
+}
+
+::ng-deep .mat-horizontal-stepper-header::before,
+::ng-deep .mat-horizontal-stepper-header::after,
+::ng-deep .mat-stepper-horizontal-line {
+  border-top-color: $secondary;
+}
+
+::ng-deep .mat-step-header .mat-step-icon:not(.mat-step-icon-selected):not(.mat-step-icon-state-edit) {
+  color: $primary;
+  border: 1px solid $primary;
+}
+
+::ng-deep .mat-step-icon .mat-step-icon-state-number .mat-step-icon-selected {
+  color: $white;
+}
+
+::ng-deep .mat-stepper-vertical-line:before {
+  border-left-color: $primary;
+}

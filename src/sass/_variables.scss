@@ -25,7 +25,7 @@ $secondary: $blue-light;
 // Define a dark theme
 $dark-primary: mat.define-palette(mat.$deep-purple-palette);
 $dark-accent: mat.define-palette(mat.$green-palette);
-$dark-theme: mat.define-dark-theme((
+$my-dark-theme: mat.define-dark-theme((
  color: (
    primary: $dark-primary,
    accent: $dark-accent,
@@ -33,5 +33,7 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 // Apply the dark theme by default
-@include mat.all-component-themes($dark-theme);
+@include mat.all-component-themes($my-dark-theme);
+@include mat.core-theme($my-dark-theme);
 
+@include mat.stepper-theme($my-dark-theme);

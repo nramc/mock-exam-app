@@ -1,0 +1,29 @@
+<div class="container summaryContainer mt-3">
+  <h5>Exam Summary</h5>
+  <hr />
+
+  <div class="suumary__details">
+    <div class="row">
+      <div class="result-icon-container col-md-4 col-sm-12 text-center">
+        <img [src]="summary.iconUrl" alt="Exam Staus" class="result-icon">
+      </div>
+
+      <div class="col-md-8 col-sm-12 mt-4">
+        <h3 class="mb-4">{{summary.title}}</h3>
+        <h5><small>Exam:</small> {{summary.exam.title}}</h5>
+        <h5><small>Result: </small> <label [class]="summary.result == 'Pass' ? 'text-success' : 'text-danger'">{{summary.result}}</label></h5>
+        <h5><small>Scored:</small> {{summary.score}}%</h5>
+        <h5><small>Correct Answers:</small> {{summary.correctAnswer}} out of {{summary.exam.noOfQuestions}}</h5>
+      </div>
+    </div>
+
+    <div class="summary-actions row mt-4">
+      <div class="col-10 text-center">
+        <button class="btn btn-primary mr-3" (click)="viewSolutions()">Answers</button>
+        <button class="btn btn-primary" (click)="gotoHome()">Home</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

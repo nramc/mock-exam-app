@@ -1,4 +1,4 @@
-import { Exam } from "./Exam.enity";
+import {Exam} from "../domain/exam.model";
 
 export interface Summary {
   exam : Exam;

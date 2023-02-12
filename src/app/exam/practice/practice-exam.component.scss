@@ -1,0 +1,23 @@
+@import 'src/sass/variables';
+
+div.examDescription {
+  @media only screen and (max-width: 600px) {
+      flex-direction: column-reverse;
+      margin-bottom: 1rem;
+  }
+  margin-top: 1rem;
+}
+
+img.exam-language-logo {
+  object-fit: fill;
+  width: 14.5rem;
+  height: 14.5rem;
+  border: 1px solid $primary;
+  border-radius: 0.5rem;
+}
+.language-logo-container {
+  margin-bottom: 1rem;
+}
+
+
+

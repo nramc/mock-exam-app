@@ -23,3 +23,20 @@ mat-progress-bar .mat-progress-bar-buffer {
 .btn {
   margin: 0 0.2rem 0 0.2rem;
 }
+
+.mat-mdc-paginator-container, .mat-mdc-paginator-container .mat-mdc-select-panel, .mdc-menu-surface {
+  background: $primary !important;
+}
+
+
+.mdc-data-table__cell{
+  background: $white !important;
+  color: $primary !important;
+}
+.mdc-data-table__header-cell {
+  background: $primary !important;
+  color: $white !important;
+}
+table > thead > tr {
+  background: $primary !important;
+}

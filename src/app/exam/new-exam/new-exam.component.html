@@ -1,0 +1,25 @@
+
+
+<mat-stepper linear #stepper color="primary" [orientation]="(stepperOrientation | async)!" >
+  <mat-step  [editable]="true" [hasError]="hasAnyErrorInDetailsForm() | async" errorMessage="Please fix error" #step1>
+    <ng-template matStepLabel><div class="text-primary">Details</div></ng-template>
+    <app-exam-new></app-exam-new>
+  </mat-step>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel><div class="text-primary">Questions</div></ng-template>
+    <app-new-exam-questions></app-new-exam-questions>
+    <div class="row mt-3">
+      <div class="col-12 d-grid gap-2 d-md-flex justify-content-center">
+        <button class="btn btn-primary" matStepperPrevious [disabled]="step1.hasError">Back</button>
+        <button class="btn btn-primary" matStepperNext [disabled]="step1.hasError">Next</button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel><div class="text-primary">Summary</div></ng-template>
+    <ng-template matStepContent>
+      <app-new-exam-summary></app-new-exam-summary>
+    </ng-template>
+
+  </mat-step>
+</mat-stepper>

@@ -12,14 +12,12 @@
       <div class="col exam-details mt-2" *ngFor="let exam of exams">
         <div class="card h-100" (click)="gotoExam(exam)">
           <div class="card-header">
-            <h6>{{exam.name}}</h6>
+            <h6>{{exam.title}}</h6>
           </div>
           <div class="row row align-items-center">
             <div class="col-sm-8 col-md-4 align-items-center text-center m-auto mt-sm-4">
-                <img [src]="exam.logoUrl"
-              class="exam__logo img-fluid rounded-start" [alt]="exam.name" [title]="exam.name"
-              >
-
+              <img [src]="exam.imageUrl"
+                   class="exam__logo img-fluid rounded-start" [alt]="exam.title" [title]="exam.title"/>
             </div>
             <div class="col-sm-8 col-md-8">
               <div class="card-body">
@@ -27,27 +25,25 @@
                   <p>{{exam.description}}</p>
                 </div>
                 <div class="card-text">
-                  <div [hidden]="!exam.labels" class="text-primary">
-                    <small>Topics: {{exam.labels}}</small>
+                  <div [hidden]="!exam.tags" class="text-primary">
+                    <small>Topics: {{exam.tags}}</small>
                   </div>
                   <div [hidden]="!exam.noOfQuestions" class="text-primary">
                     <small>Questions: {{exam.noOfQuestions}}</small>
                   </div>
-                  <div [hidden]="!exam.durationInMin" class="text-primary font-weight-bold">
-                    <small>Duration: {{exam.durationInMin}}(min)</small>
-                  <div>
+                  <div [hidden]="!exam.noOfQuestions" class="text-primary font-weight-bold">
+                    <small>Duration: {{exam.noOfQuestions}}(min)</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+
         </div>
+
       </div>
 
-
-
     </div>
-
   </div>
-
 </div>
-

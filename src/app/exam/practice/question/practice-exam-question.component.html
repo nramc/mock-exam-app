@@ -1,0 +1,74 @@
+<div class="container question">
+
+  <div class="question__title mt-4">
+    <h5>Todo: Question Title</h5>
+  </div>
+
+  <div class="question_content">
+
+    <mat-progress-bar mode="determinate" [value]="getCurrentProgress()" class="mb-2"></mat-progress-bar>
+    <div class="row">
+      <div class="col-12 justify-content-around" [innerHtml]="question.description"></div>
+    </div>
+
+  </div>
+
+  <br/>
+  <div class="question__answers">
+    <hr>
+
+    <section class="multiple-answer-option-section text-primary row" *ngIf="question.hasMultipleAnswers">
+      <ng-template ngFor let-option [ngForOf]="question.options" let-index="index"
+                   [ngForTrackBy]="fnTracedByForOption">
+        <div class="input-group mb-3 col-12">
+          <mat-checkbox color="primary" class="form-control col-12" [(ngModel)]="option.isSelected">
+            <div class="text-primary" [innerHtml]="option.text"></div>
+          </mat-checkbox>
+        </div>
+      </ng-template>
+    </section>
+
+    <section class="single-answer-option-section text-primary row" *ngIf="!question.hasMultipleAnswers">
+      <mat-radio-group (change)="singleOptionChangeEvent($event)" color="primary">
+        <div class="input-group mb-3 col-12" *ngFor="let option of question.options">
+          <mat-radio-button [value]="option.id" color="primary" class="form-control col-12 w-100">
+            <div class="text-primary" [innerHtml]="option.text"></div>
+          </mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </section>
+
+  </div>
+
+
+  <div *ngIf="canDisplaySolution()" class="question_solution mt-3 p-1" style="border: 1px solid purple;">
+
+    <ng-container *ngIf="isAnswerCorrect(); else wrongAnswerTemplate">
+      <label class="text-primary">
+        <mat-icon color="accent">check_circle</mat-icon>
+        <span class="icon-text ml-2">Right Answer</span></label>
+
+    </ng-container>
+    <ng-template #wrongAnswerTemplate>
+      <label class="text-danger">
+        <mat-icon color="warn">clear</mat-icon>
+        <span class="icon-text">Wrong Answer</span></label>
+    </ng-template>
+
+  </div>
+
+  <div class="actions">
+    <!-- Save & Display correct answer -->
+    <button *ngIf="!exam?.isSubmitted && exam.solutionDisplayOption == displaySolutionOption.AFTER_QUESTION_SUBMISSION"
+            class="btn btn-outline-primary mr-3 mt-2" (click)="save()">Show Answer</button>
+    <!-- Display Previous button except first question -->
+    <button *ngIf="!isItFirstQuestion()" (click)="moveToPrevQuestion()" class="btn btn-primary mr-3 mt-2">Prev</button>
+    <!-- Display Next option except last question -->
+    <button *ngIf="!isItLastQuestion()" (click)="moveToNextQuestion()" class="btn btn-primary mr-3 mt-2">Next</button>
+    <!-- Display Submit option only for last question and exam's display solution option set to display solution at the end -->
+    <button *ngIf="canDisplaySubmitOption()" class="btn btn-success mr-3 mt-2" (click)="submit()">Submit</button>
+    <button *ngIf="exam?.isSubmitted && isItLastQuestion() " class="btn btn-primary mr-3 mt-2" (click)="home()">Home
+    </button>
+  </div>
+
+</div>

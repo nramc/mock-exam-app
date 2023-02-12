@@ -1,0 +1,99 @@
+<div class="container new-exam-summary">
+
+  <div class="row new-exam__title">
+    <div class="col text-center">
+      <h5>Exam Summary</h5>
+      <hr/>
+    </div>
+  </div>
+
+  <div class="row new-exam-summary__details">
+
+    <div class="row">
+
+      <div class="col-md-6 col-sm-12">
+
+        <div class="col-12 mb-3 form-floating">
+          <input type="text" id="examId" name="examId" class="form-control text-primary bg-white "
+                 [(ngModel)]="exam.id" [disabled]="true">
+          <label for="examId" class="text-primary ms-1">Exam ID</label>
+        </div>
+
+        <div class="col-12 mb-3 form-floating">
+          <div id="examTitle" class="form-control text-primary bg-white " [innerHtml]="exam.title"></div>
+          <label for="examTitle" class="text-primary ms-1">Title</label>
+        </div>
+
+        <div class="col-md-12 col-sm-12 mb-3 form-floating">
+          <div id="examTags" class="form-control text-primary h-auto">
+            <ng-template ngFor let-tag [ngForOf]="exam.tags" let-index="index">
+              <span class="badge text-bg-success me-1">{{tag}}</span>
+            </ng-template>
+          </div>
+          <label for="examTags" class="text-primary ms-1">Tags</label>
+        </div>
+
+        <div class="col-md-12 col-sm-12 mb-3 form-floating">
+          <div id="difficulty" class="form-control text-primary bg-white ">{{exam.noOfQuestions}}</div>
+          <label for="difficulty" class="text-primary ms-1">Difficulty</label>
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-sm-12 align-bottom">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <img [src]="exam.imageUrl" class="rounded mx-auto d-block" alt="" width="200px" height="200px" >
+          </div>
+
+          <div class="col-12 mb-3 form-floating">
+            <input type="text" id="imageUrl" name="imageUrl" class="form-control text-primary bg-white "
+                   [(ngModel)]="exam.imageUrl" placeholder="Paste URL here">
+            <label for="imageUrl" class="text-primary ms-1">Image URL</label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-12 col-sm-12 mb-3 form-floating new-exam-summary__details__description">
+      <div id="examDescription"
+           class="form-control text-primary mt-1 new-exam-summary__details__description__content"
+           [innerHtml]="exam.description"></div>
+      <label for="examDescription" class="text-primary ms-1">Description</label>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-2 col-sm-12 mb-3 form-floating">
+        <div id="minPassingScore" class="form-control text-primary bg-white ">{{exam.passScore}}%</div>
+        <label for="minPassingScore" class="text-primary ms-1">Pass Score</label>
+      </div>
+
+      <div class="col-md-2 col-sm-12 mb-3 form-floating">
+        <div id="noOfQuestions" class="form-control text-primary bg-white ">{{exam.noOfQuestions}}</div>
+        <label for="noOfQuestions" class="text-primary ms-1">No Of Questions</label>
+      </div>
+
+      <div class="col-md-3 col-sm-12 mb-3 form-floating">
+        <select id="displaySolutionOption" name="displaySolutionOption" class="form-select text-primary bg-white"
+                [(ngModel)]="exam.solutionDisplayOption" [disabled]="true">
+          <option selected [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION">After Exam Submission</option>
+          <option [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION">After Answering Each Question</option>
+        </select>
+        <label for="displaySolutionOption" class="text-primary ms-1">Display Solution</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 d-grid gap-2 d-md-flex justify-content-center">
+        <button class="btn btn-outline-primary" matStepperPrevious>Back</button>
+        <button class="btn btn-primary" (click)="downloadDataAsJsonFile()">Download</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

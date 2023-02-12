@@ -1,22 +1,32 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { ExamComponent } from './exam/exam.component';
-import { SummaryComponent } from './exam/summary/summary.component';
-import { HomeComponent } from './home/home.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {PracticeExamComponent} from './exam/practice/practice-exam.component';
+import {PracticeExamSummaryComponent} from './exam/practice/summary/practice-exam-summary.component';
+import {HomeComponent} from './home/home.component';
 
-import { QuestionComponent } from './question/question.component';
+import {PracticeExamQuestionComponent} from './exam/practice/question/practice-exam-question.component';
+import {NewExamQuestionsComponent} from "./exam/new-exam/new-exam-questions/new-exam-questions.component";
+import {NewExamComponent} from "./exam/new-exam/new-exam.component";
 
 const routes: Routes = [
-  { path : 'home', component : HomeComponent },
-  { path : 'exam',
+  {path: 'home', component: HomeComponent},
+  {
+    path: 'exam',
     children: [
-      { path: ':examId', component: ExamComponent },
-      { path: ':examId/question/:questionId', component: QuestionComponent },
-      { path: ':examId/summary', component: SummaryComponent}
-     ]
+      {
+        path: 'new',
+        children: [
+          {path: '', component: NewExamComponent},
+          {path: "questions", component: NewExamQuestionsComponent}
+        ]
+      },
+
+      {path: ':examId', component: PracticeExamComponent},
+      {path: ':examId/question/:questionId', component: PracticeExamQuestionComponent},
+      {path: ':examId/summary', component: PracticeExamSummaryComponent}
+    ]
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 
 ];
 
@@ -24,4 +34,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
