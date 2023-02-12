@@ -10,7 +10,6 @@ import {PracticeQuestion} from "../../../domain/practice-question.model";
   styleUrls: ['./practice-exam-summary.component.scss']
 })
 export class PracticeExamSummaryComponent implements OnInit {
-
   summary!: Summary;
 
   constructor(
@@ -18,9 +17,6 @@ export class PracticeExamSummaryComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private persistentService: PersistentService
   ) {
-  }
-
-  async ngOnInit(): Promise<void> {
     this.activatedRoute.paramMap.subscribe(async params => {
       const examId = params.get('examId') as string;
       const exam = await this.persistentService.getPracticeExam(examId);
@@ -40,6 +36,10 @@ export class PracticeExamSummaryComponent implements OnInit {
       };
 
     });
+  }
+
+  async ngOnInit(): Promise<void> {
+
 
   }
 
@@ -52,9 +52,7 @@ export class PracticeExamSummaryComponent implements OnInit {
   }
 
   private getQuestionsAnsweredCorrectly(questions: PracticeQuestion[]): PracticeQuestion[] {
-
-
-    return questions.filter(question => question.options.every(opt => opt.isSelected == opt.isCorrectAnswer));
+    return questions.filter(question => question.options.every(opt => Boolean(opt.isSelected) === Boolean(opt.isCorrectAnswer)));
   }
 
   private getResult(actualPercentage: number, requiredPercentage: number): 'Pass' | 'Fail' {

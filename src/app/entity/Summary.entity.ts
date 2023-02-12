@@ -1,9 +1,9 @@
-import {Exam} from "../domain/exam.model";
+import {PracticeExam} from "../domain/practice-exam.model";
 
 export interface Summary {
-  exam : Exam;
-  result : "Pass" | "Fail";
-  score : number;
+  exam: PracticeExam;
+  result: "Pass" | "Fail";
+  score: number;
   correctAnswer: number;
   title: string;
   iconUrl: string;
