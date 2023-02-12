@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Summary} from 'src/app/entity/Summary.entity';
 import {PersistentService} from 'src/app/services/persistent.service';
-import {PracticeExam} from "../../../domain/practice-exam.model";
 import {PracticeQuestion} from "../../../domain/practice-question.model";
 
 @Component({
@@ -24,7 +23,7 @@ export class PracticeExamSummaryComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.activatedRoute.paramMap.subscribe(async params => {
       const examId = params.get('examId') as string;
-      const exam = await this.persistentService.getPracticeExam(examId) as PracticeExam;
+      const exam = await this.persistentService.getPracticeExam(examId);
       const correctAnswers = this.getQuestionsAnsweredCorrectly(exam.questions);
       const percentage = Math.ceil((correctAnswers.length / exam?.noOfQuestions) * 100);
       const result = this.getResult(percentage, exam?.passScore);
