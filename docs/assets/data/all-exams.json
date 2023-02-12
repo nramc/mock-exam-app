@@ -1,0 +1,13 @@
+[
+  {
+    "id": "3aca7aeb-6f73-4dde-a27f-3d81b1350704",
+    "title": "Python Quiz - Fundamentals ",
+    "description": "This Quiz is for beginners who are new to Python Programming.\nThis quiz provides Multiple Choice Questions to get familiar with Python.\nThe quiz focuses on testing your basic skills in Python functions, string, operators, functions, set, and lists.\n",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": ["python","basic","fundamental"],
+    "solutionDisplayOption": 1,
+    "noOfQuestions": 5,
+    "passScore": 70,
+    "questions": []
+  }
+]
