@@ -73,7 +73,7 @@ export class PracticeExamQuestionComponent {
   }
 
   moveToNextQuestion(): void {
-    this.save();
+    this.persistentService.saveQuestion(this.question);
     if (this.question.rowNo + 1 <= this.exam.noOfQuestions) {
       this.router.navigate([`exam/${this.exam?.id}/question/`, this.question.rowNo + 1]);
     }
