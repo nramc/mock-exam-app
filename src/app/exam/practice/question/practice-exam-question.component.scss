@@ -34,3 +34,10 @@
   background: indianred;
   opacity: 50%;
 }
+
+// option row clickable with width 100%
+::ng-deep .mat-mdc-radio-button .mdc-form-field,
+::ng-deep .mat-mdc-radio-button .mdc-form-field label {
+  width: 100% !important;
+  line-height: 2.5rem;
+}
