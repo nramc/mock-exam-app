@@ -13,8 +13,8 @@
   width: 100% !important;
 }
 
-::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:disabled:checked+.mdc-radio__background .mdc-radio__outer-circle,
-::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:disabled:checked+.mdc-radio__background .mdc-radio__inner-circle,
+::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:disabled:checked + .mdc-radio__background .mdc-radio__outer-circle,
+::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:disabled:checked + .mdc-radio__background .mdc-radio__inner-circle,
 ::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-disabled.mat-mdc-checkbox-checked .mdc-checkbox__background {
   background: $black !important;
   opacity: 75%;
@@ -24,7 +24,13 @@
   background: forestgreen;
   font-weight: bold;
 }
+
 .highlight-right-answer-text {
   color: whitesmoke !important;
   font-weight: bold;
+}
+
+.highlight-wrong-answer {
+  background: indianred;
+  opacity: 50%;
 }

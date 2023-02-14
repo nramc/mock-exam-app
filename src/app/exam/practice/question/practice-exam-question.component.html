@@ -24,6 +24,7 @@
         <div class="input-group mb-3 col-12">
           <mat-checkbox color="primary" class="form-control col-12"
                         [class.highlight-right-answer]="isQuestionOrExamSubmitted() && option.isCorrectAnswer"
+                        [class.highlight-wrong-answer]="this.isQuestionOrExamSubmitted() && !option.isCorrectAnswer && option.isSelected"
                         [(ngModel)]="option.isSelected" [checked]="option.isSelected"
                         [disabled]="isQuestionOrExamSubmitted()">
             <div class="text-primary fw-bold" [innerHtml]="option.text"
@@ -38,7 +39,8 @@
         <div class="input-group mb-3 col-12" *ngFor="let option of question.options">
           <mat-radio-button [value]="option.id" color="primary" class="form-control col-12 w-100"
                             [checked]="option.isSelected" [disabled]="isQuestionOrExamSubmitted()"
-                            [class.highlight-right-answer]="isQuestionOrExamSubmitted() && option.isCorrectAnswer">
+                            [class.highlight-right-answer]="isQuestionOrExamSubmitted() && option.isCorrectAnswer"
+                            [class.highlight-wrong-answer]="isQuestionOrExamSubmitted() && !option.isCorrectAnswer && option.isSelected">
             <div class="text-primary fw-bold" [innerHtml]="option.text"
                  [class.highlight-right-answer-text]="isQuestionOrExamSubmitted() && option.isCorrectAnswer"></div>
           </mat-radio-button>
