@@ -1,11 +1,15 @@
-<div class="fab">
+<div class="d-flex fab justify-content-end align-items-end">
 
-  <button mat-icon-button color="primary" class="float-end" (click)="myprofile()" title="About Me">
-    <mat-icon>account_circle</mat-icon>
+  <button mat-icon-button color="primary" (click)="home()" title="Home">
+    <mat-icon aria-hidden="false" aria-label="Home" fontIcon="home"></mat-icon>
   </button>
 
-  <button mat-icon-button color="primary" class="float-end" (click)="home()" title="Home">
-    <mat-icon aria-hidden="false" aria-label="Home" fontIcon="home"></mat-icon>
+  <button mat-icon-button color="primary" (click)="newExam()" title="New Exam">
+    <mat-icon>add_moderator</mat-icon>
+  </button>
+
+  <button mat-icon-button color="primary"  (click)="myprofile()" title="About Me">
+    <mat-icon>contact_page</mat-icon>
   </button>
 
 </div>

@@ -34,7 +34,7 @@ export class PracticeExamQuestionComponent {
       const examId = params.get('examId') as string;
       this.exam = await this.persistentService.getPracticeExam(examId);
       const questionRowNo = params.get('questionId');
-      if (this.exam?.id && questionRowNo && +questionRowNo <= this.exam.noOfQuestions) {
+      if (this.exam?.id && questionRowNo && +questionRowNo <= this.exam?.noOfQuestions) {
         this.setQuestion(+questionRowNo);
       } else {
         this.notifyService.notifyError();
@@ -44,6 +44,7 @@ export class PracticeExamQuestionComponent {
   }
 
   save(): void {
+    this.question.isQuestionSubmitted = true;
     this.question.isQuestionAnswered = true;
     this.persistentService.saveQuestion(this.question);
   }
@@ -73,6 +74,7 @@ export class PracticeExamQuestionComponent {
   }
 
   moveToNextQuestion(): void {
+    this.question.isQuestionAnswered = this.question.options.some(option => option.isSelected);
     this.persistentService.saveQuestion(this.question);
     if (this.question.rowNo + 1 <= this.exam.noOfQuestions) {
       this.router.navigate([`exam/${this.exam?.id}/question/`, this.question.rowNo + 1]);
@@ -92,7 +94,7 @@ export class PracticeExamQuestionComponent {
 
   isQuestionOrExamSubmitted(): boolean {
     return this.exam?.isSubmitted ||
-      (this.exam?.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question?.isQuestionAnswered) as boolean;
+      (this.exam?.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question?.isQuestionSubmitted) as boolean;
   }
 
   isItLastQuestion(): boolean {
@@ -108,7 +110,7 @@ export class PracticeExamQuestionComponent {
   }
 
   getCurrentProgress(): number {
-    return this.exam?.questions.filter(question => question.isQuestionAnswered).length / this.exam?.noOfQuestions * 100;
+    return this.exam?.questions.filter(question => question.isQuestionAnswered).length / this.exam?.questions?.length * 100;
   }
 
   private setQuestion(questionRowNumber: number): void {
@@ -121,7 +123,7 @@ export class PracticeExamQuestionComponent {
 
   canDisableInput(): boolean {
     return this.exam.isSubmitted ||
-      (this.exam.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question.isQuestionAnswered) as boolean;
+      (this.exam.solutionDisplayOption == DisplaySolutionOption.AFTER_QUESTION_SUBMISSION && this.question.isQuestionSubmitted) as boolean;
   }
 
   fnTracedByForOption(index: number, item: Option) {

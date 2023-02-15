@@ -3,14 +3,15 @@
   "title": "Python Quiz - Fundamentals ",
   "description": "This Quiz is for beginners who are new to Python Programming.\nThis quiz provides Multiple Choice Questions to get familiar with Python.\nThe quiz focuses on testing your basic skills in Python functions, string, operators, functions, set, and lists.\n",
   "imageUrl": "assets/images/logo/python-logo.png",
-  "tags": ["python","basic","fundamental"],
+  "tags": "python,basic,fundamental",
   "solutionDisplayOption": 1,
   "noOfQuestions": 5,
   "passScore": 70,
   "questions": [
     {
       "id": "d22ef9b7-ad25-431b-8689-3b79bf0c55d0",
-      "description": "What is the output of the following code?\n<br >\n<code>\np, q, r = 10, 20 ,30\nprint(p, q, r)\n</code>",
+      "title": "What is the output of the following code?",
+      "description": "<code>\np, q, r = 10, 20 ,30\n\nprint(p, q, r)\n</code>",
       "hasMultipleAnswers": false,
       "options": [
         {
@@ -32,7 +33,8 @@
     },
     {
       "id": "06de94ea-3974-425a-8385-0d47dad625d6",
-      "description": "A string is immutable in Python?",
+      "title": "A string is immutable in Python?",
+      "description": "",
       "hasMultipleAnswers": false,
       "options": [
         {
@@ -49,7 +51,8 @@
     },
     {
       "id": "c7fb11ef-d638-426f-b4f5-bff646f0ff96",
-      "description": "Which of these collections defines a TUPLE?\n\n",
+      "title": "Which of these collections defines a TUPLE?",
+      "description": "",
       "hasMultipleAnswers": false,
       "options": [
         {
@@ -82,7 +85,7 @@
         {
           "id": "e62a4501-8b09-46f9-80fc-9b147a18e1e3",
           "text": "{‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’}",
-          "isCorrectAnswer": true
+          "isCorrectAnswer": false
         },
         {
           "id": "cb4825ae-d125-43b3-9fda-0b7f5b992ae8",

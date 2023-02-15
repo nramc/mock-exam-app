@@ -24,6 +24,7 @@ export class NewQuestionComponent {
   };
   newQuestion: Question = Object.assign({}, {
     id: '',
+    title: '',
     description: '',
     hasMultipleAnswers: false,
     options: [Object.assign({}, this.defaultOption, {id: uuid()})]

@@ -16,6 +16,14 @@
         </div>
 
         <div class="col-12 mb-3">
+          <label for="questionTitle" class="form-label text-secondary">Title</label>
+          <div class="input-group">
+              <input type="text" id="questionTitle" name="questionTitle" class="form-control text-primary"
+                        [(ngModel)]="newQuestion.title" />
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
           <label for="questionDescription" class="form-label text-secondary">Description</label>
           <div class="input-group">
               <textarea id="questionDescription" name="questionDescription" class="form-control text-primary" rows="5"
