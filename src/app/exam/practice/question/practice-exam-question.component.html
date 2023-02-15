@@ -9,12 +9,12 @@
     <mat-progress-bar mode="determinate" [value]="getCurrentProgress()" class="mb-2"></mat-progress-bar>
     <div class="row">
       <div class="col-12 justify-content-around text-primary">
-        <p [innerHtml]="question.title" *ngIf="question.title" class="text-dark-emphasis"></p>
         <p class="fst-italic" *ngIf="!question.hasMultipleAnswers">Choose the correct answer:</p>
         <p class="text-dark-emphasis" *ngIf="question.hasMultipleAnswers">Choose all correct answers:</p>
+        <p [innerHtml]="question.title" *ngIf="question.title" class="text-dark-emphasis"></p>
       </div>
       <div class="col-12 justify-content-around text-primary mt-2">
-        <p [innerHtml]="question.description" class="text-dark-emphasis"></p>
+        <p [innerHtml]="question.description" *ngIf="question.description" class="text-dark-emphasis"></p>
       </div>
     </div>
 
