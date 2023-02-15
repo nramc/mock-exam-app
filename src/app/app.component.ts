@@ -19,4 +19,7 @@ export class AppComponent {
     window.open('https://myprofile.codewithram.dev');
   }
 
+  newExam() {
+    this.router.navigate(['/exam/new']);
+  }
 }
