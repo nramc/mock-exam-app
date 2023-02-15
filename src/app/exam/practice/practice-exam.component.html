@@ -10,8 +10,8 @@
     <div class="col-md-8 col-sm-12">
       <div class="exam__details">
         <div class="row">
-          <div class="col">
-            <h5 class="mb-4">{{exam.description}}</h5>
+          <div class="col-12">
+            <p [innerHtml]="exam.description" class="text-primary"></p>
             <h6><small>Topics Covered: </small>{{exam.tags}}</h6>
             <h6><small>No of Questions: </small>{{exam.noOfQuestions}}</h6>
             <h6><small>Duration: </small> {{exam.noOfQuestions}}</h6>
