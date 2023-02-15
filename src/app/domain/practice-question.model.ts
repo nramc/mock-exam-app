@@ -6,6 +6,7 @@ export interface PracticeQuestion {
   description: string,
   hasMultipleAnswers: boolean
   options: PracticeOption[],
-  isQuestionAnswered?: boolean,
+  isQuestionSubmitted?: boolean,
+  isQuestionAnswered?: boolean;
   rowNo: number;
 }
