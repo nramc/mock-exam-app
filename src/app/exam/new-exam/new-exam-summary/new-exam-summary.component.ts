@@ -23,7 +23,7 @@ export class NewExamSummaryComponent {
     let jsonData = JSON.stringify(this.exam);
     let a = document.createElement('a');
     a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(jsonData));
-    a.setAttribute('download', this.exam?.title + '.json');
+    a.setAttribute('download', this.exam?.id + '.json');
     a.click()
   }
 
