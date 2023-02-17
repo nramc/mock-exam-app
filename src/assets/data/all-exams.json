@@ -9,5 +9,16 @@
     "noOfQuestions": 5,
     "passScore": 70,
     "questions": []
+  },
+  {
+    "id": "9ac5c002-512f-485b-8ec9-50e22d63ccc3",
+    "title": "Introduction to Python & Computer Programming",
+    "description": "In this exam, you will learn,\n - fundamentals of computer programming language\n- Compilation vs Interpretation\n- Introduction to Python\n- Python 2 vs Python 3",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": ["python", "basics", "fundamental"],
+    "solutionDisplayOption": 2,
+    "noOfQuestions": 25,
+    "passScore": 70,
+    "questions": []
   }
 ]

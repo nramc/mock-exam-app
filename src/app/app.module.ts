@@ -30,6 +30,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import { PracticeExamQuestionAnswerComponent } from './exam/practice/question/answer/practice-exam-question-answer.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -46,25 +47,26 @@ import { PracticeExamQuestionAnswerComponent } from './exam/practice/question/an
     NewExamSummaryComponent,
     PracticeExamQuestionAnswerComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatStepperModule,
-    MatButtonToggleModule,
-    MatCheckboxModule,
-    MatRadioModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatProgressBarModule,
+        MatDialogModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatStepperModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        MatTooltipModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

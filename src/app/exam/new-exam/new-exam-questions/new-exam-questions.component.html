@@ -24,10 +24,10 @@
       </ng-container>
 
       <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef class="col-10 text-center"> Description</th>
+        <th mat-header-cell *matHeaderCellDef class="col-10 text-center"> Question</th>
         <td mat-cell *matCellDef="let element"  class="w-50">
           <div [innerHtml]="element.title"></div>
-          <div [innerHtml]="element.description" [className]="!wrapDescription ? 'wrap-content': ''"></div>
+          <div [innerHtml]="element.description" [class.wrap-content]="wrapDescription"></div>
         </td>
       </ng-container>
 

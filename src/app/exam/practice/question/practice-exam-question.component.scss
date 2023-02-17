@@ -8,6 +8,10 @@
   border: 1px solid $primary !important;
   border-radius: 50%;
 }
+::ng-deep .mdc-radio__background .mdc-radio__inner-circle {
+  top: -1px;
+  left: -1px;
+}
 
 ::ng-deep mdc-checkbox .mdc-form-field {
   width: 100% !important;
@@ -35,9 +39,22 @@
   opacity: 50%;
 }
 
-// option row clickable with width 100%
+// radio option row clickable with width 100%
 ::ng-deep .mat-mdc-radio-button .mdc-form-field,
 ::ng-deep .mat-mdc-radio-button .mdc-form-field label {
   width: 100% !important;
   line-height: 2.5rem;
+  cursor: pointer;
+}
+
+// checkbox option row clickable with width 100%
+::ng-deep .mat-mdc-checkbox .mdc-form-field,
+::ng-deep .mat-mdc-checkbox .mdc-form-field label {
+  width: 100% !important;
+  line-height: 2.5rem;
+  cursor: pointer;
+}
+
+.option-text {
+  font-weight: 500 !important;
 }
