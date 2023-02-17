@@ -1,14 +1,14 @@
 <div class="d-flex fab justify-content-end align-items-end">
 
-  <button mat-icon-button color="primary" (click)="home()" title="Home">
+  <button mat-icon-button color="primary" (click)="home()" matTooltip="Home">
     <mat-icon aria-hidden="false" aria-label="Home" fontIcon="home"></mat-icon>
   </button>
 
-  <button mat-icon-button color="primary" (click)="newExam()" title="New Exam">
-    <mat-icon>add_moderator</mat-icon>
+  <button mat-icon-button extended color="primary" (click)="newExam()" matTooltip="Create New Exam">
+    <mat-icon>queue_play_next</mat-icon>
   </button>
 
-  <button mat-icon-button color="primary"  (click)="myprofile()" title="About Me">
+  <button mat-icon-button color="primary" matTooltip="About Me" (click)="myprofile()">
     <mat-icon>contact_page</mat-icon>
   </button>
 
