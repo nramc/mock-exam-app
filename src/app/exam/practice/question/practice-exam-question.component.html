@@ -9,8 +9,8 @@
     <mat-progress-bar mode="determinate" [value]="getCurrentProgress()" class="mb-2"></mat-progress-bar>
     <div class="row">
       <div class="col-12 justify-content-around text-primary">
-        <p class="fst-italic" *ngIf="!question.hasMultipleAnswers">Choose the correct answer:</p>
-        <p class="text-dark-emphasis" *ngIf="question.hasMultipleAnswers">Choose all correct answers:</p>
+        <p class="fst-italic" *ngIf="!question.hasMultipleAnswers">Choose the correct answer</p>
+        <p class="fst-italic" *ngIf="question.hasMultipleAnswers">Choose all correct answers</p>
         <p [innerHtml]="question.title" *ngIf="question.title" class="text-dark-emphasis"></p>
       </div>
       <div class="col-12 justify-content-around text-primary mt-2">
@@ -32,7 +32,7 @@
                         [class.highlight-wrong-answer]="this.isQuestionOrExamSubmitted() && !option.isCorrectAnswer && option.isSelected"
                         [(ngModel)]="option.isSelected" [checked]="option.isSelected"
                         [disabled]="isQuestionOrExamSubmitted()">
-            <div class="text-primary fw-bold" [innerHtml]="option.text"
+            <div class="text-primary option-text" [innerHtml]="option.text"
                  [class.highlight-right-answer-text]="isQuestionOrExamSubmitted() && option.isCorrectAnswer"></div>
           </mat-checkbox>
         </div>
@@ -46,7 +46,7 @@
                             [checked]="option.isSelected" [disabled]="isQuestionOrExamSubmitted()"
                             [class.highlight-right-answer]="isQuestionOrExamSubmitted() && option.isCorrectAnswer"
                             [class.highlight-wrong-answer]="isQuestionOrExamSubmitted() && !option.isCorrectAnswer && option.isSelected">
-            <div class="text-primary fw-bold" [innerHtml]="option.text"
+            <div class="text-primary option-text" [innerHtml]="option.text"
                  [class.highlight-right-answer-text]="isQuestionOrExamSubmitted() && option.isCorrectAnswer"></div>
           </mat-radio-button>
         </div>
