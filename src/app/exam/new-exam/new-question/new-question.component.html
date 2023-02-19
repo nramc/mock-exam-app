@@ -24,11 +24,8 @@
         </div>
 
         <div class="col-12 mb-3">
-          <label for="questionDescription" class="form-label text-secondary">Description</label>
-          <div class="input-group">
-              <textarea id="questionDescription" name="questionDescription" class="form-control text-primary" rows="5"
-                        [(ngModel)]="newQuestion.description"></textarea>
-          </div>
+          <angular-editor name="questionDescriptionEditor" placeholder="enter description here" class="text-primary"
+                          [config]="editorConfig" [(ngModel)]="newQuestion.description"></angular-editor>
         </div>
 
         <div class="col-12 text-secondary mb-3">

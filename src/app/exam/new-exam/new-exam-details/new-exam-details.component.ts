@@ -3,6 +3,9 @@ import {Exam} from "../../../domain/exam.model";
 import {v4 as uuid} from 'uuid';
 import {DisplaySolutionOption} from "../../../domain/display-solution-option";
 import {NewExamService} from "../services/new-exam.service";
+import {AngularEditorConfig} from "@kolkov/angular-editor";
+import {COMMA, ENTER, SPACE} from "@angular/cdk/keycodes";
+import {MatChipInputEvent} from "@angular/material/chips";
 
 @Component({
   selector: 'app-exam-new',
@@ -11,6 +14,8 @@ import {NewExamService} from "../services/new-exam.service";
 })
 export class NewExamDetailsComponent {
   solutionDisplayOption = DisplaySolutionOption;
+  readonly separatorKeysCodes = [ENTER, COMMA, SPACE] as const;
+
   // define default values
   exam: Exam = {
     id: '',
@@ -22,6 +27,34 @@ export class NewExamDetailsComponent {
     noOfQuestions: 0,
     passScore: 70,
     questions: []
+  };
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+    ],
+    customClasses: [
+      {
+        name: "quote",
+        class: "quote",
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: "titleText",
+        class: "titleText",
+        tag: "h1",
+      },
+    ]
   };
 
   private selectedFile: any;
@@ -73,6 +106,25 @@ export class NewExamDetailsComponent {
     this.newExamService.saveExam(this.exam);
     localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     console.log("Saved..!", this.exam);
+  }
+
+  add(event: MatChipInputEvent): void {
+    const newTag = (event.value || '').trim();
+
+    if (newTag) {
+      this.exam.tags.push(newTag);
+    }
+
+    // Clear the input value
+    event.chipInput!.clear();
+  }
+
+  remove(tag: string): void {
+    const index = this.exam.tags.indexOf(tag);
+
+    if (index >= 0) {
+      this.exam.tags.splice(index, 1);
+    }
   }
 
 }

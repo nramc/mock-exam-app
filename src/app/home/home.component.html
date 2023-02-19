@@ -7,31 +7,37 @@
 
   <div class="home__content mt-sm-4">
 
-    <div class="row row-cols-1 row-cols-md-3 flex-grow-1 flex-fill h-100 row align-items-center">
+    <div class="row row-cols-1 row-cols-md-2 flex-grow-1 flex-fill h-100 row align-items-center">
 
       <div class="col exam-details mt-2" *ngFor="let exam of exams">
         <div class="card h-100" (click)="gotoExam(exam)">
           <div class="card-header">
             <h6>{{exam.title}}</h6>
           </div>
-          <div class="row row align-items-center">
-            <div class="col-sm-8 col-md-4 align-items-center text-center m-auto mt-sm-4">
+          <div class="row align-items-center just">
+
+            <div class="col-sm-8 col-md-4 align-items-center text-center mt-1">
               <img [src]="exam.imageUrl"
                    class="exam__logo img-fluid rounded-start" [alt]="exam.title" [title]="exam.title"/>
             </div>
+
             <div class="col-sm-8 col-md-8">
               <div class="card-body">
                 <div class="card-title text-wrap overflow-hidden text-primary">
                   <p class="text-primary">{{exam.title}}</p>
                 </div>
                 <div class="card-text text-primary">
-                  <p class="exam-description">{{exam.description}}</p>
-                  <div [hidden]="!exam.tags">
-                    <small>Topics: {{exam.tags}}</small>
+                  <p class="exam-description" [innerHTML]="exam.description"></p>
+
+                  <div class="col-12 mt-2 mb-4">
+                    <span *ngFor="let tag of exam.tags" class="badge text-primary text-bg-light me-1">{{tag}}</span>
                   </div>
+
                   <div [hidden]="!exam.noOfQuestions">
                     <small>Questions: {{exam.noOfQuestions}}</small>
+                    <small class="ms-3">Duration: {{getApproxExamDuration(exam)}} min</small>
                   </div>
+
                 </div>
               </div>
             </div>
