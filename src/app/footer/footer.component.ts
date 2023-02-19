@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  goto(url: string) {
+    // @ts-ignore
+    window.open(url, '_blank').focus();
+  }
 }

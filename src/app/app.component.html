@@ -1,18 +1,29 @@
-<div class="d-flex fab justify-content-end align-items-end">
+<div class="container app__container d-flex flex-column ">
+  <div class="row app__header">
+    <div class="text-end">
 
-  <button mat-icon-button color="primary" (click)="home()" matTooltip="Home">
-    <mat-icon aria-hidden="false" aria-label="Home" fontIcon="home"></mat-icon>
-  </button>
+      <button mat-icon-button color="primary" (click)="home()" matTooltip="Home">
+        <mat-icon aria-hidden="false" aria-label="Home" fontIcon="home"></mat-icon>
+      </button>
 
-  <button mat-icon-button extended color="primary" (click)="newExam()" matTooltip="Create New Exam">
-    <mat-icon>queue_play_next</mat-icon>
-  </button>
+      <button mat-icon-button extended color="primary" (click)="newExam()" matTooltip="Create New Exam">
+        <mat-icon>queue_play_next</mat-icon>
+      </button>
 
-  <button mat-icon-button color="primary" matTooltip="About Me" (click)="myprofile()">
-    <mat-icon>contact_page</mat-icon>
-  </button>
+      <button mat-icon-button color="primary" matTooltip="About Me" (click)="myprofile()">
+        <mat-icon>contact_page</mat-icon>
+      </button>
 
+    </div>
+  </div>
+
+  <div class="row app__content ">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="row app__footer">
+    <app-footer></app-footer>
+  </div>
 </div>
 
 
-<router-outlet></router-outlet>
