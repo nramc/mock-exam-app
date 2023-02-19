@@ -6,6 +6,7 @@ import {DataServiceService} from '../../services/data-service.service';
 import {PersistentService} from '../../services/persistent.service';
 import {Exam} from "../../domain/exam.model";
 import {DisplaySolutionOption} from "../../domain/display-solution-option";
+import {TimeUtils} from "../../utils/time.utils";
 
 @Component({
   selector: 'app-practice-exam',
@@ -44,6 +45,10 @@ export class PracticeExamComponent implements OnInit {
     await this.persistentService.initializeExam(this.exam)
       .then(practiceExam => this.router
         .navigate(['question', 1], {relativeTo: this.activatedRoute}));
+  }
+
+  public getApproxExamDuration() {
+    return TimeUtils.getExamDuration(this.exam.noOfQuestions);
   }
 
 }

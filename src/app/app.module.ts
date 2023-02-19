@@ -31,6 +31,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import { PracticeExamQuestionAnswerComponent } from './exam/practice/question/answer/practice-exam-question-answer.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
         MatButtonToggleModule,
         MatCheckboxModule,
         MatRadioModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatChipsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

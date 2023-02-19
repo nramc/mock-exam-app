@@ -12,36 +12,61 @@
         <div class="row">
           <div class="col-12">
             <p [innerHtml]="exam.description" class="text-primary"></p>
-            <h6><small>Topics Covered: </small>{{exam.tags}}</h6>
-            <h6><small>No of Questions: </small>{{exam.noOfQuestions}}</h6>
-            <h6><small>Duration: </small> {{exam.noOfQuestions}}</h6>
-            <h6><small>Passing Score: </small> {{exam.passScore}}% </h6>
+          </div>
+
+          <div class="col-12 mt-2 mb-4">
+            <span *ngFor="let tag of exam.tags" class="badge text-bg-primary me-1">{{tag}}</span>
           </div>
         </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text border-primary border-opacity-50"><mat-icon>quiz</mat-icon></span>
+              <span class="input-group-text border-primary border-opacity-50 w-50">Questions</span>
+              <label class="form-control border-primary border-opacity-50">{{exam.noOfQuestions}}</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text border-primary border-opacity-50"><mat-icon>timer</mat-icon></span>
+              <span class="input-group-text border-primary border-opacity-50 w-50">Duration</span>
+              <label class="form-control border-primary border-opacity-50">{{(getApproxExamDuration())}} min</label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text border-primary border-opacity-50"><mat-icon>speed</mat-icon></span>
+              <span class="input-group-text border-primary border-opacity-50 w-50">Difficulty</span>
+              <label class="form-control border-primary border-opacity-50">{{exam.noOfQuestions}}</label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text border-primary border-opacity-50"><mat-icon>flag</mat-icon></span>
+              <span class="input-group-text border-primary border-opacity-50 w-50">Pass Score</span>
+              <label class="form-control border-primary border-opacity-50">{{exam.passScore}} %</label>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <div class="exam__result-display-option mt-4">
-        <div>
-          <label class="text-primary">
-            <input
-              type="radio"
-              [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION"
-              name="examResultDisplayOption"
-              [(ngModel)]="exam.solutionDisplayOption"
-            />
-            Display correct answer after answering each questions
-          </label>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="displayResultOption">Display correct answer</label>
+          <select class="form-select" id="displayResultOption" [(ngModel)]="exam.solutionDisplayOption">
+            <option selected>Choose...</option>
+            <option [value]="solutionDisplayOption.AFTER_QUESTION_SUBMISSION">after answering each questions</option>
+            <option [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION">only after exam submission</option>
+          </select>
         </div>
-        <div>
-          <label class="text-primary">
-            <input type="radio"
-                   [value]="solutionDisplayOption.AFTER_EXAM_SUBMISSION"
-                   name="examResultDisplayOption"
-                   [(ngModel)]="exam.solutionDisplayOption"
-            />
-            Display correct answer only at the end of exam
-          </label>
-        </div>
+
       </div>
 
     </div>
@@ -50,10 +75,9 @@
       <img class="exam-language-logo" [src]="exam.imageUrl" alt="Image">
     </div>
 
-
   </div>
 
-  <div class="text-center mb-5">
+  <div class="text-center mb-5 mt-md-3">
     <h4>Best of Luck..!</h4>
     <button class="btn btn-primary" (click)="startExam()">Launch</button>
   </div>
