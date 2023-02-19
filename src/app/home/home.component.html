@@ -26,12 +26,16 @@
                 </div>
                 <div class="card-text text-primary">
                   <p class="exam-description" [innerHTML]="exam.description"></p>
-                  <div [hidden]="!exam.tags">
-                    <small>Topics: {{exam.tags}}</small>
+
+                  <div class="col-12 mt-2 mb-4">
+                    <span *ngFor="let tag of exam.tags" class="badge text-primary text-bg-light me-1">{{tag}}</span>
                   </div>
+
                   <div [hidden]="!exam.noOfQuestions">
                     <small>Questions: {{exam.noOfQuestions}}</small>
+                    <small class="ms-3">Duration: {{getApproxExamDuration(exam)}} min</small>
                   </div>
+
                 </div>
               </div>
             </div>

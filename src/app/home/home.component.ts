@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {AlertModelComponent} from '../alert-model/alert-model.component';
 import {DataServiceService} from '../services/data-service.service';
 import {Exam} from "../domain/exam.model";
+import {TimeUtils} from "../utils/time.utils";
 
 @Component({
   selector: 'app-home',
@@ -36,6 +37,10 @@ export class HomeComponent implements OnInit {
 
   public gotoExam(exam: Exam): void {
     this.router.navigate(['/exam', exam.id]);
+  }
+
+  public getApproxExamDuration(exam: Exam) {
+    return TimeUtils.getExamDuration(exam.noOfQuestions);
   }
 
 }
