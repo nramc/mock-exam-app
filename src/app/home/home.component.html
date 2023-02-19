@@ -25,7 +25,7 @@
                   <p class="text-primary">{{exam.title}}</p>
                 </div>
                 <div class="card-text text-primary">
-                  <p class="exam-description">{{exam.description}}</p>
+                  <p class="exam-description" [innerHTML]="exam.description"></p>
                   <div [hidden]="!exam.tags">
                     <small>Topics: {{exam.tags}}</small>
                   </div>
