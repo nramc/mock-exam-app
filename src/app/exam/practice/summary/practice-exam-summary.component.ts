@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Summary} from 'src/app/entity/Summary.entity';
 import {PersistentService} from 'src/app/services/persistent.service';
 import {PracticeQuestion} from "../../../domain/practice-question.model";
+import {Summary} from "../../../domain/practice-exam-summary.model";
 
 @Component({
   selector: 'app-practice-exam-summary',

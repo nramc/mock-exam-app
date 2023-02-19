@@ -1,4 +1,4 @@
-import {PracticeExam} from "../domain/practice-exam.model";
+import {PracticeExam} from "./practice-exam.model";
 
 export interface Summary {
   exam: PracticeExam;
