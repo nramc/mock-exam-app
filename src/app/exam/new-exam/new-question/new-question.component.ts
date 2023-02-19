@@ -3,6 +3,7 @@ import {v4 as uuid} from "uuid";
 import {Option} from "../../../domain/option.model";
 import {Question} from "../../../domain/question.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {AngularEditorConfig} from "@kolkov/angular-editor";
 
 @Component({
   selector: 'app-new-question',
@@ -10,6 +11,35 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./new-question.component.scss']
 })
 export class NewQuestionComponent {
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+    ],
+    customClasses: [
+      {
+        name: "quote",
+        class: "quote",
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: "titleText",
+        class: "titleText",
+        tag: "h1",
+      },
+    ]
+  };
+
   constructor(
     public dialogRef: MatDialogRef<NewQuestionComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { question: Question }) {
