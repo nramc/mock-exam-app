@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import allExams from '../../assets/data/all-exams.json';
-import {Observable} from 'rxjs';
 import {Exam} from "../domain/exam.model";
 
 @Injectable({

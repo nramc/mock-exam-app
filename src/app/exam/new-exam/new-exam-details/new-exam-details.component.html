@@ -46,7 +46,23 @@
 
         <div class="col-md-12 col-sm-12 mb-3">
           <label for="examTags" class="form-label text-primary">Tags</label>
-          <input type="text" id="examTags" name="examTags" class="form-control text-primary" [(ngModel)]="exam.tags">
+
+          <mat-chip-grid #chipGrid id="examTags" class="form-control">
+            <mat-chip-row *ngFor="let tag of exam.tags" color="primary"
+                          (removed)="remove(tag)"
+                          [editable]="false">
+              {{tag}}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+            <input placeholder="New Tag..."
+                   [matChipInputFor]="chipGrid"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="false"
+                   (matChipInputTokenEnd)="add($event)"/>
+          </mat-chip-grid>
+
         </div>
 
         <div class="col-12">
