@@ -2,9 +2,7 @@ import {PracticeExam} from "../domain/practice-exam.model";
 
 export interface Summary {
   exam: PracticeExam;
-  result: "Pass" | "Fail";
+  result: boolean;
   score: number;
-  correctAnswer: number;
-  title: string;
-  iconUrl: string;
+  correctAnswers: number;
 }

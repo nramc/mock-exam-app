@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Summary} from 'src/app/entity/Summary.entity';
 import {PersistentService} from 'src/app/services/persistent.service';
@@ -9,7 +9,7 @@ import {PracticeQuestion} from "../../../domain/practice-question.model";
   templateUrl: './practice-exam-summary.component.html',
   styleUrls: ['./practice-exam-summary.component.scss']
 })
-export class PracticeExamSummaryComponent implements OnInit {
+export class PracticeExamSummaryComponent {
   summary!: Summary;
 
   constructor(
@@ -22,25 +22,16 @@ export class PracticeExamSummaryComponent implements OnInit {
       const exam = await this.persistentService.getPracticeExam(examId);
       const correctAnswers = this.getQuestionsAnsweredCorrectly(exam.questions);
       const percentage = Math.ceil((correctAnswers.length / exam?.noOfQuestions) * 100);
-      const result = this.getResult(percentage, exam?.passScore);
-      const title = result == 'Pass' ? 'Congratulation..!' : 'Sorry..! Better Luck Next Time';
-      const iconUrl = result == 'Pass' ? 'assets/images/success-animi2.gif' : 'assets/images/fail-animi.gif';
+      const result = this.isSecured(percentage, exam?.passScore);
 
       this.summary = {
         exam: exam,
-        correctAnswer: correctAnswers.length,
+        correctAnswers: correctAnswers.length,
         result: result,
         score: percentage,
-        title: title,
-        iconUrl: iconUrl
       };
 
     });
-  }
-
-  async ngOnInit(): Promise<void> {
-
-
   }
 
   public viewSolutions(): void {
@@ -55,8 +46,8 @@ export class PracticeExamSummaryComponent implements OnInit {
     return questions.filter(question => question.options.every(opt => Boolean(opt.isSelected) === Boolean(opt.isCorrectAnswer)));
   }
 
-  private getResult(actualPercentage: number, requiredPercentage: number): 'Pass' | 'Fail' {
-    return actualPercentage >= requiredPercentage ? 'Pass' : 'Fail'
+  private isSecured(actualPercentage: number, requiredPercentage: number): boolean {
+    return actualPercentage >= requiredPercentage
   }
 
 }
