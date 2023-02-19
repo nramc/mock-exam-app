@@ -3,6 +3,7 @@ import {Exam} from "../../../domain/exam.model";
 import {v4 as uuid} from 'uuid';
 import {DisplaySolutionOption} from "../../../domain/display-solution-option";
 import {NewExamService} from "../services/new-exam.service";
+import {AngularEditorConfig} from "@kolkov/angular-editor";
 
 @Component({
   selector: 'app-exam-new',
@@ -22,6 +23,34 @@ export class NewExamDetailsComponent {
     noOfQuestions: 0,
     passScore: 70,
     questions: []
+  };
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+    ],
+    customClasses: [
+      {
+        name: "quote",
+        class: "quote",
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: "titleText",
+        class: "titleText",
+        tag: "h1",
+      },
+    ]
   };
 
   private selectedFile: any;

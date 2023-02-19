@@ -32,6 +32,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import { PracticeExamQuestionAnswerComponent } from './exam/practice/question/answer/practice-exam-question-answer.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatChipsModule} from "@angular/material/chips";
+import {AngularEditorModule} from "@kolkov/angular-editor";
 
 @NgModule({
   declarations: [
@@ -48,27 +49,28 @@ import {MatChipsModule} from "@angular/material/chips";
     NewExamSummaryComponent,
     PracticeExamQuestionAnswerComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        FormsModule,
-        HttpClientModule,
-        MatSnackBarModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatProgressBarModule,
-        MatDialogModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatStepperModule,
-        MatButtonToggleModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatTooltipModule,
-        MatChipsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTooltipModule,
+    MatChipsModule,
+    AngularEditorModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -40,9 +40,8 @@
         </div>
 
         <div class="col-md-12 col-sm-12 mb-3">
-          <label for="examDescription" class="form-label text-secondary">Description</label>
-          <textarea id="examDescription" name="examDescription" class="form-control text-primary" rows="10"
-                    [(ngModel)]="exam.description" required minlength="10"></textarea>
+          <angular-editor name="examDescriptionEditor" placeholder="enter description here"
+                          [config]="editorConfig" [(ngModel)]="exam.description"></angular-editor>
         </div>
 
         <div class="col-md-12 col-sm-12 mb-3">

@@ -13,7 +13,7 @@
   {
     "id": "9ac5c002-512f-485b-8ec9-50e22d63ccc3",
     "title": "Introduction to Python & Computer Programming",
-    "description": "In this exam, you will learn,\n <ul><li>fundamentals of computer programming language</li><li>Compilation vs Interpretation</li><li>Introduction to Python</li><li>Python 2 vs Python 3</li></ul>",
+    "description": "<font size=\"3\">In this exam, you will learn about,&#160;</font><p></p><p></p><ul><li><font size=\"3\">Fundamentals of computer programming language</font></li><li><font size=\"3\">Compilation vs Interpretation</font></li><li><font size=\"3\">Introduction to Python</font></li><li><font size=\"3\">Python 2 vs Python 3</font></li></ul>",
     "imageUrl": "assets/images/logo/python-logo.png",
     "tags": ["python", "basics", "fundamental"],
     "solutionDisplayOption": 2,
