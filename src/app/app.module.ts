@@ -33,6 +33,7 @@ import { PracticeExamQuestionAnswerComponent } from './exam/practice/question/an
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatChipsModule} from "@angular/material/chips";
 import {AngularEditorModule} from "@kolkov/angular-editor";
+import { FooterComponent } from './footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
     NewQuestionComponent,
     NewExamComponent,
     NewExamSummaryComponent,
-    PracticeExamQuestionAnswerComponent
+    PracticeExamQuestionAnswerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
