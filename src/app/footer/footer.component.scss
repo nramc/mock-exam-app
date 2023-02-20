@@ -1,0 +1,18 @@
+@import '../../sass/mixin';
+
+.footer {
+  position: relative;
+  bottom: 0;
+}
+
+.footer__copywriter-row {
+  @include gradient($primary, $pink);
+}
+
+.footer__links-row {
+  @include gradient($primary, $secondary);
+}
+
+.footer__copywriter__text {
+  font-size: 0.75rem;
+}

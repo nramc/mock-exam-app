@@ -135,4 +135,8 @@ export class PracticeExamQuestionComponent {
     this.question.options.forEach(option => option.isSelected = option.id === selectedOption)
   }
 
+  reportIssue(): void {
+    window.open(`https://github.com/nramc/mock-exam-app/issues/new?labels=bug,InApp&title=[${this.exam.id}][${this.question.id}] -`,
+      '_blank')
+  }
 }
