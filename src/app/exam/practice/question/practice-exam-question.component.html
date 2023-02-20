@@ -1,7 +1,15 @@
 <div class="container question">
 
   <div class="question__title mt-4">
-    <h5 [innerHtml]="exam.title"></h5>
+    <div class="d-flex d-flex-inline flex-row justify-content-start">
+      <div [innerHtml]="exam.title" class="exam-title h5"></div>
+      <div class="report-bug-link flex-fill text-end">
+        <button mat-button class="text-primary" (click)="reportIssue()" matTooltip="Incorrect answer? Having suggestion?">
+          <mat-icon>bug_report</mat-icon>
+          Report Bug
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="question_content">
