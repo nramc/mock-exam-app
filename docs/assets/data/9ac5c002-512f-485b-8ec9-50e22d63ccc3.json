@@ -7,6 +7,7 @@
   "solutionDisplayOption": 2,
   "noOfQuestions": 25,
   "passScore": 70,
+  "difficulty": "Basics",
   "questions": [
     {
       "id": "6e23cead-b999-4527-8cb3-4211c449f50e",
