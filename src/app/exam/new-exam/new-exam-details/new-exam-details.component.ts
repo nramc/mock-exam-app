@@ -6,6 +6,7 @@ import {NewExamService} from "../services/new-exam.service";
 import {AngularEditorConfig} from "@kolkov/angular-editor";
 import {COMMA, ENTER, SPACE} from "@angular/cdk/keycodes";
 import {MatChipInputEvent} from "@angular/material/chips";
+import {Difficulty} from "../../../domain/difficulty.model";
 
 @Component({
   selector: 'app-exam-new',
@@ -14,6 +15,7 @@ import {MatChipInputEvent} from "@angular/material/chips";
 })
 export class NewExamDetailsComponent {
   solutionDisplayOption = DisplaySolutionOption;
+  examDifficulty = Object.values(Difficulty);
   readonly separatorKeysCodes = [ENTER, COMMA, SPACE] as const;
 
   // define default values
@@ -26,6 +28,7 @@ export class NewExamDetailsComponent {
     solutionDisplayOption: DisplaySolutionOption.AFTER_QUESTION_SUBMISSION,
     noOfQuestions: 0,
     passScore: 70,
+    difficulty: Difficulty.Easy,
     questions: []
   };
   editorConfig: AngularEditorConfig = {

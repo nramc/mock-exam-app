@@ -10,6 +10,7 @@ export interface PracticeExam {
   noOfQuestions: number;
   solutionDisplayOption: DisplaySolutionOption;
   passScore: number
+  difficulty: string
   questions: PracticeQuestion[],
   isSubmitted?: boolean
 }

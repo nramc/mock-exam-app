@@ -8,6 +8,7 @@
     "solutionDisplayOption": 1,
     "noOfQuestions": 5,
     "passScore": 70,
+    "difficulty": "Intermediate",
     "questions": []
   },
   {
@@ -19,6 +20,7 @@
     "solutionDisplayOption": 2,
     "noOfQuestions": 25,
     "passScore": 70,
+    "difficulty": "Basics",
     "questions": []
   }
 ]
