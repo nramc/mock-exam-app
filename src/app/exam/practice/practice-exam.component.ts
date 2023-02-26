@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AlertModelComponent} from '../../alert-model/alert-model.component';
 import {DataServiceService} from '../../services/data-service.service';
 import {PersistentService} from '../../services/persistent.service';
 import {Exam} from "../../domain/exam.model";
 import {DisplaySolutionOption} from "../../domain/display-solution-option";
 import {TimeUtils} from "../../utils/time.utils";
+import {NotificationService} from "../../services/notification.service";
 
 @Component({
   selector: 'app-practice-exam',
@@ -19,7 +18,7 @@ export class PracticeExamComponent implements OnInit {
 
   constructor(private dataService: DataServiceService,
               private persistentService: PersistentService,
-              private matDialog: MatDialog,
+              private notificationService: NotificationService,
               private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
@@ -29,15 +28,11 @@ export class PracticeExamComponent implements OnInit {
       this.exam = this.dataService.getExamById(examId) as Exam;
     });
     if (!this.exam || !this.exam.id) {
-      const dialogRef = this.matDialog.open(AlertModelComponent, {
-        data: {
-          title: 'Error',
+      this.notificationService.errorWithHomeNavigation({
           message: 'Practice Exam is invalid. Please try again later.'
         }
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        this.router.navigate(['/', result]);
-      });
+      );
+
     }
   }
 
