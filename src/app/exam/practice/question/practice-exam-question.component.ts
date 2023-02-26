@@ -3,12 +3,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 import {DataServiceService} from '../../../services/data-service.service';
 import {PersistentService} from '../../../services/persistent.service';
-import {AlertModelComponent} from '../../../alert-model/alert-model.component';
 import {PracticeExam} from "../../../domain/practice-exam.model";
 import {PracticeQuestion} from "../../../domain/practice-question.model";
 import {DisplaySolutionOption} from "../../../domain/display-solution-option";
 import {NotificationService} from "../../../services/notification.service";
-import {MatDialog} from "@angular/material/dialog";
 import {Option} from "../../../domain/option.model";
 
 @Component({
@@ -24,11 +22,10 @@ export class PracticeExamQuestionComponent {
 
   constructor(
     private dataService: DataServiceService,
-    private notifyService: NotificationService,
+    private notificationService: NotificationService,
     private persistentService: PersistentService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private matDialog: MatDialog) {
+    private activatedRoute: ActivatedRoute) {
 
     this.activatedRoute.paramMap.subscribe(async params => {
       const examId = params.get('examId') as string;
@@ -37,7 +34,9 @@ export class PracticeExamQuestionComponent {
       if (this.exam?.id && questionRowNo && +questionRowNo <= this.exam?.noOfQuestions) {
         this.setQuestion(+questionRowNo);
       } else {
-        this.notifyService.notifyError();
+        this.notificationService.errorWithHomeNavigation({
+          message: 'Unable to fetch Exam/Question reference. Please try again.'
+        });
       }
 
     });
@@ -51,13 +50,11 @@ export class PracticeExamQuestionComponent {
 
   submit(): void {
 
-    const dialogRef = this.matDialog.open(AlertModelComponent, {
-      data: {
-        title: 'Submit Exam',
-        message: 'Do you want to submit exam.?',
-        btnConfirmLabel: 'Yes',
-        btnCloseLabel: 'No'
-      }
+    const dialogRef = this.notificationService.confirm({
+      title: 'Confirmation',
+      message: 'Are you sure that you want to submit the practice test ?',
+      btnConfirmLabel: 'Yes',
+      btnCloseLabel: 'No'
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result == 'YES') {

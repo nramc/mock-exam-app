@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import {AlertModelComponent} from '../alert-model/alert-model.component';
+import {AlertType} from '../alert-model/alert-model.component';
 import {DataServiceService} from '../services/data-service.service';
 import {Exam} from "../domain/exam.model";
 import {TimeUtils} from "../utils/time.utils";
+import {NotificationService} from "../services/notification.service";
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private dataService: DataServiceService,
     private router: Router,
-    private matDialog: MatDialog) {
+    private notificationService: NotificationService) {
 
   }
 
@@ -26,11 +26,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.exams = this.dataService.getAllExams();
     if (!this.exams || this.exams.length == 0) {
-      this.matDialog.open(AlertModelComponent, {
-        data: {
-          title: 'Info',
-          message: 'Practice exams are not available at the moment. Please try again later.'
-        }
+      this.notificationService.error({
+        type: AlertType.INFO,
+        message: 'Practice exams are not available at the moment. Please try again later.'
       });
     }
   }

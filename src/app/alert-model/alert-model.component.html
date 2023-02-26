@@ -1,8 +1,20 @@
-<span class="text-danger" mat-dialog-title>{{data.title}}</span>
-<div mat-dialog-content>
-  <p>{{data.message}}</p>
+<div mat-dialog-title
+     [class.text-bg-info]="data.type == alertType.INFO"
+     [class.text-bg-warning]="data.type == alertType.WARN"
+     [class.text-bg-danger]="data.type == alertType.ERROR"
+     [class.text-bg-success]="data.type == alertType.CONFIRM"
+>
+  <span>{{data.title}}</span>
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-content class="text-bg-light alert-dialog-content justify-content-center align-items-center d-flex flex-column">
+  <p class="text-primary" >{{data.message}}</p>
+</div>
+<div mat-dialog-actions class="bg-opacity-75"
+     [class.text-bg-info]="data.type == alertType.INFO"
+     [class.text-bg-warning]="data.type == alertType.WARN"
+     [class.text-bg-danger]="data.type == alertType.ERROR"
+     [class.text-bg-success]="data.type == alertType.CONFIRM"
+>
   <button *ngIf="data.btnConfirmLabel" mat-button mat-dialog-close="YES">{{data.btnConfirmLabel}}</button>
   <button mat-button mat-dialog-close="EXIT">{{data.btnCloseLabel || 'Close'}}</button>
 </div>

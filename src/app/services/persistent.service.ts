@@ -1,13 +1,11 @@
 import {Injectable} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {Router} from '@angular/router';
-import {AlertModelComponent} from '../alert-model/alert-model.component';
 import {DataServiceService} from './data-service.service';
 import {Exam} from "../domain/exam.model";
 import {PracticeExam} from "../domain/practice-exam.model";
 import {Question} from "../domain/question.model";
 import {PracticeQuestion} from "../domain/practice-question.model";
 import {DisplaySolutionOption} from "../domain/display-solution-option";
+import {NotificationService} from "./notification.service";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +14,7 @@ export class PersistentService {
   private exam: PracticeExam | undefined;
 
   constructor(private dataService: DataServiceService,
-              private matDialog: MatDialog,
-              private router: Router) {
+              private notificationService: NotificationService) {
   }
 
   async initializeExam(exam: Exam): Promise<PracticeExam | undefined> {
@@ -25,15 +22,8 @@ export class PersistentService {
 
     await this.dataService.fetchExamById(exam.id).then(data => {
       if (!data) {
-        const dialogRef = this.matDialog.open(AlertModelComponent, {
-          data: {
-            title: 'Error',
-            message: 'Exam is invalid or expired. Please try again later.'
-          }
-        });
-        dialogRef.afterClosed().subscribe(result => {
-          console.log("clicked:", result)
-          this.router.navigate(['/']);
+        this.notificationService.errorWithHomeNavigation({
+          message: 'Exam is invalid or expired. Please try again later.'
         });
       } else {
 
