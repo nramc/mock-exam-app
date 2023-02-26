@@ -32,14 +32,28 @@ img.exam__logo {
 
 .card-title {
   font-weight: 500;
-  font-size: 0.9rem;;
+  font-size: 0.9rem;
 }
+
+.card-body {
+ font-size: 0.8rem;
+}
+
+.card-text .exam-description{
+  height: 8.5rem;
+  overflow: hidden;
+  text-wrap: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+}
+
 .card-text small{
   font-weight: 500;
 }
 
 .home__content {
-  margin-bottom: 2rem;;
+  margin-bottom: 2rem;
 }
 
 .exam-description {
