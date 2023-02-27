@@ -1,4 +1,3 @@
-import {DisplaySolutionOption} from "./display-solution-option";
 import {Question} from "./question.model";
 
 export interface Exam {
@@ -8,7 +7,7 @@ export interface Exam {
   imageUrl: string
   tags: string[]
   noOfQuestions: number
-  solutionDisplayOption: DisplaySolutionOption
+  solutionDisplayOption: string
   passScore: number
   questions: Question[]
   difficulty: string
