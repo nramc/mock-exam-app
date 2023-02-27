@@ -86,7 +86,7 @@
         {
           "id": "e62a4501-8b09-46f9-80fc-9b147a18e1e3",
           "text": "{‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’}",
-          "isCorrectAnswer": false
+          "isCorrectAnswer": true
         },
         {
           "id": "cb4825ae-d125-43b3-9fda-0b7f5b992ae8",
