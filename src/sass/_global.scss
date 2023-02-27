@@ -40,3 +40,16 @@ mat-progress-bar .mat-progress-bar-buffer {
 table > thead > tr {
   background: $primary !important;
 }
+
+.code-snippet {
+  color: $pink !important;
+  font-family: monospace !important;
+  width: 100% !important;
+  margin: 1rem 0 1rem 1rem;
+  box-decoration-break: clone;
+}
+
+.code-text {
+  color: $pink !important;
+  font-family: monospace !important;
+}

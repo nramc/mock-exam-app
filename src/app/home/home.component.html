@@ -29,19 +29,29 @@
                 </div>
                 -->
                 <div class="card-text text-primary">
-                  <p class="exam-description" [innerHTML]="exam.description"></p>
-
-                  <div class="col-12 mt-2 mb-4">
-                    <span *ngFor="let tag of exam.tags" class="badge text-primary text-bg-light me-1">{{tag}}</span>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="exam-description" [innerHTML]="exam.description"></p>
+                    </div>
                   </div>
 
-                  <div [hidden]="!exam.noOfQuestions">
-                    <small>Questions: <span class="badge text-bg-primary">{{exam.noOfQuestions}}</span></small>
-                    <small class="ms-3">Duration: <span class="badge text-bg-primary">{{getApproxExamDuration(exam)}} min</span></small>
+                  <div class="row">
+                    <div class="col-12 mt-2 mb-2">
+                      <span *ngFor="let tag of exam.tags" class="badge text-bg-primary me-1"># {{tag}}</span>
+                    </div>
                   </div>
 
-                  <div [hidden]="!exam.difficulty">
-                    <small>Difficulty: <span class="badge text-bg-primary">{{exam.difficulty}}</span></small>
+                  <div class="d-flex flex-row justify-content-start" [hidden]="!exam.noOfQuestions">
+                    <div>
+                      <small>Questions: <span class="badge text-bg-primary">{{exam.noOfQuestions}}</span></small>
+                    </div>
+                    <div class="ms-2">
+                      <small>Duration: <span class="badge text-bg-primary">{{getApproxExamDuration(exam)}}
+                        min</span></small>
+                    </div>
+                    <div class="ms-2">
+                      <small [hidden]="!exam.difficulty">Difficulty: <span class="badge text-bg-primary">{{exam.difficulty}}</span></small>
+                    </div>
                   </div>
 
                 </div>
