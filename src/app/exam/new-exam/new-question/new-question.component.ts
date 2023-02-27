@@ -25,17 +25,12 @@ export class NewQuestionComponent {
     ],
     customClasses: [
       {
-        name: "quote",
-        class: "quote",
+        name: "code-snippet",
+        class: "code-snippet",
       },
       {
-        name: 'redText',
-        class: 'redText'
-      },
-      {
-        name: "titleText",
-        class: "titleText",
-        tag: "h1",
+        name: "code-text",
+        class: "code-text",
       },
     ]
   };

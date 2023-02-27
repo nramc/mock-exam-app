@@ -40,22 +40,14 @@ export class NewExamDetailsComponent {
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
+    defaultFontSize: '2',
     toolbarHiddenButtons: [
       ['bold']
     ],
     customClasses: [
       {
-        name: "quote",
-        class: "quote",
-      },
-      {
-        name: 'redText',
-        class: 'redText'
-      },
-      {
-        name: "titleText",
-        class: "titleText",
-        tag: "h1",
+        name: "code-snippet",
+        class: "code-snippet",
       },
     ]
   };
@@ -119,7 +111,7 @@ export class NewExamDetailsComponent {
     }
 
     // Clear the input value
-    event.chipInput!.clear();
+    event.chipInput.clear();
   }
 
   remove(tag: string): void {
