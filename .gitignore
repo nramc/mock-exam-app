@@ -7,6 +7,9 @@
 # Only exists if Bazel was run
 /bazel-out
 
+# GitHub pages files
+/docs/CNAME
+
 # dependencies
 /node_modules
 
