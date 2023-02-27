@@ -38,5 +38,21 @@
     "passScore": 70,
     "difficulty": "Easy",
     "questions": []
+  },
+  {
+    "id": "ecebd54b-c2c9-4317-9a1f-cf56ab5c375b",
+    "title": "Python: Introduction to Arithmetic Operators",
+    "description": "<p><span>In this module, you will learn about:</span></p><p></p><ul><li><font face=\"Arial\" size=\"2\">Arithmetic operators&#160;</font></li><li><font face=\"Arial\" size=\"2\">Operator Precedents&#160;</font></li><li><font face=\"Arial\" size=\"2\">Left sided &amp; Right sided Bindings</font></li></ul><p></p><p><br></p>",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": [
+      "Python",
+      "Basics",
+      "Fundamentals"
+    ],
+    "solutionDisplayOption": "2",
+    "noOfQuestions": 20,
+    "passScore": 70,
+    "difficulty": "Easy",
+    "questions": []
   }
 ]
