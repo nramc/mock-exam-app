@@ -5,7 +5,7 @@
     "description": "This Quiz is for beginners who are new to Python Programming.\nThis quiz provides Multiple Choice Questions to get familiar with Python.\nThe quiz focuses on testing your basic skills in Python functions, string, operators, functions, set, and lists.\n",
     "imageUrl": "assets/images/logo/python-logo.png",
     "tags": ["python","basic","fundamental"],
-    "solutionDisplayOption": 1,
+    "solutionDisplayOption": "1",
     "noOfQuestions": 5,
     "passScore": 70,
     "difficulty": "Intermediate",
@@ -17,10 +17,26 @@
     "description": "<font size=\"2\">In this exam, you will learn about,&#160;</font><p></p><p></p><ul><li><font size=\"2\">Fundamentals of computer programming language</font></li><li><font size=\"2\">Compilation vs Interpretation</font></li><li><font size=\"2\">Introduction to Python</font></li><li><font size=\"2\">Python 2 vs Python 3</font></li></ul>",
     "imageUrl": "assets/images/logo/python-logo.png",
     "tags": ["python", "basics", "fundamental"],
-    "solutionDisplayOption": 2,
+    "solutionDisplayOption": "2",
     "noOfQuestions": 25,
     "passScore": 70,
     "difficulty": "Basics",
+    "questions": []
+  },
+  {
+    "id": "8d99e8a8-e754-40e9-afd7-0e81165fbedc",
+    "title": "Python: Introduction to Data Types, Variables, Input & Output operations",
+    "description": "<p><font face=\"Arial\" size=\"2\">In this practice test, you will learn about:</font></p><p></p><ul><li><font face=\"Arial\" size=\"2\">simple statements</font></li><li><font face=\"Arial\" size=\"2\">literals, operators, and expressions</font></li><li><font face=\"Arial\" size=\"2\">variables and what are the rules that govern them</font></li><li><font face=\"Arial\" size=\"2\">how to perform basic input and output operations</font></li></ul><p></p>",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": [
+      "Python",
+      "Basics",
+      "Fundamentals"
+    ],
+    "solutionDisplayOption": "2",
+    "noOfQuestions": 25,
+    "passScore": 70,
+    "difficulty": "Easy",
     "questions": []
   }
 ]
