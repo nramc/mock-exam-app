@@ -7,6 +7,7 @@ import {AngularEditorConfig} from "@kolkov/angular-editor";
 import {COMMA, ENTER, SPACE} from "@angular/cdk/keycodes";
 import {MatChipInputEvent} from "@angular/material/chips";
 import {Difficulty} from "../../../domain/difficulty.model";
+import {TEXT_EDITOR_CONFIG} from "../../../config/text-editor-config";
 
 @Component({
   selector: 'app-exam-new',
@@ -31,26 +32,7 @@ export class NewExamDetailsComponent {
     difficulty: Difficulty.Easy,
     questions: []
   };
-  editorConfig: AngularEditorConfig = {
-    editable: true,
-    spellcheck: true,
-    height: '15rem',
-    minHeight: '5rem',
-    placeholder: 'Enter text here...',
-    translate: 'no',
-    defaultParagraphSeparator: 'div',
-    defaultFontName: '',
-    defaultFontSize: '',
-    toolbarHiddenButtons: [
-      ['bold'], ['fontSize', 'fontName']
-    ],
-    customClasses: [
-      {
-        name: "code-snippet",
-        class: "code-snippet",
-      },
-    ]
-  };
+  editorConfig: AngularEditorConfig = TEXT_EDITOR_CONFIG;
 
   private selectedFile: any;
 
