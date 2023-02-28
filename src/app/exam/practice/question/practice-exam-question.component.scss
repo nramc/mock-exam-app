@@ -7,10 +7,7 @@
 ::ng-deep .mdc-radio__background {
   border: 1px solid $primary !important;
   border-radius: 50%;
-}
-::ng-deep .mdc-radio__background .mdc-radio__inner-circle {
-  top: -1px;
-  left: -1px;
+  box-sizing: content-box !important;
 }
 
 ::ng-deep mdc-checkbox .mdc-form-field {
