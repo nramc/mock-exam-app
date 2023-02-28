@@ -4,6 +4,7 @@ import {Option} from "../../../domain/option.model";
 import {Question} from "../../../domain/question.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {AngularEditorConfig} from "@kolkov/angular-editor";
+import {TEXT_EDITOR_CONFIG} from "../../../config/text-editor-config";
 
 @Component({
   selector: 'app-new-question',
@@ -11,32 +12,7 @@ import {AngularEditorConfig} from "@kolkov/angular-editor";
   styleUrls: ['./new-question.component.scss']
 })
 export class NewQuestionComponent {
-  editorConfig: AngularEditorConfig = {
-    editable: true,
-    spellcheck: true,
-    height: '15rem',
-    minHeight: '5rem',
-    placeholder: 'Enter text here...',
-    translate: 'no',
-    defaultParagraphSeparator: 'div',
-    defaultFontName: '',
-    defaultFontSize: '',
-    toolbarHiddenButtons: [
-      ['bold'], ['fontSize', 'fontName']
-    ],
-    customClasses: [
-      {
-        name: "code-snippet",
-        class: "code-snippet",
-        tag: 'div'
-      },
-      {
-        name: "code-text",
-        class: "code-text",
-        tag: "span"
-      },
-    ]
-  };
+  editorConfig: AngularEditorConfig = TEXT_EDITOR_CONFIG;
 
   constructor(
     public dialogRef: MatDialogRef<NewQuestionComponent>,
