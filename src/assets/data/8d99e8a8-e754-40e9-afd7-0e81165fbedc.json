@@ -1,7 +1,7 @@
 {
   "id": "8d99e8a8-e754-40e9-afd7-0e81165fbedc",
   "title": "Python: Introduction to Data Types, Variables, Input & Output operations",
-  "description": "<p><font face=\"Arial\" size=\"2\">In this practice test, you will learn about:</font></p><p></p><ul><li><font face=\"Arial\" size=\"2\">simple statements</font></li><li><font face=\"Arial\" size=\"2\">literals, operators, and expressions</font></li><li><font face=\"Arial\" size=\"2\">variables and what are the rules that govern them</font></li><li><font face=\"Arial\" size=\"2\">how to perform basic input and output operations</font></li></ul><p></p>",
+  "description": "<p>In this practice test, you will learn about:</p><p></p><ul><li><span>simple statements</span></li><li><span>literals, operators, and expressions</span></li><li><span>variables and what are the rules that govern them</span></li><li><span>how to perform basic input and output operations</span></li></ul>&#10;",
   "imageUrl": "assets/images/logo/python-logo.png",
   "tags": [
     "Python",
@@ -26,12 +26,12 @@
         },
         {
           "id": "f8c8118c-86cb-429f-8c68-b5413af3062c",
-          "text": "\"Hello Word!\" is string literal",
+          "text": "\"Hello World!\" is string literal",
           "isCorrectAnswer": true
         },
         {
           "id": "419ab665-083e-46a0-a2da-a4bcde6d7de9",
-          "text": "Output is: Hello Word!",
+          "text": "Output is: Hello World!",
           "isCorrectAnswer": true
         },
         {
@@ -155,7 +155,7 @@
     },
     {
       "id": "92d55149-990d-4d3e-8b8b-0660952602f7",
-      "title": "How will you assign number 1 million to a variable <span class='code-snippet ms-0'>count</span> ?",
+      "title": "How will you assign number 1 million to a variable count ?",
       "description": "",
       "hasMultipleAnswers": true,
       "options": [
@@ -216,7 +216,7 @@
     },
     {
       "id": "c0291b39-f9e4-4ebb-93ee-5eb2ee5538e9",
-      "title": "Choose statements which is TRUE for assigning float point numbers:",
+      "title": "Choose valid assigning statements for floating numbers:",
       "description": "",
       "hasMultipleAnswers": true,
       "options": [
@@ -261,12 +261,12 @@
         {
           "id": "a482113c-2c47-42e7-ae28-7a0c307bc7cb",
           "text": "123",
-          "isCorrectAnswer": true
+          "isCorrectAnswer": false
         },
         {
           "id": "67ed08a6-062b-4b9c-aa77-bf70af2e74e1",
           "text": "83",
-          "isCorrectAnswer": false
+          "isCorrectAnswer": true
         },
         {
           "id": "82b383fe-06e4-46e1-b590-94a213732c3e",
@@ -282,8 +282,8 @@
     },
     {
       "id": "dddbb90d-b580-415c-b985-39ee8f69ee71",
-      "title": "How will you assign  6.62607 x 10-34 to a variable constant using exponential notation?",
-      "description": "",
+      "title": "",
+      "description": "<font face=\"Arial\">How will you assign&#160; 6.62607 x 10-34 to a variable&#160;</font><span class=\"code-text\">constant</span><font face=\"Arial\">&#160;using exponential notation?</font>",
       "hasMultipleAnswers": true,
       "options": [
         {
@@ -368,7 +368,7 @@
     },
     {
       "id": "61b8fed8-fe36-46c7-85a8-7cbedd6f21c4",
-      "title": "Choose statements which is TRUE for escape characters:",
+      "title": "Choose valid escape characters:",
       "description": "",
       "hasMultipleAnswers": true,
       "options": [
@@ -541,47 +541,47 @@
       "options": [
         {
           "id": "ecb1749a-b385-49d8-8376-d67436adba9a",
-          "text": "type('hello') is &lt;class 'str'&gt;",
+          "text": "type('hello') is class 'str'",
           "isCorrectAnswer": true
         },
         {
           "id": "f7947452-33de-4827-b8f5-2e58d2aa762b",
-          "text": "type(\"hallo\") is &lt;class 'str'&gt;",
+          "text": "type(\"hallo\") is class 'str'",
           "isCorrectAnswer": true
         },
         {
           "id": "a5bcc12c-b0cf-47c1-b3ac-55c9727e266e",
-          "text": "type(True) is &lt;class 'bool'&gt;",
+          "text": "type(True) is class 'bool'",
           "isCorrectAnswer": true
         },
         {
           "id": "0a2cd276-8508-4b6c-bcc6-f8a5be7a4c94",
-          "text": "type(4.0) is &lt;class 'float'&gt;",
+          "text": "type(4.0) is class 'float'",
           "isCorrectAnswer": true
         },
         {
           "id": "40f99be7-0e38-4e4c-9691-c51d1b766957",
-          "text": "type(4) is &lt;class 'int'&gt;",
+          "text": "type(4) is class 'int'",
           "isCorrectAnswer": true
         },
         {
           "id": "888dd0c7-b4ca-4588-b567-a8bd900ee413",
-          "text": "type('4') is &lt;class 'str'&gt;",
+          "text": "type('4') is class 'str'",
           "isCorrectAnswer": true
         },
         {
           "id": "8ce9b4a7-1789-4695-a583-7c199938470a",
-          "text": "type(4j) is &lt;class 'complex'&gt;",
+          "text": "type(4j) is class 'complex'",
           "isCorrectAnswer": true
         },
         {
           "id": "c720452d-5bb7-496d-8372-919fe94807a5",
-          "text": "type(b'4') is &lt;class 'bytes'&gt;",
+          "text": "type(b'4') is class 'bytes'",
           "isCorrectAnswer": true
         },
         {
           "id": "e1b6a96a-c788-4678-ac4d-d9ba962ec2e8",
-          "text": "type(None) is &lt;class 'NoneType'&gt;",
+          "text": "type(None) is class 'NoneType'",
           "isCorrectAnswer": true
         }
       ]
@@ -622,7 +622,7 @@
       "options": [
         {
           "id": "eefa2c62-0013-4c35-abd2-26a4afa03339",
-          "text": "_",
+          "text": "_name",
           "isCorrectAnswer": false
         },
         {
@@ -644,8 +644,8 @@
     },
     {
       "id": "b28fcdef-d777-461e-a311-a0722575574c",
-      "title": "",
-      "description": "<font size=\"2\">A remark inserted into the program such as Who the author is and when the program created, which is omitted at runtime, is called a ____&#10;</font>",
+      "title": "A remark inserted into the program such as Who the author is and when the program created, which is omitted at runtime, is called a ____",
+      "description": "",
       "hasMultipleAnswers": false,
       "options": [
         {
@@ -695,8 +695,8 @@
     },
     {
       "id": "2bf2db20-43a6-4b24-ad06-692c4a735e71",
-      "title": "What is the return type of the input() method?",
-      "description": "",
+      "title": "",
+      "description": "<font face=\"Arial\">What is the return type of the&#160;</font><span class=\"code-text\">input()</span><font face=\"Arial\">&#160;method?</font>",
       "hasMultipleAnswers": false,
       "options": [
         {
@@ -751,8 +751,8 @@
     },
     {
       "id": "5ec98360-7539-4027-928c-22ee40b30487",
-      "title": "print() function can output values of",
-      "description": "",
+      "title": "",
+      "description": "<span class=\"code-text\">print()</span><font face=\"Arial\">&#160;function can output values of</font>",
       "hasMultipleAnswers": false,
       "options": [
         {
