@@ -34,6 +34,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatChipsModule} from "@angular/material/chips";
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import { FooterComponent } from './footer/footer.component';
+import {TagListComponent} from "./components/tagname.component";
 
 @NgModule({
   declarations: [
@@ -51,28 +52,29 @@ import { FooterComponent } from './footer/footer.component';
     PracticeExamQuestionAnswerComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    HttpClientModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatStepperModule,
-    MatButtonToggleModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatTooltipModule,
-    MatChipsModule,
-    AngularEditorModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule,
+        HttpClientModule,
+        MatSnackBarModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatProgressBarModule,
+        MatDialogModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatStepperModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        MatTooltipModule,
+        MatChipsModule,
+        AngularEditorModule,
+        TagListComponent
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
