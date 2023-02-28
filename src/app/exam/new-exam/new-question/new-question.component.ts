@@ -18,19 +18,22 @@ export class NewQuestionComponent {
     minHeight: '5rem',
     placeholder: 'Enter text here...',
     translate: 'no',
-    defaultParagraphSeparator: 'p',
-    defaultFontName: 'Arial',
+    defaultParagraphSeparator: 'div',
+    defaultFontName: '',
+    defaultFontSize: '',
     toolbarHiddenButtons: [
-      ['bold']
+      ['bold'], ['fontSize', 'fontName']
     ],
     customClasses: [
       {
         name: "code-snippet",
         class: "code-snippet",
+        tag: 'div'
       },
       {
         name: "code-text",
         class: "code-text",
+        tag: "span"
       },
     ]
   };

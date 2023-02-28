@@ -38,11 +38,11 @@ export class NewExamDetailsComponent {
     minHeight: '5rem',
     placeholder: 'Enter text here...',
     translate: 'no',
-    defaultParagraphSeparator: 'p',
-    defaultFontName: 'Arial',
-    defaultFontSize: '2',
+    defaultParagraphSeparator: 'div',
+    defaultFontName: '',
+    defaultFontSize: '',
     toolbarHiddenButtons: [
-      ['bold']
+      ['bold'], ['fontSize', 'fontName']
     ],
     customClasses: [
       {
