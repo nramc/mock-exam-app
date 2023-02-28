@@ -15,7 +15,7 @@
           </div>
 
           <div class="col-12 mt-2 mb-4">
-            <span *ngFor="let tag of exam.tags" class="badge text-bg-primary me-1">{{tag}}</span>
+            <app-tag-list [tags]="exam.tags"></app-tag-list>
           </div>
         </div>
 

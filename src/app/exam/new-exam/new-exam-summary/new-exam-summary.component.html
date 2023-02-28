@@ -26,9 +26,7 @@
 
         <div class="col-md-12 col-sm-12 mb-3 form-floating">
           <div id="examTags" class="form-control text-primary h-auto">
-            <ng-template ngFor let-tag [ngForOf]="exam.tags" let-index="index">
-              <span class="badge text-bg-success me-1">{{tag}}</span>
-            </ng-template>
+            <app-tag-list [tags]="exam.tags"></app-tag-list>
           </div>
           <label for="examTags" class="text-primary ms-1">Tags</label>
         </div>
