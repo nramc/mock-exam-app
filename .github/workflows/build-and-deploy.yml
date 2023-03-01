@@ -37,8 +37,4 @@ jobs:
           source_files: dist/mock-exam-app/
           target_branch: main
           target_dir: docs
-          # Repository url to push the code to
-          remote_repository: # default is origin
-          # Token used to push the code
-          access_token: ${{ secrets.GITHUB_TOKEN }}
 
