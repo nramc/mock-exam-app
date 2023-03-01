@@ -30,11 +30,15 @@ jobs:
       - name: CNAME Update
         run: echo "mock.codewithram.dev" > dist/mock-exam-app/CNAME
 
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Copy artifacts
+        uses: GuillaumeFalourd/copy-push-files@v1
         with:
-          target_branch: docs
-          build_dir: dist/mock-exam-app/
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: Release Preparation - Copy artifacts to gh-page directory
+          source_files: dist/mock-exam-app/
+          target_branch: main
+          target_dir: docs
+          # Repository url to push the code to
+          remote_repository: # default is origin
+          # Token used to push the code
+          access_token: ${{ secrets.GITHUB_TOKEN }}
 
