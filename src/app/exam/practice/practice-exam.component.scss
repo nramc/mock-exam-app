@@ -2,8 +2,8 @@
 
 div.examDescription {
   @media only screen and (max-width: 600px) {
-      flex-direction: column-reverse;
-      margin-bottom: 1rem;
+    flex-direction: column-reverse;
+    margin-bottom: 1rem;
   }
   margin-top: 1rem;
   line-height: 2rem;
@@ -14,6 +14,7 @@ img.exam-language-logo {
   width: 14.5rem;
   height: 14.5rem;
 }
+
 .language-logo-container {
   margin-bottom: 1rem;
 }
