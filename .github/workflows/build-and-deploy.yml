@@ -37,4 +37,5 @@ jobs:
           source_files: dist/mock-exam-app/
           target_branch: main
           target_dir: docs
+          access_token: ${{ secrets.GITHUB_TOKEN }}
 
