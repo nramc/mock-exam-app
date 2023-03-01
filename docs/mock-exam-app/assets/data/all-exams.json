@@ -1,0 +1,58 @@
+[
+  {
+    "id": "3aca7aeb-6f73-4dde-a27f-3d81b1350704",
+    "title": "Python Quiz - Fundamentals ",
+    "description": "This Quiz is for beginners who are new to Python Programming.\nThis quiz provides Multiple Choice Questions to get familiar with Python.\nThe quiz focuses on testing your basic skills in Python functions, string, operators, functions, set, and lists.\n",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": ["python","basic","fundamental"],
+    "solutionDisplayOption": "1",
+    "noOfQuestions": 5,
+    "passScore": 70,
+    "difficulty": "Intermediate",
+    "questions": []
+  },
+  {
+    "id": "9ac5c002-512f-485b-8ec9-50e22d63ccc3",
+    "title": "Introduction to Python & Computer Programming",
+    "description": "<font size=\"2\">In this exam, you will learn about,&#160;</font><p></p><p></p><ul><li><font size=\"2\">Fundamentals of computer programming language</font></li><li><font size=\"2\">Compilation vs Interpretation</font></li><li><font size=\"2\">Introduction to Python</font></li><li><font size=\"2\">Python 2 vs Python 3</font></li></ul>",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": ["python", "basics", "fundamental"],
+    "solutionDisplayOption": "2",
+    "noOfQuestions": 25,
+    "passScore": 70,
+    "difficulty": "Basics",
+    "questions": []
+  },
+  {
+    "id": "8d99e8a8-e754-40e9-afd7-0e81165fbedc",
+    "title": "Python: Introduction to Data Types, Variables, Input & Output operations",
+    "description": "<p>In this practice test, you will learn about:</p><p></p><ul><li><span>simple statements</span></li><li><span>literals, operators, and expressions</span></li><li><span>variables and what are the rules that govern them</span></li><li><span>how to perform basic input and output operations</span></li></ul>&#10;",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": [
+      "Python",
+      "Basics",
+      "Fundamentals"
+    ],
+    "solutionDisplayOption": "2",
+    "noOfQuestions": 25,
+    "passScore": 70,
+    "difficulty": "Easy",
+    "questions": []
+  },
+  {
+    "id": "ecebd54b-c2c9-4317-9a1f-cf56ab5c375b",
+    "title": "Python: Introduction to Arithmetic Operators",
+    "description": "<p><span>In this module, you will learn about:</span></p><p></p><ul><li><font face=\"Arial\" size=\"2\">Arithmetic operators&#160;</font></li><li><font face=\"Arial\" size=\"2\">Operator Precedents&#160;</font></li><li><font face=\"Arial\" size=\"2\">Left sided &amp; Right sided Bindings</font></li></ul><p></p><p><br></p>",
+    "imageUrl": "assets/images/logo/python-logo.png",
+    "tags": [
+      "Python",
+      "Basics",
+      "Fundamentals"
+    ],
+    "solutionDisplayOption": "2",
+    "noOfQuestions": 20,
+    "passScore": 70,
+    "difficulty": "Easy",
+    "questions": []
+  }
+]
