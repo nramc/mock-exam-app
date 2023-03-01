@@ -24,7 +24,7 @@ export class PracticeExamComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-      let examId = params.get("examId") as string;
+      const examId = params.get("examId") as string;
       this.exam = this.dataService.getExamById(examId) as Exam;
     });
     if (!this.exam || !this.exam.id) {

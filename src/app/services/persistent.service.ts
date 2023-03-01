@@ -67,7 +67,7 @@ export class PersistentService {
   }
 
   public saveQuestion(question: PracticeQuestion): void {
-    let indexPos = this.exam?.questions.findIndex(q => q.id == question.id)!;
+    const indexPos = this.exam?.questions.findIndex(q => q.id == question.id)!;
     if (indexPos > -1) {
       this.exam?.questions.splice(indexPos, 1, Object.assign({}, question));
     } else {

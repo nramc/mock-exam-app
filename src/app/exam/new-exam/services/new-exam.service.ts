@@ -27,7 +27,7 @@ export class NewExamService {
 
   public saveOrUpdateQuestion(question: Question): void {
     if (!question.id) return;
-    let index = this.exam.questions.findIndex(q => q.id == question.id);
+    const index = this.exam.questions.findIndex(q => q.id == question.id);
     if (index >= 0) {
       this.exam.questions[index] = question;
     } else {
@@ -38,7 +38,7 @@ export class NewExamService {
   }
 
   public deleteQuestion(question: Question): void {
-    let index = this.exam.questions.findIndex(q => q.id == question.id);
+    const index = this.exam.questions.findIndex(q => q.id == question.id);
     this.exam.questions.splice(index, 1);
     localStorage.setItem("new-exam-details", JSON.stringify(this.exam));
     this.exam$.next(this.exam);

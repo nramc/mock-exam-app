@@ -18,7 +18,7 @@ export class NewExamQuestionsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<Question>;
 
   dataSource: MatTableDataSource<Question> = new MatTableDataSource<Question>();
-  wrapDescription: boolean = false;
+  wrapDescription = false;
 
   constructor(
     public dialog: MatDialog,

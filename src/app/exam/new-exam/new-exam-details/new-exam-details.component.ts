@@ -52,7 +52,7 @@ export class NewExamDetailsComponent {
   }
 
   uploadDataFromLocalStorage(): void {
-    let data = JSON.parse(localStorage.getItem("new-exam-details")!);
+    const data = JSON.parse(localStorage.getItem("new-exam-details")!);
     console.log(data);
     this.exam = data
   }

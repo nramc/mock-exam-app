@@ -20,8 +20,8 @@ export class NewExamSummaryComponent {
   solutionDisplayOption = DisplaySolutionOption;
 
   downloadDataAsJsonFile(): void {
-    let jsonData = JSON.stringify(this.exam);
-    let a = document.createElement('a');
+    const jsonData = JSON.stringify(this.exam);
+    const a = document.createElement('a');
     a.setAttribute('href', 'data:text/plain;charset=utf-u,' + encodeURIComponent(jsonData));
     a.setAttribute('download', this.exam?.id + '.json');
     a.click()
