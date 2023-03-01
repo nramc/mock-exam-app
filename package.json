@@ -8,9 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "#ng lint --force=true --slient=true",
-    "package": "npm run build",
+    "package": "npm run build -- --output-path=docs/",
+    "cname": "echo 'mock.codewithram.dev' > docs/CNAME",
     "test:prod": "#ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "build:prod": "npm run package"
+    "build:prod": "npm run package",
+    "package:prod": "npm run package && npm run cname"
   },
   "private": true,
   "dependencies": {
