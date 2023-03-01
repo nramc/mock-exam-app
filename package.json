@@ -7,7 +7,9 @@
     "build": "ng build --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "package": "npm run build -- --output-path=docs/"
+    "package": "npm run build -- --output-path=docs/",
+    "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
+    "build:prod": "npm run package"
   },
   "private": true,
   "dependencies": {
