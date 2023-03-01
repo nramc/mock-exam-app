@@ -38,4 +38,4 @@ jobs:
           target_branch: main
           target_dir: docs
           access_token: ${{ secrets.GITHUB_TOKEN }}
-          remote_repository: https://github.com/nramc/mock-exam-app/
+          remote_repository: https://github.com/nramc/mock-exam-app
