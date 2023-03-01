@@ -1,0 +1,121 @@
+{
+  "id": "3aca7aeb-6f73-4dde-a27f-3d81b1350704",
+  "title": "Python Quiz - Fundamentals ",
+  "description": "This Quiz is for beginners who are new to Python Programming.\nThis quiz provides Multiple Choice Questions to get familiar with Python.\nThe quiz focuses on testing your basic skills in Python functions, string, operators, functions, set, and lists.\n",
+  "imageUrl": "assets/images/logo/python-logo.png",
+  "tags": "python,basic,fundamental",
+  "solutionDisplayOption": 1,
+  "noOfQuestions": 5,
+  "passScore": 70,
+  "difficulty": "Intermediate",
+  "questions": [
+    {
+      "id": "d22ef9b7-ad25-431b-8689-3b79bf0c55d0",
+      "title": "What is the output of the following code?",
+      "description": "<code>\np, q, r = 10, 20 ,30\n\nprint(p, q, r)\n</code>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "ee07f780-114f-45d2-aca3-e6275df71596",
+          "text": " 10 20",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "9317b243-d363-4915-bcce-083b09cff292",
+          "text": " 10 20 30",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "df6a7b85-b6b9-41e3-bec8-9b1e6bc5ba21",
+          "text": " Error: invalid syntax",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "06de94ea-3974-425a-8385-0d47dad625d6",
+      "title": "A string is immutable in Python?",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "3b599f2c-b718-4bde-ace6-19c654baa363",
+          "text": "True",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "d3fe0aa6-e596-4828-96e0-c55b6d43699a",
+          "text": "False",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "c7fb11ef-d638-426f-b4f5-bff646f0ff96",
+      "title": "Which of these collections defines a TUPLE?",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "3e461031-57c5-48d4-a352-94ffe2dc65f4",
+          "text": "{‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’}",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "84c6458d-c4c8-4dce-9e58-79542ac4f35e",
+          "text": "[‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’]",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "577cda9f-1013-487e-8c8c-534dd797a691",
+          "text": "(‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’)",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "4d25151a-fa26-4d8a-93dd-7a49bd0b78bb",
+      "description": "Which of these collections defines a SET?\n\n",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "bd6a6fb6-91d0-4c5b-b408-067b94e02662",
+          "text": "[‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’]",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "e62a4501-8b09-46f9-80fc-9b147a18e1e3",
+          "text": "{‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’}",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "cb4825ae-d125-43b3-9fda-0b7f5b992ae8",
+          "text": "(‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’)",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "5a698ede-9e2d-4fa8-aae4-0eacd81dd24e",
+      "description": "Which of these collections defines a LIST?\n\n",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "0c99f367-5148-4ba6-acf2-0890f2fb9de0",
+          "text": "{‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’}",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "62237b12-72e1-479a-ad16-23f3ef5e78e9",
+          "text": "[‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’]",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "8190f45e-82a0-4a53-a2b8-0dfa97f1ae8d",
+          "text": "(‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’)",
+          "isCorrectAnswer": false
+        }
+      ]
+    }
+  ]
+}

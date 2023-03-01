@@ -1,0 +1,847 @@
+{
+  "id": "8d99e8a8-e754-40e9-afd7-0e81165fbedc",
+  "title": "Python: Introduction to Data Types, Variables, Input & Output operations",
+  "description": "<p>In this practice test, you will learn about:</p><p></p><ul><li><span>simple statements</span></li><li><span>literals, operators, and expressions</span></li><li><span>variables and what are the rules that govern them</span></li><li><span>how to perform basic input and output operations</span></li></ul>&#10;",
+  "imageUrl": "assets/images/logo/python-logo.png",
+  "tags": [
+    "Python",
+    "Basics",
+    "Fundamentals"
+  ],
+  "solutionDisplayOption": "2",
+  "noOfQuestions": 25,
+  "passScore": 70,
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "id": "310bfb69-d465-427b-b4e3-9b6af7154c8d",
+      "title": "Choose correct statements which is TRUE:",
+      "description": "<span class=\"code-snippet\"><font size=\"2\">print(&#34;Hello World!&#34;)</font></span>",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "a702a6d8-7a2b-44c5-9dd8-2e628f0a0a5d",
+          "text": "print is a inbuilt python function",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "f8c8118c-86cb-429f-8c68-b5413af3062c",
+          "text": "\"Hello World!\" is string literal",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "419ab665-083e-46a0-a2da-a4bcde6d7de9",
+          "text": "Output is: Hello World!",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "43d0f8b8-6791-4daf-a142-927362d47bda",
+          "text": "print is an output function",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "f39fdc64-dbdc-4947-80ca-3ed336ac3716",
+      "title": "Choose statements which is TRUE for function call:",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "343991ff-39d9-45a1-90be-8f8c82e53f39",
+          "text": "While calling function, parentheses are mandatory only when function takes zero argument",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "01eea63b-0b85-4cf8-8410-a2320f402082",
+          "text": "While calling function, parentheses are mandatory only when function takes one or more arguments",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "5b37d63d-a48b-4703-bdcf-c6f3adbab075",
+          "text": "parentheses are always mandatory",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "0308bfb1-2ac7-443d-b770-b2f290e59373",
+          "text": "parentheses are always optional",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "7b0a624d-f85c-4cd9-9dec-2ffd4b74b810",
+      "title": "Python escape character is:",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "3eac0b33-2106-4f99-a8f1-5745f5f2378b",
+          "text": "\\ backslash",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "fc33c2c3-33c4-4bfe-8534-a88149a3efd9",
+          "text": "/ forward slash",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "f3cb42fb-a019-49d0-85be-6e62c892f44f",
+          "text": " ' single quote",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "e364d664-13f9-4545-9b01-11e05ba571e4",
+          "text": "# hash",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "e67f5af8-5343-49ab-95f8-66cea250118b",
+      "title": "What is the output of the below line ?",
+      "description": "<span class=\"code-snippet\">print('1', '2', '3')</span><br>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "af5c2846-d077-4c5f-822f-6710afcd5b3d",
+          "text": "123",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "dcb0a1d2-47fb-419e-a888-c14e6ea0c85e",
+          "text": "1 2 3",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "58ed1fd3-6703-4196-a2f2-75050daa80b7",
+          "text": "1 \\n 2 \\n 3 \\n",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "76951837-20ce-4b32-84fc-6c2f93789180",
+          "text": "'1' '2' '3'",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "df53a87c-f009-44a9-8ca0-7be08b45c647",
+          "text": "1,2,3",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "c2f7d9f7-7a5c-438d-9af9-7bf1eacde8d5",
+      "title": "What is the output of the below line ?",
+      "description": "<span class=\"code-snippet\">print( end=&#34; &#34;, &#34;My name is&#34;, &#34;Python.&#34;)</span><br>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "c168af3d-6cd8-4ce7-ad59-72775000bfb2",
+          "text": "My name is Python.",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "6bb97815-e559-4259-aaa0-a59d2a41db5e",
+          "text": "My name is\\n Python.",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "13c8e891-dbaf-45ab-9c49-b9d088ee1c80",
+          "text": "Syntax Error: positional argument follows keyword argument",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "92d55149-990d-4d3e-8b8b-0660952602f7",
+      "title": "How will you assign number 1 million to a variable count ?",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "74e27543-8434-4423-adb6-b5f7fe5e49f8",
+          "text": "count = +1000000",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "6887db03-ce90-4b1f-a28f-fe7d7e94a165",
+          "text": "count = 1_000_000",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "b25d9e91-4a45-4aa4-bf29-5504f7e9c1ba",
+          "text": "count = 1000000",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "9265f82f-fc33-4e9c-aa7f-0b0da8aebbf1",
+          "text": "count = 1.000.000",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "cd38f09d-1f22-4e31-be68-0018f4e284af",
+          "text": "count = 1 000 000",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "fbe4cec7-6539-4426-b07c-029703e552e5",
+      "title": "how will you represent octal value?",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "1c9249b5-6012-4a30-aad3-852367e3b08d",
+          "text": "0x123",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "85b432f0-71df-4a13-a360-9b5512427183",
+          "text": "0o123",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "6905474c-9025-46e0-9678-25c9c10b0696",
+          "text": "0b123",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "d974e2e9-ee47-46de-bbb2-43f2997e3515",
+          "text": "0d123",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "c0291b39-f9e4-4ebb-93ee-5eb2ee5538e9",
+      "title": "Choose valid assigning statements for floating numbers:",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "ad0746d6-768a-4420-99d7-5c4a2a4ed46c",
+          "text": "val = 4.4",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "92933cdb-b67d-4248-82e3-9a12636b9721",
+          "text": "val = 4.",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "a81d8fa6-3072-4434-a276-6209b5ee2acb",
+          "text": "val = .4",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "617db039-8233-4feb-b3c3-0a89c6d8b855",
+          "text": "val = .",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "12ed46eb-91b5-416e-adba-6f968cb8272a",
+          "text": "val = 4,4",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "309054e1-32f3-4694-8c4d-80b60c33f4ae",
+          "text": "val = -4.0",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "ea8343e9-4947-476b-a2b4-13f172ea74d1",
+      "title": "What is the output of the below line ?",
+      "description": "<span class=\"code-snippet\">print(0o123)</span><br>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "a482113c-2c47-42e7-ae28-7a0c307bc7cb",
+          "text": "123",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "67ed08a6-062b-4b9c-aa77-bf70af2e74e1",
+          "text": "83",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "82b383fe-06e4-46e1-b590-94a213732c3e",
+          "text": "0o123",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "e63e532d-fac5-4719-a1d8-26b7f6cb4732",
+          "text": "Syntax Error",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "dddbb90d-b580-415c-b985-39ee8f69ee71",
+      "title": "",
+      "description": "<font face=\"Arial\">How will you assign&#160; 6.62607 x 10-34 to a variable&#160;</font><span class=\"code-text\">constant</span><font face=\"Arial\">&#160;using exponential notation?</font>",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "14afc8f1-bdd8-4a14-9f73-5979cdce9e82",
+          "text": "constant = 6.62607E-34",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "44137928-897e-4a10-8420-530ebb72f1b7",
+          "text": "constant = 6.62607E34",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "5afb26d1-be2e-4211-822d-56cf5fa5fd6e",
+          "text": "constant = 6.62607e-34",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "5922c4fa-7da1-43c6-9c86-db4618a3c934",
+          "text": "constant = 6.62607e34",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "27e55036-c536-4413-9656-f9dd6c5d4791",
+      "title": "Choose all valid string literals",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "db1d4750-ec2d-4e53-99d2-ad88fb1c75dc",
+          "text": " 'this is a valid string literal'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "4cc06854-3134-4f3b-a6a1-bd28f5c6346e",
+          "text": " \"this is a valid string literal\"",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "71b792b5-bb52-4da3-95b6-93470e60ee2a",
+          "text": " 'this is a valid \"string\" literal'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "71cf8300-b863-42c6-a7ca-8f9a29cd33bb",
+          "text": " \"this is a valid 'string' literal\"",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "b144f2ff-b550-4bb4-a4a0-b53d9ea3186d",
+          "text": " \"this is a valid \\\"string\\\" literal\"",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "6f7a68c6-ad9c-4257-8a85-2e4b8ed05652",
+          "text": " 'this is a valid \\'string\\' literal'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "f7f7e7da-183a-40ea-a68e-e29c08c9503f",
+          "text": " ''",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "1de5b396-0c81-4704-a6e1-994c24c04656",
+          "text": "\"\"",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "12876a2e-6a01-4e16-abab-1b4bbba4ff44",
+          "text": " \"this is a valid \"string\" literal\"",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "79689d5e-6cb8-41e8-a8e8-76b0a6aed898",
+          "text": " 'this is a valid 'string' literal'",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "61b8fed8-fe36-46c7-85a8-7cbedd6f21c4",
+      "title": "Choose valid escape characters:",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "0291eaff-21e8-4d7b-b2e9-7a682a23c3a5",
+          "text": "\\' -  escape Single quote",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "4abf52ba-baa2-4f7f-9bad-350f7fda5878",
+          "text": "  \\\\ escape Backslash",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "93e7c513-31c3-4d74-b213-8995662fb419",
+          "text": "\\n escape new line",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "ba25b438-628b-459c-a1d2-1fcca87c579e",
+          "text": "\\r escape Carriage Return",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "ae40a2f2-9301-436b-8e8d-57cf09bbdeac",
+          "text": "\\t escape Tab",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "e655cd62-05fb-4f2d-80f6-1d8f590698bb",
+          "text": "\\b escape Backspace",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "02a73199-9c89-4e2f-a86a-29fe815be748",
+          "text": "\\f escape Form Feed",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "7614e4cb-edba-49cd-be81-c43682cbef58",
+          "text": "\\o escape Octal value",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "9942e68c-b9e2-4c80-b63d-ddce90739ee2",
+          "text": "\\xhh escape Hex value",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "6c1676ba-d58b-4c3c-8bbe-9304d94556b5",
+      "title": "Choose all valid Boolean literals",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "6c2e8449-a3d7-49ce-b91e-c7ffa835a232",
+          "text": "True",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "546da79c-7861-4aca-8e96-38cb8dc3d392",
+          "text": "False",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "b02062df-017e-4197-be36-4814a3c5c0e6",
+          "text": "TRUE",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "90b6b909-b6b7-4c28-922a-c28045a731d4",
+          "text": "FALSE",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "d0319413-ca62-4578-aad3-22b2d8322583",
+          "text": "true",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "35f57896-613e-47a3-85cc-4ad1795a4f5e",
+          "text": "false",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "7157a257-e0b0-4c3d-baad-830033beabbb",
+      "title": "What is the output of the below line ?",
+      "description": "<p><span class=\"code-snippet\">print(True == 1,&#160;False == 0)</span><br></p>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "a1437a9e-4e64-4bb8-ab31-dfe331e1e649",
+          "text": "True True",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "2fb09b57-ff72-4ecf-96c6-82d9b15330af",
+          "text": "False False",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "720dd943-e8ad-476d-a145-6ac3eea5ac76",
+          "text": "True False",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "085c1391-369a-4264-bdf9-51c97c004c8b",
+          "text": "False True",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "dd004f1b-ddb2-406b-b1ab-55424d557199",
+          "text": "Syntax Error",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "446b5d73-e591-4791-aae6-cb13f5227cec",
+      "title": "Choose all valid data types:",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "3d44acf4-5ed0-4dc7-bbf9-81b03846b11e",
+          "text": "str",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "1dc9251f-9667-4fd0-b1ff-60c33c54e876",
+          "text": "int",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "f4e2023b-f450-48ce-8ec7-2af46fb2add0",
+          "text": "float",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "63bb143e-b402-4ff3-b589-9d7cf750c8c0",
+          "text": "complex",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "2c777965-da9e-4a98-b366-ab65e873a7c3",
+          "text": "bool",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "e97c537f-f67c-4e3e-b041-6d47abc6df6b",
+          "text": "bytes",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "f06cdba7-dd26-45af-bca0-52c4f6ab9c6f",
+          "text": "NoneType",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "204f9fb4-e2eb-4884-ae7f-f0f45c746ab4",
+      "title": "Choose statements which is TRUE:",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "ecb1749a-b385-49d8-8376-d67436adba9a",
+          "text": "type('hello') is class 'str'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "f7947452-33de-4827-b8f5-2e58d2aa762b",
+          "text": "type(\"hallo\") is class 'str'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "a5bcc12c-b0cf-47c1-b3ac-55c9727e266e",
+          "text": "type(True) is class 'bool'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "0a2cd276-8508-4b6c-bcc6-f8a5be7a4c94",
+          "text": "type(4.0) is class 'float'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "40f99be7-0e38-4e4c-9691-c51d1b766957",
+          "text": "type(4) is class 'int'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "888dd0c7-b4ca-4588-b567-a8bd900ee413",
+          "text": "type('4') is class 'str'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "8ce9b4a7-1789-4695-a583-7c199938470a",
+          "text": "type(4j) is class 'complex'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "c720452d-5bb7-496d-8372-919fe94807a5",
+          "text": "type(b'4') is class 'bytes'",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "e1b6a96a-c788-4678-ac4d-d9ba962ec2e8",
+          "text": "type(None) is class 'NoneType'",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "e8f55360-ab24-42d6-ba3d-d36413b96e8b",
+      "title": "Choose statements which is TRUE about naming variable:",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "424847ec-4f7f-42a4-9b33-fd3818a8e241",
+          "text": "the name of the variable must be composed of upper-case or lower-case letters, digits, and the character _ (underscore)",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "d82527ac-db81-40cb-82a6-c75ab8fcae5c",
+          "text": "The name of the variable must begin with a letter or _ (underscore)",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "003d967c-6e32-4973-b4d2-9f4ab0999f46",
+          "text": "variable names are case sensitives",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "890081a4-de66-427a-8a43-3f66072fbcdd",
+          "text": "the name of the variable must not be any of Python's reserved words ",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "79bac423-e449-4db2-b67c-0b8dd4f848f7",
+      "title": "Choose incorrect variable name",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "eefa2c62-0013-4c35-abd2-26a4afa03339",
+          "text": "_name",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "958d1657-3573-4615-a8c9-f1663c87577b",
+          "text": "i",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "145a19e7-ff9d-44f9-bb9a-2cec1929d9bd",
+          "text": "sûr_la_mer",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "f51cea39-3d04-4f8b-9a5f-627dd6752359",
+          "text": "10times",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "b28fcdef-d777-461e-a311-a0722575574c",
+      "title": "A remark inserted into the program such as Who the author is and when the program created, which is omitted at runtime, is called a ____",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "d3ca0d73-7dac-4cf8-8df9-a464cbc58883",
+          "text": "comment",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "7ad4266e-651d-4347-a0b2-c3f36a0da10e",
+          "text": "decorator",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "dd6c8bae-3c53-4cbd-a912-820fe17dacc2",
+          "text": "lambda",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "d34c15b3-2e04-4ed3-9c42-0a4ed935f049",
+          "text": "variable",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "a6f83ad5-f34a-48d6-ab5d-2281407c7c27",
+      "title": "Choose statements which run successfully without any error:",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "b8b9d4be-9908-419e-a872-ac11f828586b",
+          "text": "# print(\"String #1\")",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "222dce1d-d3aa-45c6-bace-cce17fa78956",
+          "text": "print(\"String #2\")",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "947d6af1-3539-42b0-921c-e1936c852116",
+          "text": "# This is a  comment. #  print(\"Hello!\")",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "2bf2db20-43a6-4b24-ad06-692c4a735e71",
+      "title": "",
+      "description": "<font face=\"Arial\">What is the return type of the&#160;</font><span class=\"code-text\">input()</span><font face=\"Arial\">&#160;method?</font>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "628c842c-67b4-488e-8b26-fe033b06466a",
+          "text": "str",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "346df5e8-9e70-4079-836f-40fa95891825",
+          "text": "int",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "3b4a8c3f-4569-4bc7-9cfd-917afc941b83",
+          "text": "float",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "0b55bebc-d392-4033-bfd7-31b1802f5422",
+          "text": "any",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "c5165590-70c3-4241-9138-14914d2c2352",
+          "text": "None",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "30a1fc8b-e7ce-45db-b41d-2018ace80e18",
+      "title": "What is the difference between int and float ?",
+      "description": "",
+      "hasMultipleAnswers": true,
+      "options": [
+        {
+          "id": "b731c232-2418-493f-989a-7ee3bb12d3b5",
+          "text": "they stored differently in computer memory",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "c045dec4-64a3-4d48-8dfe-2d08ca187a0f",
+          "text": "Int does not have fractional values where as float has fractional part",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "d4487e78-1d0f-40ef-ad3e-2b3a69dfa897",
+          "text": "int literals written as a=10 and b=20 where as float literals written as a = 10.0 and b = 20.0 respectively",
+          "isCorrectAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "5ec98360-7539-4027-928c-22ee40b30487",
+      "title": "",
+      "description": "<span class=\"code-text\">print()</span><font face=\"Arial\">&#160;function can output values of</font>",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "971ad250-ba15-413c-bc91-d86d2ae1d0bf",
+          "text": "any number of arguments excluding zero",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "56dd3924-fa5e-4538-9add-6a31ff1ff8a6",
+          "text": "any number of arguments including zero",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "94c2edc5-bcde-4f16-b1ae-25feecf54d6d",
+          "text": "just an one argument",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "f11c9689-f8be-427f-8edf-15cad00bc557",
+          "text": "not more than 16 arguments",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "7d4debde-1fa9-4600-b8f0-a69c235b7747",
+      "title": "\"0x\" denotes literals of ",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "16737704-42db-4056-9bcd-5e13372f11ad",
+          "text": "binary",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "25950a72-c4ee-4907-9885-fb1e353ad5c2",
+          "text": "bytes",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "47e5cba1-8bf7-4eed-8047-5ab4e8e3e58a",
+          "text": "octal",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "06419fa8-ade4-4d50-9b7f-ff2170a51ce2",
+          "text": "hex",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "04574feb-c969-45e6-bece-4da5625aeefd",
+          "text": "decimal",
+          "isCorrectAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "3f74efaf-0ff4-4cb1-8144-60d8ba48dd3e",
+      "title": "\"0b\" denotes literals of ",
+      "description": "",
+      "hasMultipleAnswers": false,
+      "options": [
+        {
+          "id": "1aa3f281-5ad8-4952-8f98-021a8402e718",
+          "text": "binary",
+          "isCorrectAnswer": true
+        },
+        {
+          "id": "6cd6a082-e288-48b6-87b9-8b4008ad4c61",
+          "text": "bytes",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "34ec36a5-5484-467f-894f-7b55396f4a75",
+          "text": "octal",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "3541ab8c-04b7-492a-b632-a79bbcc92db3",
+          "text": "hex",
+          "isCorrectAnswer": false
+        },
+        {
+          "id": "f9b34000-2576-4bb7-b4c4-3f1d82cde698",
+          "text": "decimal",
+          "isCorrectAnswer": false
+        }
+      ]
+    }
+  ]
+}
