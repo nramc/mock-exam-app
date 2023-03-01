@@ -27,15 +27,12 @@ jobs:
       - name: Build
         run: npm run build:prod
 
-      - name: CNAME Update
-        run: echo "mock.codewithram.dev" > dist/mock-exam-app/CNAME
+      - name: Package
+        run: npm run package:prod
 
-      - name: Copy artifacts
-        uses: GuillaumeFalourd/copy-push-files@v1
-        with:
-          commit_message: Release Preparation - Copy artifacts to gh-page directory
-          source_files: dist/mock-exam-app/
-          target_branch: main
-          target_dir: docs
-          access_token: ${{ secrets.GITHUB_TOKEN }}
-          remote_repository: https://github.com/nramc/mock-exam-app
+      - name: Publish
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "deploy@nramc.noreply.github.com"
+          git commit -a -m "Release Preparation: Publish artifact to docs"
+          git push

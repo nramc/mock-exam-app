@@ -7,9 +7,6 @@
 # Only exists if Bazel was run
 /bazel-out
 
-# GitHub pages files
-/docs/CNAME
-
 # dependencies
 /node_modules
 
@@ -48,4 +45,3 @@ testem.log
 .DS_Store
 Thumbs.db
 /.npmrc
-/docs/
