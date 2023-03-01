@@ -28,7 +28,7 @@ jobs:
         run: npm run build:prod
 
       - name: CNAME Update
-        run: cat "mock.codewithram.dev" > dist/mock-exam-app/CNAME
+        run: echo "mock.codewithram.dev" > dist/mock-exam-app/CNAME
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
