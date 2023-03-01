@@ -24,15 +24,13 @@ jobs:
       - name: Tests
         run: npm run test:prod
 
-      - name: Build
-        run: npm run build:prod
-
-      - name: Package
+      - name: Build & Package
         run: npm run package:prod
 
       - name: Publish
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "deploy@nramc.noreply.github.com"
-          git commit -a -m "Release Preparation: Publish artifact to docs"
+          git add .
+          git commit -m "Release Preparation: Publish artifact to docs"
           git push
