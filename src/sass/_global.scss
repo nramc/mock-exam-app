@@ -53,3 +53,10 @@ table > thead > tr {
   color: $pink !important;
   font-family: monospace !important;
 }
+
+hr.half-center {
+  width: 50%;
+  transform: translateX(50%);
+  border: 1px solid $primary;
+  border-radius: 7px;
+}
