@@ -32,4 +32,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  searchExams(searchKeyWord: string) {
+    this.exams = this.dataService.getExamsByKeyword(searchKeyWord);
+  }
+
 }

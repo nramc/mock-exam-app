@@ -36,6 +36,7 @@ import {AngularEditorModule} from "@kolkov/angular-editor";
 import { FooterComponent } from './footer/footer.component';
 import {TagListComponent} from "./components/tagname/tagname.component";
 import { ExamDetailsCardComponent } from './exam/exam-details-card/exam-details-card.component';
+import { SearchComponentComponent } from './components/search-component/search-component.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ExamDetailsCardComponent } from './exam/exam-details-card/exam-details-
     NewExamSummaryComponent,
     PracticeExamQuestionAnswerComponent,
     FooterComponent,
-    ExamDetailsCardComponent
+    ExamDetailsCardComponent,
+    SearchComponentComponent
   ],
     imports: [
         BrowserModule,

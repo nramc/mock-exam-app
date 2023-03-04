@@ -7,6 +7,7 @@ import {Exam} from "../domain/exam.model";
   providedIn: 'root'
 })
 export class DataServiceService {
+  private isKeywordExists = (text:string, keyword:string) => text.toLowerCase().search(keyword.toLowerCase()) != -1;
   private readonly exams !: Exam[];
 
   constructor(private http: HttpClient) {
@@ -24,6 +25,11 @@ export class DataServiceService {
   public fetchExamById(examId: string): Promise<Exam> {
     const dataFileName = 'assets/data/' + examId + '.json';
     return this.http.get<Exam>(dataFileName).toPromise();
+  }
+
+  public getExamsByKeyword(searchKeyWord: string): Exam[] {
+    const exams = this.getAllExams();
+    return exams.filter(exam => this.isKeywordExists(exam.title, searchKeyWord) || this.isKeywordExists(exam.description, searchKeyWord));
   }
 
 }

@@ -1,0 +1,7 @@
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search your practice exams here..!"
+         [(ngModel)]="searchKeyword" (ngModelChange)="search()">
+  <button class="btn btn-outline-secondary" type="button" id="search" (click)="search()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
