@@ -35,6 +35,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import { FooterComponent } from './footer/footer.component';
 import {TagListComponent} from "./components/tagname/tagname.component";
+import { ExamDetailsCardComponent } from './exam/exam-details-card/exam-details-card.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {TagListComponent} from "./components/tagname/tagname.component";
     NewExamComponent,
     NewExamSummaryComponent,
     PracticeExamQuestionAnswerComponent,
-    FooterComponent
+    FooterComponent,
+    ExamDetailsCardComponent
   ],
     imports: [
         BrowserModule,

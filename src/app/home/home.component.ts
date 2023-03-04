@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {AlertType} from '../alert-model/alert-model.component';
 import {DataServiceService} from '../services/data-service.service';
 import {Exam} from "../domain/exam.model";
-import {TimeUtils} from "../utils/time.utils";
 import {NotificationService} from "../services/notification.service";
 
 @Component({
@@ -31,14 +30,6 @@ export class HomeComponent implements OnInit {
         message: 'Practice exams are not available at the moment. Please try again later.'
       });
     }
-  }
-
-  public gotoExam(exam: Exam): void {
-    this.router.navigate(['/exam', exam.id]);
-  }
-
-  public getApproxExamDuration(exam: Exam) {
-    return TimeUtils.getExamDuration(exam.noOfQuestions);
   }
 
 }
