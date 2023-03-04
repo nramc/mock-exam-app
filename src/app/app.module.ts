@@ -34,7 +34,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatChipsModule} from "@angular/material/chips";
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import { FooterComponent } from './footer/footer.component';
-import {TagListComponent} from "./components/tagname.component";
+import {TagListComponent} from "./components/tagname/tagname.component";
 
 @NgModule({
   declarations: [
