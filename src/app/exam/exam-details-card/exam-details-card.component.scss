@@ -5,6 +5,10 @@ img.exam__logo {
   object-fit: fill;
   height: 5.5rem;
   width: 5rem;
+  position: absolute;
+  right: 0;
+  bottom:2rem;
+  opacity:35%;
 }
 
 .card {
@@ -34,9 +38,12 @@ img.exam__logo {
   font-size: 0.9rem;
 }
 
+
 .card-body {
   font-size: 0.8rem;
+  position: relative;
 }
+
 
 .card-text .exam-description{
   height: 8.5rem;
