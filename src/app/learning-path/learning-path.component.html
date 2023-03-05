@@ -19,7 +19,7 @@
 
         <mat-accordion displayMode="flat">
 
-          <mat-expansion-panel *ngFor="let learningPath of allLearningPaths">
+          <mat-expansion-panel *ngFor="let learningPath of allLearningPaths;let pathIndex = index" [expanded]="pathIndex==0">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <span>{{learningPath.title}}</span>
