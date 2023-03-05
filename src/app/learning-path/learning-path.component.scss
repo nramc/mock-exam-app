@@ -1,0 +1,13 @@
+@import '../../sass/variables';
+@import '../../sass/mixin';
+
+
+.mat-expansion-panel {
+  background: $primary;
+  border: 1px solid $primary;
+}
+
+::ng-deep .mat-expansion-panel-content{
+  background: whitesmoke !important;
+  color: $primary;
+}

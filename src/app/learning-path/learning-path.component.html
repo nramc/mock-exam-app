@@ -1,0 +1,48 @@
+<div class="container home">
+
+  <div class="home__title col-12 m-auto text-center">
+    <h4>Learning Paths</h4>
+    <hr class="half-center">
+  </div>
+
+  <div class="home__content mt-sm-4">
+    <div class="row">
+      <div class="col-12">
+        <app-search-component (onSearchEvent)="searchLearningPaths($event)"
+                              placeholder="Keyword to search your learning path..!"></app-search-component>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-12 mt-2">
+
+        <mat-accordion displayMode="flat">
+
+          <mat-expansion-panel *ngFor="let learningPath of allLearningPaths">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span>{{learningPath.title}}</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+
+              <div class="col-md col-sm-12 mt-2" *ngFor="let exam of learningPath.exams;let index=index">
+                <button type="button" class="btn btn-outline-primary" (click)="gotoPracticeExam(exam)">
+                  <span class="text-wrap">{{index+1}} - {{exam.title}}</span>
+
+                </button>
+              </div>
+
+            </div>
+
+          </mat-expansion-panel>
+
+        </mat-accordion>
+
+      </div>
+
+    </div>
+  </div>
+</div>
