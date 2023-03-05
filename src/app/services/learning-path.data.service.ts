@@ -15,4 +15,9 @@ export class LearningPathDataService {
   getAllLearningPaths(): LearningPath[] {
     return [...this.allLearningPaths];
   }
+
+  getLearningPathsByKeyword(keyword: string): LearningPath[] {
+    return [...this.allLearningPaths.filter(l => l.title.toLowerCase().search(keyword.toLowerCase()) != -1)];
+  }
+
 }

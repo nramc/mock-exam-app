@@ -21,7 +21,7 @@ export class LearningPathComponent {
 
 
   searchLearningPaths(searchKeyWord: string) {
-    console.log("yet to be handled: ", searchKeyWord)
+    this.allLearningPaths = this.learningPathDataService.getLearningPathsByKeyword(searchKeyWord)
   }
 
   gotoPracticeExam(exam: Exam) {
