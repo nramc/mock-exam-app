@@ -1,0 +1,63 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixin';
+
+img.exam__logo {
+  object-fit: fill;
+  height: 5.5rem;
+  width: 5rem;
+  position: absolute;
+  right: 0;
+  bottom:2rem;
+  opacity:35%;
+}
+
+.card {
+  border-color: $secondary;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+}
+
+.card:hover {
+  box-shadow: 3px 3px 3px $secondary;
+  cursor: pointer;
+}
+
+.card-header {
+  @include gradient($primary, $secondary);
+  h6 {
+    color: $gray-100 !important;
+  }
+}
+
+
+.card-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+
+.card-body {
+  font-size: 0.8rem;
+  position: relative;
+}
+
+
+.card-text .exam-description{
+  height: 8.5rem;
+  overflow: hidden;
+  text-wrap: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+}
+
+.card-text small{
+  font-weight: 500;
+}
+
+.exam-description {
+  font-size: 0.8rem;
+}

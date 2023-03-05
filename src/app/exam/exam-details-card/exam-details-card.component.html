@@ -1,0 +1,42 @@
+<div class="card h-100" (click)="gotoExam(exam)">
+
+  <div class="card-header">
+    <h6>{{exam.title}}</h6>
+  </div>
+
+  <div class="col-12">
+    <div class="card-body">
+      <div class="card-text text-primary">
+        <div class="row">
+          <div class="col-12">
+            <p class="exam-description" [innerHTML]="exam.description"></p>
+          </div>
+          <div class="row">
+            <img  class="exam__logo" [src]="exam.imageUrl" [alt]="exam.title">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mt-2 mb-2">
+            <app-tag-list [tags]="exam.tags"></app-tag-list>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row justify-content-start" [hidden]="!exam.noOfQuestions">
+          <div>
+            <small>Questions: <span class="badge text-bg-primary">{{exam.noOfQuestions}}</span></small>
+          </div>
+          <div class="ms-2">
+            <small>Duration: <span class="badge text-bg-primary">{{getApproxExamDuration(exam)}}
+              min</span></small>
+          </div>
+          <div class="ms-2">
+            <small [hidden]="!exam.difficulty">Difficulty: <span
+              class="badge text-bg-primary">{{exam.difficulty}}</span></small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

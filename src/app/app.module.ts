@@ -34,7 +34,11 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatChipsModule} from "@angular/material/chips";
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import { FooterComponent } from './footer/footer.component';
-import {TagListComponent} from "./components/tagname.component";
+import {TagListComponent} from "./components/tagname/tagname.component";
+import { ExamDetailsCardComponent } from './exam/exam-details-card/exam-details-card.component';
+import { SearchComponentComponent } from './components/search-component/search-component.component';
+import { LearningPathComponent } from './learning-path/learning-path.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -50,31 +54,35 @@ import {TagListComponent} from "./components/tagname.component";
     NewExamComponent,
     NewExamSummaryComponent,
     PracticeExamQuestionAnswerComponent,
-    FooterComponent
+    FooterComponent,
+    ExamDetailsCardComponent,
+    SearchComponentComponent,
+    LearningPathComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        FormsModule,
-        HttpClientModule,
-        MatSnackBarModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatProgressBarModule,
-        MatDialogModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatStepperModule,
-        MatButtonToggleModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatTooltipModule,
-        MatChipsModule,
-        AngularEditorModule,
-        TagListComponent
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTooltipModule,
+    MatChipsModule,
+    AngularEditorModule,
+    TagListComponent,
+    MatExpansionModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

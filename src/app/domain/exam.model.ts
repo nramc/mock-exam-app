@@ -11,5 +11,6 @@ export interface Exam {
   passScore: number
   questions: Question[]
   difficulty: string
+  learningPathId?: string
 
 }

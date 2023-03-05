@@ -15,6 +15,10 @@ export class AppComponent {
     this.router.navigate(['/']);
   }
 
+  navigateToLearningPaths() : void {
+    this.router.navigate(['/learning-path']);
+  }
+
   myprofile() : void{
     window.open('https://myprofile.codewithram.dev');
   }
