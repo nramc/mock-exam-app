@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
   selector: 'app-tag-name',
   standalone: true,
   imports: [CommonModule],
-  template: `<span class="badge text-bg-primary me-1">#&nbsp;{{tagName}}</span>`,
+  template: `<span class="badge text-bg-primary me-1">&nbsp;{{tagName}}</span>`,
 })
 export class TagNameComponent {
   @Input()
